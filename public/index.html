@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>MERISUR | Version 1.2.2 Feb2023</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/css/ico.png" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+    <script>
+        function leave(){
+           var answer = confirm("Are you sure you want to log out?");
+           if (answer) window.location = "/logout";
+           else return 0;
+        }
+    </script>
+</head>
+<body>
+
+<!-- ═══════════════ MODAL (unchanged) ═══════════════ -->
+<div class="modal">
+   <div id="divLoadData" class="divLoadData">
+    <h1><i class="fa fa-spinner" aria-hidden="true"></i></h1>
+    <p>processing data</p>
+   </div>
+   <div id="warnigOption" class="warnigOption">
+      <p id="warningMsg"></p>
+       <li href="#" id="warningOk" class="warningOk">Accept <i class="fa fa-check" aria-hidden="true"></i></li>
+       <li href="#" id="warningOkTwo" class="warningOkTwo">Accept <i class="fa fa-check" aria-hidden="true"></i></li>
+       <a href="javascript:closeModal()" id="warningNo" class="warningNo">Cancel <i class="fa fa-times" aria-hidden="true"></i></a>
+   </div>
+   <div id="ByfferMssgOption">
+    <p id="ByfferMssg">If you select to map <strong class="accent-yellow">Damage and Debris</strong>, it will take a few minutes more!!</p>
+       <li href="#" id="WithOutBuffer" class="">Damage</li>
+       <li href="#" id="WithBuffer" class="">Damage and Debris</li>
+   </div>
+</div>
+
+<!-- ═══════════════ FIXED HEADER ═══════════════ -->
+<div class="header-top">
+    <div class="header-left">
+        <img src="/css/upm.png" class="logo" alt="UPM">
+        <img src="/css/LogoTERRA.png" class="logo" alt="TERRA">
+    </div>
+    <nav class="nav-center">
+        <a href="/">Home</a>
+        <a href="/info.html">Information</a>
+        <a href="/links.html">Useful Links</a>
+        <a href="/contact.html">Contact Us</a>
+    </nav>
+    <div class="header-right">
+        <span id="nav-auth"></span>
+    </div>
+</div>
+
+<!-- ═══════════════ THREE-PANEL SLIDE WRAP ═══════════════ -->
+<div id="slide-wrap">
+  <div id="slide-track">
+
+    <!-- ─── PANEL 1 · Intro / hero ─── -->
+    <div class="slide" id="slide-intro">
+
+        <div id="header" class="header">
+            <div class="inner">
+                <a class="title">Urban Seismic Risk Assessment</a>
+                <hr />
+                <div class="steps">
+                    <ol>
+                        <li><strong>Edit seismic source:</strong> input characteristics of seismic rupture generating ground motion at the target sites (Lorca and Puerto Lumbreras). Use <i>Automatic</i> or <i>Manual</i> menu:<br><br>
+                        <ul>
+                            <li><strong class="accent-brown">Automatic menu:</strong> Find a source among the <i>Available Faults</i> of the list. Select it on the map and click <i>Generate Max Magnitude</i>, to estimate the seismic risk due to the maximum magnitude associated to this fault.</li>
+                            <li><strong class="accent-brown">Manual menu:</strong> Click on <i>Start to Edit</i>. Introduce the source parameters. Use the <i>Generate This Earthquake</i> button below, to estimate the seismic risk due to the newly defined earthquake.</li>
+                        </ul></li>
+                        <li><strong>Select the probability level associated to the seismic scenario: </strong>
+                        <select class="form-control" id="seleCaso">
+                            <option value="caso1" selected>High Probability</option>
+                            <option value="caso2">Low Probability (High Impact)</option>
+                            <option value="caso3">Very Low Probability (Very High Impact)</option>
+                        </select><br><br>
+                        <ul>
+                            <li>High probability: median ground motion value and modal damage grade.</li>
+                            <li>Low probability (high impact): median-plus-one-sigma ground motion value and modal damage grade.</li>
+                            <li>Very low probability (very high impact): median-plus-one-sigma ground motion value and damage grade corresponding to percentile 85.</li>
+                        </ul>
+                        </li>
+                    </ol>
+                </div>
+                <!-- CTA button — goes to Panel 2 -->
+                <a id="btn-go-map1" class="bar-btn bar-btn-red">
+                    Edit seismic source <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <footer id="project">
+            <p>This site is developed in the frame of the MERISUR project, (ref. CGL2013-40492-R), National R+D+I Program for Societal Challenges 2013, Ministry of Economy and Competitiveness of Spain.</p>
+        </footer>
+
+    </div><!-- /slide-intro -->
+
+    <!-- ─── PANEL 2 · Map 1 (seismic source editor) ─── -->
+    <div class="slide" id="slide-map1">
+
+        <iframe id="iframe-map1" src="/main.html" frameborder="0"></iframe>
+
+        <div class="bar-map1">
+            <!-- selectSetting.js sets display via $('a#mapView', parent.document) -->
+            <a id="mapView" class="bar-btn bar-btn-purple">
+                <i class="fa fa-map-o" aria-hidden="true"></i> Load result on map
+            </a>
+            <!-- Home -->
+            <a id="btn-home-map1" class="bar-btn bar-btn-red bar-btn-home">
+                <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
+        </div>
+
+    </div><!-- /slide-map1 -->
+
+    <!-- ─── PANEL 3 · Map 2 (results) ─── -->
+    <div class="slide" id="slide-map2">
+
+        <iframe id="iframe-map2" frameborder="0"></iframe>
+
+        <div class="bar-map2">
+            <div class="bar-map2-left">
+                <p id="developr">Last Update 2026</p>
+                <p id="developer">Contact developer: <a href="mailto:pouye.yazdi@upm.es">Pouye Yazdi</a></p>
+            </div>
+            <div class="bar-map2-btns">
+                <a id="btn-go-map1-from-map2" class="bar-btn bar-btn-red">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i> Edit seismic source
+                </a>
+                <!-- selectSetting.js sets display via $('a#viewBuffer', parent.document) -->
+                <a id="viewBuffer" class="bar-btn bar-btn-purple">
+                    <i class="fa fa-bullseye" aria-hidden="true"></i> Load debris on map
+                </a>
+            </div>
+        </div>
+
+    </div><!-- /slide-map2 -->
+
+  </div><!-- /slide-track -->
+</div><!-- /slide-wrap -->
+
+
+<script src="/js/scrolly/jquery.min.js"></script>
+<script>
+/* ═══════════════════════════════════════════════════
+   PANEL NAVIGATION — only via buttons
+   ═══════════════════════════════════════════════════ */
+
+var currentPanel = 0;   // 0=intro, 1=map1, 2=map2
+var map2Loaded   = false;
+var mapFile      = '/map_.html';
+
+// Detect logged-in user and choose correct map file
+fetch('/me').then(r => r.json()).then(d => {
+    document.getElementById('nav-auth').innerHTML = d.usuario
+        ? '<a class="log btn-logout" href="javascript:leave()">Log out</a>'
+        : '<a class="log btn-login" href="/login">Log in</a>';
+    if (d.usuario) mapFile = '/map.html';
+}).catch(() => {});
+
+function goToPanel(n) {
+    currentPanel = n;
+    var pct = n * (100 / 3);
+    document.getElementById('slide-track').style.transform =
+        'translateX(-' + pct + '%)';
+}
+
+/* ── Button: Intro → Map1 ── */
+document.getElementById('btn-go-map1').addEventListener('click', function () {
+    goToPanel(1);
+});
+
+/* ── Button: Map1 → Intro (home) ── */
+document.getElementById('btn-home-map1').addEventListener('click', function () {
+    goToPanel(0);
+    document.getElementById('mapView').style.display = 'none';
+});
+
+/* ── Button: Map1 → Map2 (load results) — id="mapView" for selectSetting.js ── */
+document.getElementById('mapView').addEventListener('click', function () {
+    document.querySelector('.modal').style.display = 'inherit';
+    document.querySelector('.divLoadData').style.display = 'inherit';
+
+    if (map2Loaded) {
+        document.getElementById('iframe-map2').contentWindow.location.reload(true);
+    } else {
+        document.getElementById('iframe-map2').src = mapFile;
+        map2Loaded = true;
+    }
+    goToPanel(2);
+});
+
+/* ── Button: Map2 → Map1 (edit source) ── */
+document.getElementById('btn-go-map1-from-map2').addEventListener('click', function () {
+    sessionStorage.clear();
+    localStorage.clear();
+
+    // Intentar llamar a resetSiteCache dentro del iframe ANTES de destruirlo,
+    // para que el próximo "Load result on map" arranque siempre desde cero.
+    try {
+        var ifrMap2 = document.getElementById('iframe-map2');
+        if (ifrMap2.contentWindow && ifrMap2.contentWindow.resetSiteCache) {
+            ifrMap2.contentWindow.resetSiteCache();
+        }
+    } catch(e) {}
+
+    // Vaciar el src del iframe de resultados para que el próximo
+    // "Load result on map" inyecte los datos frescos del nuevo cálculo.
+    var ifrMap2 = document.getElementById('iframe-map2');
+    ifrMap2.src = '';
+    map2Loaded = false;
+
+    // Ocultar también el botón "Load debris" hasta que se calcule de nuevo
+    document.getElementById('viewBuffer').style.display = 'none';
+
+    // Force full reload of the seismic source editor
+    var iframe = document.getElementById('iframe-map1');
+    iframe.src = '/main.html?t=' + Date.now();
+
+    goToPanel(1);
+});
+
+/* ── Button: Load debris — id="viewBuffer" for selectSetting.js ── */
+document.getElementById('viewBuffer').addEventListener('click', function () {
+    var ifrMap2 = document.getElementById('iframe-map2');
+    if (ifrMap2.contentWindow && ifrMap2.contentWindow.bufferManual) {
+        ifrMap2.contentWindow.bufferManual.crearLayer();
+    }
+    this.style.display = 'none';
+});
+
+/* ── Hide modal when iframe-map2 finishes loading ── */
+document.getElementById('iframe-map2').addEventListener('load', function () {
+    closeModal();
+});
+
+/* ── postMessage listener (navSettingSSCC.js sends iframeReady) ── */
+window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (!d || !d.type) return;
+    if (d.type === 'mapReady') closeModal();
+});
+
+/* ═══════════════════════════════════════════════════
+   BLOCK ALL SCROLL / SWIPE on the host page
+   ═══════════════════════════════════════════════════ */
+
+// Kill wheel / touchmove on the document level
+// (allow scroll only inside #slide-intro which has overflow-y:auto)
+document.addEventListener('wheel', function (e) {
+    var target = e.target;
+    var introEl = document.getElementById('slide-intro');
+    if (introEl && introEl.contains(target)) return; // let intro panel scroll
+    e.preventDefault();
+}, { passive: false });
+
+var _touchStartY = 0;
+document.addEventListener('touchstart', function (e) {
+    _touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchmove', function (e) {
+    var introEl = document.getElementById('slide-intro');
+    if (introEl && introEl.contains(e.target)) return;
+    e.preventDefault();
+}, { passive: false });
+
+/* ── Also block keyboard arrow keys / Page Up/Down ── */
+document.addEventListener('keydown', function (e) {
+    var blocked = [33, 34, 35, 36, 37, 38, 39, 40]; // PgUp, PgDn, End, Home, arrows
+    if (blocked.indexOf(e.keyCode) !== -1) {
+        // allow inside the intro panel (for scrolling text)
+        var introEl = document.getElementById('slide-intro');
+        if (introEl && introEl.contains(document.activeElement)) return;
+        e.preventDefault();
+    }
+});
+
+/* ═══════════════════════════════════════════════════
+   HELPERS
+   ═══════════════════════════════════════════════════ */
+
+function closeModal(){
+    document.querySelector('.modal').style.display = 'none';
+    document.getElementById('warningMsg').innerHTML = '';
+}
+
+function showAlertBuffer(){
+    // Legacy alias for compatibility with inner iframe calls
+    var ifrMap2 = document.getElementById('iframe-map2');
+    if (ifrMap2.contentWindow && ifrMap2.contentWindow.bufferManual) {
+        ifrMap2.contentWindow.bufferManual.crearLayer();
+    }
+    document.getElementById('viewBuffer').style.display = 'none';
+}
+
+// Forzar la limpieza del almacenamiento local/sesión si tu backend o JS guarda ahí el estado del sismo
+window.addEventListener('message', function(event) {
+    if (event.data === 'clear_earthquake_cache') {
+        sessionStorage.clear();
+        localStorage.clear();
+    }
+});
+</script>
+</body>
+</html>

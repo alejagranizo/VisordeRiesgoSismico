@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="map-embed">
+<head>
+    <meta charset="UTF-8">
+    <title>MERISUR | Trial version</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="icon" type="image/png" href="/css/ico.png" />
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <link rel="stylesheet" href="/leaflet/leaflet.css" />
+    <script src="/leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-ui.js"></script>
+    <link rel="stylesheet" href="/js/jquery/jquery-ui.css">
+    <script src="/js/TweenMax/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
+
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     PANEL 1 — LAYERS  (izquierda)
+     ══════════════════════════════════════════════════ -->
+<div class="fp hidden" id="fp-layers">
+    <button class="fp-close" id="close-fp-layers" title="Close Layers">&times;</button>
+    <div class="fp-header">
+        <img class="panel-icon" src="/css/icon-capas.png" alt="Layers" />
+        <span class="titles">Layers</span>
+    </div>
+    <div class="fp-body">
+        <nav class="boxes">
+            <div class="cajaSelector">
+                <ul class="selecLayer">
+                    <li>
+                        <a href="#" class="titles">
+                            <i class="fa fa-angle-down masLayer" aria-hidden="true"></i>
+                            <i class="fa fa-globe"></i> Base Maps
+                        </a>
+                        <ul class="sub-selecLayer">
+                            <li><input type="radio" id="osm-road" name="mapabase" value="osm" checked>
+                                <label for="osm-road">OpenStreet Map</label></li>
+                            <li><input type="radio" id="pnoa-all" name="mapabase" value="pnoa">
+                                <label for="pnoa-all">PNOA</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="titles">
+                            <i class="fa fa-angle-down masLayer" aria-hidden="true"></i>
+                            <i class="fa fa-map-o"></i> Layers
+                        </a>
+                        <ul class="sub-selecLayer">
+                            <li><input type="radio" id="ly_secciones" checked name="tematic" value="0">
+                                <label for="ly_secciones">Census Sections</label></li>
+                            <li><input type="radio" id="Vunerabilidad" name="tematic" value="1">
+                                <label for="Vunerabilidad">Vulnerability Class</label></li>
+                            <li><input type="radio" id="Danio" name="tematic" value="2">
+                                <label for="Danio">Damage Estimation</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PANEL 2 — LEGEND  (izquierda)
+     ══════════════════════════════════════════════════ -->
+<div class="fp hidden" id="fp-legend">
+    <button class="fp-close" id="close-fp-legend" title="Close Legend">&times;</button>
+    <div class="fp-header">
+        <img class="panel-icon" src="/css/icon-legend.png" alt="Legend" />
+        <span class="titles">Legend</span>
+    </div>
+    <div class="fp-body">
+        <div id="mySidenav" class="sidenav">
+            <div class="listLegends"><ul></ul></div>
+            <div class="listLegendsTematic"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     BOTONES PARA ABRIR PANELES (arriba a la izquierda)
+     ══════════════════════════════════════════════════ -->
+<button class="fp-btn" id="btn-fp-layers" title="Layers">
+    <img src="/css/icon-capas.png" alt="Layers" />
+</button>
+<button class="fp-btn" id="btn-fp-legend" title="Legend">
+    <img src="/css/icon-legend.png" alt="Legend" />
+</button>
+
+<!-- ══════════════════════════════════════════════════
+     BARRA SUPERIOR DERECHA
+     [Lorca] [Puerto Lumbreras]   [🔍 Búsqueda]
+     ══════════════════════════════════════════════════ -->
+<div id="top-toolbar">
+    <div id="locality-switcher">
+        <button class="locality-btn" data-locality="Lorca"
+                onclick="window.toggleLocality && window.toggleLocality('Lorca')">
+            Lorca
+        </button>
+        <button class="locality-btn" data-locality="PuertoLumbreras"
+                onclick="window.toggleLocality && window.toggleLocality('PuertoLumbreras')">
+            Puerto Lumbreras
+        </button>
+    </div>
+    <div id="map-search-box">
+        <div id="search-input-wrap">
+            <i class="fa fa-search" id="search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search street, place…" autocomplete="off" />
+            <button id="search-clear" title="Clear">&times;</button>
+        </div>
+        <ul id="search-results"></ul>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     MAPA
+     ══════════════════════════════════════════════════ -->
+<div class="contentid">
+    <div id="map"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     INFO PANEL (derecha)
+     ══════════════════════════════════════════════════ -->
+<div id="info-panel">
+    <a href="#" id="close-info" class="closebtn">&times;</a>
+    <div id="info-content"></div>
+</div>
+
+<script>
+    // ── Mapa Leaflet ─────────────────────────────────────────────────────────
+    var map = L.map('map', { zoomControl: false, maxZoom: 28 })
+                .setView([37.6710, -1.6982], 13);
+    window.map = map;
+
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap'
+    }).addTo(map);
+
+    var pnoa = L.tileLayer.wms('http://www.ign.es/wms-inspire/pnoa-ma', {
+        layers: 'OI.OrthoimageCoverage',
+        format: 'image/png', transparent: true, attribution: 'IGN'
+    });
+
+    $('input[name="mapabase"]').on('change', function () {
+        if (this.value === 'osm') {
+            if (!map.hasLayer(osm))  map.addLayer(osm);
+            if (map.hasLayer(pnoa)) map.removeLayer(pnoa);
+        } else {
+            if (!map.hasLayer(pnoa)) map.addLayer(pnoa);
+            if (map.hasLayer(osm))  map.removeLayer(osm);
+        }
+    });
+
+    L.control.scale({ position: 'bottomleft' }).addTo(map);
+    L.control.zoom({ position: 'bottomleft' }).addTo(map);
+
+    // Señal para mapSettingSSCC.js
+    window.dispatchEvent(new Event('mapReady'));
+
+    // ── Toolbar se desplaza con el info-panel ────────────────────────────────
+    (function () {
+        var INFO_W  = 260;
+        var MARGIN  = 14;
+        var toolbar = document.getElementById('top-toolbar');
+        function sync() {
+            var open = document.getElementById('info-panel').classList.contains('open');
+            toolbar.style.right = (open ? INFO_W + MARGIN : MARGIN) + 'px';
+        }
+        new MutationObserver(sync)
+            .observe(document.getElementById('info-panel'), { attributes: true });
+    })();
+
+    // ── Panels: los botones .fp-btn ya tienen handler en navSettingSSCC.js.
+    //    Este bloque es el único handler adicional — NO duplicar. ─────────────
+    // (navSettingSSCC.js se encarga de todo vía jQuery $('#btn-fp-layers') etc.)
+</script>
+
+<!-- Orden de carga obligatorio -->
+<script src="/js/mapSettingSSCC.js"></script>
+<script src="/js/navSettingSSCC.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <!--  <meta charset="UTF-8"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <title>Pouye | Trial version</title>
+    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link rel="icon" type="image/png" href="css/ico.png" />
+    <!--jquery-->
+   <script type="text/javascript" src="js/jquery/jquery.js"></script>
+   <script type="text/javascript" src="js/jquery/jquery-ui.js"></script>
+   <link rel="stylesheet" href="js/jquery/jquery-ui.css">
+
+    <!-- Bootstrap JS -->
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style_index.css" />
+    
+    <!-- leaflet -->
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
+    
+    <!-- leaflet measure plugin-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/gokertanrisever/leaflet-ruler/master/src/leaflet-ruler.css">
+    <script src="https://cdn.rawgit.com/gokertanrisever/leaflet-ruler/master/src/leaflet-ruler.js"></script>
+    
+    
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    
+   
+   <!-- TweenMax -->
+   <script src="js/TweenMax/TweenMax.min.js"></script>
+   
+
+
+</head>
+<body>
+<!-- 
+            <hr> -->
+<div class="container-fluid text-center"> 
+    
+   <div class="row content">
+   <!-- map column 3 -->
+    <div class="col-md-3 col-sm-3 ">
+    
+     <div id="automatic-intro">
+      <h3>Automatic</h3>
+      
+<!--       <p><strong class="accent-green">Quick Hint: </strong>Find a source among the <strong>Availible Faults</strong> in the list. 
+            Select it on map an click <strong>Generate Max Magnitude</strong>, to estimated the seismic risk due to the maximum magnitude associated to it.</p> -->
+     
+      </div>
+      
+ 
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#menu1">Rupture filter</a></li>
+        <li><a href="#home-lista">Avalible faults</a></li>
+        <!-- <li><a href="#menu2">Generar datos</a></li> -->
+      </ul>
+
+      <div class="tab-content text-left">
+        <div id="home-lista" class="tab-pane fade">
+
+              
+                <div class="row radio ">
+                    <div class="col-md-6 col-sm-6 col-xs-6 div-circle-2">	  	        
+                        <input type="radio" id="circle-2" name="lista-fault" value="2">
+                        <label for="circle-2" id="dos">Show Search Circle</label>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-6 div-circle-1">
+                        <input type="radio" id="circle-1" name="lista-fault" value="1" checked>
+                        <label for="circle-1" id="uno">Hide Search Circle</label>   
+                    </div>
+                </div>
+            
+              <div class="row content-cajalista">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="cajalista">  
+                        <div id="list-group" class="list-group"></div>
+                      </div>
+                         
+                          <br>
+                          
+                             <div class="input-group faulSelected-content">
+                              <input  id="faulSelected" type="text" class="form-control" placeholder="Select from list to zoom" disabled>
+                              <span class="input-group-btn">
+                                <button id="faulSelected-go" class="btn btn-info" type="button">Get Closer</button>
+                              </span>
+                            </div>
+                            <p> <em>Select a fault on map to locate a rupture on it</em> </p>
+                  </div>
+              </div>
+              
+<!--              <div class="row  btns-createFile">
+                <div class="col-md-12 col-sm-12  col-xs-12">
+                    <div class="btn-group btn-group-justified">
+                      <a id="download-data" href="#" class="btn btn-success disabled" download="faultData.txt" >Download file with data</a>
+                    </div>
+                </div>
+             </div>   -->    
+                             
+        </div>
+        
+        <div id="menu1" class="tab-pane fade in active">
+        
+        <div class="alert alert-info">
+            Filter faults by  <i>Style of Faulting</i>
+            
+            
+            
+       </div>
+           <select class="form-control" id="seleMag">
+            <option value="All">All</option>
+            <option value="Normal">Normal</option>
+            <option value="StrikeSlip">Strike-Slip</option>
+            <option value="Reverse">Reverse</option>
+          </select>
+        <hr>
+            
+       <div class="alert alert-info">
+            Filter faults by <i>Maximum Magnitude </i>
+       </div>
+
+        <p>Mag. : <span id="spanOutput"></span></p>
+        <br />
+        <div id="slider"></div>
+
+        </div>
+        
+        <div id="menu2" class="tab-pane fade">
+           
+   <!--         
+                       <div class="row  btns-create">
+                               <div class="btn-group btn-group-justified">
+                                 <li id="star" href="#" class="btn btn-primary">Star</li>
+                                 <li id="end" href="#" class="btn btn-danger disabled">End</li>
+                               </div>
+                        </div> 
+           
+                          <div class="row content-coordenadas">
+                             <div class="col-md-12 col-sm-12  col-xs-12">
+                              <div class="input-group">
+                                 <span class="input-group-addon"><strong>Lat ; Lng: </strong></span>
+                                 <input id="xy-coordenadas" type="text" class="form-control" name="xy-coordenadas" placeholder="Click on map" disabled>
+                                 <span class="input-group-addon">wgs-84</span>
+                               </div>
+                             </div>
+                         </div> 
+           
+                      
+                       <div class="row magnitudes">
+                           <div class="col-md-12 col-sm-12  col-xs-12"> 
+                                <div class="input-group">
+                                 <span class="input-group-addon"><strong>Magnitud: </strong></span>
+                                 <span class="input-group-addon"><strong>4.0</strong> &#8804; </span>
+                                 <input id="l-distancia" type="number" class="form-control" name="l-distancia" placeholder="Magnitude" min="4" max="6" step="0.1" value="5.0" disabled>
+                                 <span class="input-group-addon">&#8804; <strong>6.0</strong> Mw.</span>
+                               </div>
+                           </div>
+                       </div>
+                       
+                       <div class="row createSlider">
+                          <div class="col-md-12 col-sm-12  col-xs-12">
+                          <label for="sliderCreate">Strike: <span>45</span>º</label>
+                           <div class="input-group content-sliderCreate">
+                           <span class="input-group-addon"><strong>0</strong>º</span>
+                           <div id="sliderCreate" class="label-Slider" ></div>
+                           <span class="input-group-addon"><strong>359</strong>º</span>
+                           </div>
+                           </div>
+                       </div>
+                       
+                       <div class="row createSlider-dip">
+                          <div class="col-md-12 col-sm-12  col-xs-12">
+                          <label for="sliderCreate-dip">Dip: <span>45</span>º</label>
+                           <div class="input-group content-sliderCreate">
+                           <span class="input-group-addon"><strong>0</strong>º</span>
+                           <div id="sliderCreate-dip" class="label-Slider"></div>
+                           <span class="input-group-addon"><strong>89</strong>º</span>
+                           </div>
+                           </div>
+                       </div>
+                       
+                       <div class="row createSlider-Ztop">
+                          <div class="col-md-12 col-sm-12  col-xs-12">
+                               <div class="input-group">
+                                   <span class="input-group-addon"><strong>Ztop:</strong></span>
+                                 <input id="input-Ztop" type="number" class="form-control" name="l-distancia" placeholder="Magnitude" min="0" step="0.1" value="5" disabled>
+                                 <span class="input-group-addon">Km.</span>
+                               </div>
+                           </div>
+                       </div>
+           
+                       <div class="row createSlider-Focal">
+                          <div class="col-md-12 col-sm-12  col-xs-12">
+                               <div class="input-group">
+                                   <span class="input-group-addon"><strong>Focal Mechanim:</strong></span>
+                                       <select class="form-control" id="Focal" disabled>
+                                           <option value="SS">SS - Strikeslip</option>
+                                           <option value="N">N - Normal</option>
+                                           <option value="R">R - Reverse</option>
+                                         </select>
+                               </div>
+                           </div>
+                       </div>
+           
+                           <div class="row  btns-createFile">
+                              <div class="col-md-12 col-sm-12  col-xs-12">
+                               <div class="btn-group btn-group-justified">
+                                <a id="view-map" href="#" class="btn btn-success disabled" download="faultData_Custom.txt" >Download file with data (custom)</a>
+                                 <li id="view-map" href="#" class="btn btn-success disabled" >Download file with data (custom)</li>
+                               </div>
+                               </div>
+                        </div> 
+                    -->
+        
+        </div>
+      </div>
+         
+          <!-- <hr> -->
+          
+    </div>
+    
+    <!-- map column 9 -->
+    <div class="col-md-6 col-sm-6 ">
+        <div class="calc-content">
+           <div class="boton-circle uno">
+                <div class="btn-group" role="group" aria-label="...">
+                  <div class="btn-group" role="group">
+                    <div class="btn-group">
+                      <select class="form-control " id="s">
+                        <option value="5">5 km </option>
+                        <option value="10">10 km </option>
+                        <option value="15">15 km </option>
+                        <option value="20">20 km </option>
+                        <option value="25">25 km </option>
+                        <option value="30">30 km </option>
+                        <option value="40">40 km </option>
+                        <option value="50">50 km </option>
+                      </select>
+                    </div>
+                  </div>
+                 <!--  <button type="button" class="btn btn-info">Ver</button> -->
+                </div>
+              </div>  
+            <div id="map"></div>
+        </div>
+    </div>
+    
+    
+    
+    <div class="col-md-3 col-sm-3">
+    
+     <h3>Manual</h3>
+
+            <div class="row  btns-create">
+                    <div class="btn-group btn-group-justified">
+                      <li id="star" href="#" class="btn btn-primary">Start to Edit</li>
+                      <li id="end" href="#" class="btn btn-danger disabled">Delete</li>
+                    </div>
+             </div> 
+
+               <div class="row content-coordenadas">
+                  <div class="col-md-12 col-sm-12  col-xs-12">
+                   <div class="input-group">
+                      <span class="input-group-addon"><strong>Lat. Log. </strong></span>
+                      <input id="xy-coordenadas" type="text" class="form-control" name="xy-coordenadas" placeholder="Click on map" disabled>
+                      <span class="input-group-addon">WGS-84</span>
+                    </div>
+                  </div>
+              </div> 
+
+           
+            <div class="row magnitudes">
+                <div class="col-md-12 col-sm-12  col-xs-12"> 
+                     <div class="input-group">
+                      <span class="input-group-addon"><strong>Magnitude: </strong></span>
+                      <span class="input-group-addon"><strong>4.0</strong> &#8804; </span>
+                      <input id="l-distancia" type="number" class="form-control" name="l-distancia" placeholder="Magnitude" min="4" max="6" step="0.1" value="5.0" disabled>
+                      <span class="input-group-addon">&#8804; <strong>6.0</strong> Mw.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row createSlider">
+               <div class="col-md-12 col-sm-12  col-xs-12">
+               <label for="sliderCreate">Strike: <span>45</span>º</label>
+                <div class="input-group content-sliderCreate">
+                <span class="input-group-addon"><strong>0</strong>º</span>
+                <div id="sliderCreate" class="label-Slider" ></div>
+                <span class="input-group-addon"><strong>359</strong>º</span>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row createSlider-dip">
+               <div class="col-md-12 col-sm-12  col-xs-12">
+               <label for="sliderCreate-dip">Dip: <span>45</span>º</label>
+                <div class="input-group content-sliderCreate">
+                <span class="input-group-addon"><strong>0</strong>º</span>
+                <div id="sliderCreate-dip" class="label-Slider"></div>
+                <span class="input-group-addon"><strong>89</strong>º</span>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row createSlider-Ztop">
+               <div class="col-md-12 col-sm-12  col-xs-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><strong>Z<sub>tor</sub>:</strong></span>
+                      <input id="input-Ztop" type="number" class="form-control" name="l-distancia" placeholder="Magnitude" min="0" step="0.1" value="5" disabled>
+                      <span class="input-group-addon">Km.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row createSlider-Focal">
+               <div class="col-md-12 col-sm-12  col-xs-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><strong>Style of faulting:</strong></span>
+                            <select class="form-control" id="Focal" disabled>
+                                <option value="SS">SS - Strike-slip</option>
+                                <option value="N">N - Normal</option>
+                                <option value="R">R - Reverse</option>
+                              </select>
+                    </div>
+                </div>
+            </div>
+
+                <div class="row  btns-createFile">
+                   <div class="col-md-12 col-sm-12  col-xs-12">
+                    <div class="btn-group btn-group-justified">
+                     <!--  <a id="view-map" href="#" class="btn btn-success disabled" download="faultData_Custom.txt" >Download file with data (custom)</a> -->
+                      <li id="view-map" href="#" class="btn btn-success disabled" data-tipe="manual" >Generate This Earthquake</li>
+                    </div>
+                    </div>
+             </div> 
+        
+    </div>   
+    
+  </div>
+</div>
+<script src="js/urm2lat.js"></script>
+<script src="data/Fault_mini_dos.js"></script>
+<script src="data/ExcelDataEnd.js"></script>
+<script src="js/selectSettingSSCC.js"></script>
+</body>
+</html>

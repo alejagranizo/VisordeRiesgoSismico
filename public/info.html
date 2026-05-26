@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <title>MERISUR | Version 1.0 Feb2018</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/css/ico.png" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <script>
+        function leave(){
+           var respuesta=confirm("Are you sure you want to log out?");
+            if(respuesta==true)
+               window.location="/logout";
+            else
+               return 0;
+        }
+    </script>
+</head>
+<body>
+<div class="modal">
+   <div id="divLoadData" class="divLoadData">
+    <h1><i class="fa fa-spinner" aria-hidden="true"></i></h1>
+    <p>processing data</p>
+   </div>
+   <div id="warnigOption" class="warnigOption">
+      <p id="warningMsg"></p>
+       <li href="#" id="warningOk" class="warningOk">Accept <i class="fa fa-check" aria-hidden="true"></i></li>
+       <li href="#" id="warningOkTwo" class="warningOkTwo">Accept <i class="fa fa-check" aria-hidden="true"></i></li>
+       <a href="javascript:closeModal()" id="warningNo" class="warningNo">Cancel <i class="fa fa-times" aria-hidden="true"></i></a>
+   </div>
+   <div id="ByfferMssgOption">
+    <p id="ByfferMssg">If you select <strong class="accent-yellow">Damage and Debris</strong> it will take a few minutes !!</p>
+       <li href="#" id="WithOutBuffer" class="">Only Damage</li>
+       <li href="#" id="WithBuffer" class="">Damage and Debris</li>
+   </div>
+</div>
+
+<div class="contenedor" id="contenedor">
+    <div class="header-top">
+    
+        <div class="header-left">
+            <img src="/css/upm.png" class="logo" alt="UPM">
+            <img src="/css/LogoTERRA.png" class="logo" alt="TERRA">
+        </div>
+
+        <nav class="nav-center">
+            <a href="/">Home</a>
+            <a href="/info.html">Information</a>
+            <a href="/links.html">Useful Links</a>
+            <a href="/contact.html">Contact Us</a>
+        </nav>
+
+        <div class="header-right">
+            <span id="nav-auth"></span>
+        </div>
+    </div>
+
+    <div id="header" class="header">
+        <div class="inner">
+            <a class="title">info</a>
+            <hr />
+            <div class="steps">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/scrolly/jquery.min.js"></script>
+<script src="/js/scrolly/jquery.scrolly.min.js"></script>
+<script>
+fetch('/me').then(r => r.json()).then(d => {
+    document.getElementById('nav-auth').innerHTML = d.usuario
+        ? '<a class="btn-logout" href="javascript:leave()">Log out</a>'
+        : '<a class="btn-login" href="/login">Log in</a>';
+});
+
+function closeModal(){
+    $('.modal').css('display','none');
+    $('p#warningMsg').html("");
+}
+</script>
+</body>
+</html>

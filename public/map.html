@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en" class="map-embed">
+<head>
+    <meta charset="UTF-8">
+    <title>MERISUR | Trial version</title>
+
+    <meta http-equiv="Expires"       content="0" />
+    <meta http-equiv="Last-Modified" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate" />
+    <meta http-equiv="Pragma"        content="no-cache" />
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <link rel="icon" type="image/png" href="css/ico.png" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui.js"></script>
+    <link rel="stylesheet" href="js/jquery/jquery-ui.css">
+    <script src="js/TweenMax/TweenMax.min.js"></script>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════
+     PANEL 1 — LAYERS  (izquierda)
+     ══════════════════════════════════════════════════ -->
+<div class="fp hidden" id="fp-layers">
+    <button class="fp-close" id="close-fp-layers" title="Close Layers">&times;</button>
+    <div class="fp-header">
+        <img class="panel-icon" src="css/icon-capas.png" alt="Layers" />
+        <span class="titles">Layers</span>
+    </div>
+    <div class="fp-body">
+        <nav class="boxes">
+            <div class="cajaSelector">
+                <ul class="selecLayer">
+                    <!-- Base Maps -->
+                    <li>
+                        <a href="#" class="titles">
+                            <i class="fa fa-angle-down masLayer" aria-hidden="true"></i>
+                            <i class="fa fa-globe" aria-hidden="true"></i> Base Maps
+                        </a>
+                        <ul class="sub-selecLayer">
+                            <li><input type="radio" id="osm-road" name="mapabase" value="0" checked>
+                                <label for="osm-road">OpenStreet Map</label></li>
+                            <li><input type="radio" id="pnoa-all" name="mapabase" value="1">
+                                <label for="pnoa-all">PNOA</label></li>
+                        </ul>
+                    </li>
+                    <!-- Layers -->
+                    <li>
+                        <a href="#" class="titles">
+                            <i class="fa fa-angle-down masLayer" aria-hidden="true"></i>
+                            <i class="fa fa-map-o" aria-hidden="true"></i> Layers
+                        </a>
+                        <ul class="sub-selecLayer">
+                            <li><input type="checkbox" id="ly_parcela" checked>
+                                <label for="ly_parcela">Urbanized Area</label></li>
+                            <li><input type="radio" id="ly_edificio" name="tematic" value="0" checked>
+                                <label for="ly_edificio">Buildings</label></li>
+                            <li><input type="radio" id="Vunerabilidad" name="tematic" value="1">
+                                <label for="Vunerabilidad">Vulnerability Class</label></li>
+                        </ul>
+                    </li>
+                    <!-- Results -->
+                    <li>
+                        <a href="#" class="titles">
+                            <i class="fa fa-angle-down masLayer" aria-hidden="true"></i>
+                            <i class="fa fa-map" aria-hidden="true"></i> Results
+                        </a>
+                        <ul class="sub-selecLayer">
+                            <li><input type="radio" id="Danio" name="tematic" value="2">
+                                <label for="Danio">Damage Estimation</label></li>
+                            <li id="li_ly_buffer1">
+                                <input type="checkbox" id="ly_buffer1">
+                                <label for="ly_buffer1">Debris Estimation</label></li>
+                            <li><input type="checkbox" id="ly_barriers">
+                                <label for="ly_barriers">Debris Barriers</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     PANEL 2 — LEGEND  (izquierda)
+     ══════════════════════════════════════════════════ -->
+<div class="fp hidden" id="fp-legend">
+    <button class="fp-close" id="close-fp-legend" title="Close Legend">&times;</button>
+    <div class="fp-header">
+        <img class="panel-icon" src="css/icon-legend.png" alt="Legend" />
+        <span class="titles">Legend</span>
+    </div>
+    <div class="fp-body">
+        <div id="mySidenav" class="sidenav">
+            <div class="listLegends"><ul></ul></div>
+            <div class="listLegendsTematic"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     BOTONES PARA ABRIR PANELES (arriba a la izquierda)
+     ══════════════════════════════════════════════════ -->
+<button class="fp-btn" id="btn-fp-layers" title="Layers">
+    <img src="css/icon-capas.png" alt="Layers" />
+</button>
+<button class="fp-btn" id="btn-fp-legend" title="Legend">
+    <img src="css/icon-legend.png" alt="Legend" />
+</button>
+
+<!-- ══════════════════════════════════════════════════
+     BARRA SUPERIOR DERECHA
+     [Lorca] [Puerto Lumbreras]   [🔍 Búsqueda]
+     ══════════════════════════════════════════════════ -->
+<div id="top-toolbar">
+    <div id="locality-switcher">
+        <button class="locality-btn" data-site="LORCA" id="lbtn-lorca">Lorca</button>
+        <button class="locality-btn" data-site="PL"    id="lbtn-pl">Puerto Lumbreras</button>
+    </div>
+    <div id="map-search-box">
+        <div id="search-input-wrap">
+            <i class="fa fa-search" id="search-icon"></i>
+            <input id="search-input" type="text" placeholder="Search address…" autocomplete="off" />
+            <button id="search-clear" title="Clear">&#x2715;</button>
+        </div>
+        <ul id="search-results"></ul>
+    </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     MAPA
+     ══════════════════════════════════════════════════ -->
+<div class="contentid">
+    <div id="map"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     INFO PANEL (derecha)
+     ══════════════════════════════════════════════════ -->
+<div id="info-panel">
+    <a href="#" id="close-info" class="closebtn">&times;</a>
+    <div id="info-content"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     DATOS POR SITE — inyección dinámica con anti-caché
+     Los scripts de edificios/secciones son estáticos (no cambian).
+     Los scripts de resultados Python se inyectan con timestamp para
+     garantizar que el browser siempre carga la versión más reciente.
+     Los scripts de la app se cargan DESPUÉS, en orden, cuando todos
+     los datos están disponibles.
+     ══════════════════════════════════════════════════ -->
+<!-- Datos estáticos (no dependen del sismo) -->
+<script src="newData/SinConstrucionEnd_LORCA.js"></script>
+<script src="newData/EdificioEnd_LORCA.js"></script>
+<script src="newData/EdificioEnd_PL.js"></script>
+
+<script>
+// Carga secuencial de scripts dinámicos (datos Python) y luego los scripts de la app.
+// Usar loadScriptsSequentially garantiza que cada script se ejecuta en orden,
+// independientemente de si el browser los cachea o no.
+(function () {
+    var t = Date.now();
+
+    // Archivos que dependen del cálculo sísmico (se regeneran con cada terremoto)
+    var dataFiles = [
+        'pythonCode/output/result_LORCA.js',
+        'pythonCode/output/Colored_Buffers_LORCA.js',
+        'pythonCode/output/barriers_LORCA.js',
+        'pythonCode/output/result_PL.js',
+        'pythonCode/output/Colored_Buffers_PL.js',
+        'pythonCode/output/barriers_PL.js'
+    ];
+
+    // Scripts de la app (orden obligatorio)
+    var appFiles = [
+        'js/barrierLayer.js',
+        'js/mapSetting.js',
+        'js/navSetting.js',
+        'js/siteSwitcher.js'
+    ];
+
+    function loadScript(src, onload, onerror) {
+        var s = document.createElement('script');
+        s.src    = src;
+        s.async  = false;
+        s.onload = onload;
+        s.onerror = onerror || onload; // continuar aunque falle (p.ej. barriers inexistente)
+        document.head.appendChild(s);
+    }
+
+    function loadSequential(list, idx, done) {
+        if (idx >= list.length) { done(); return; }
+        loadScript(list[idx], function () {
+            loadSequential(list, idx + 1, done);
+        });
+    }
+
+    // 1. Cargar datos Python (con timestamp anti-caché)
+    var dataFilesTs = dataFiles.map(function (f) { return f + '?t=' + t; });
+
+    loadSequential(dataFilesTs, 0, function () {
+        // 2. Cargar scripts de la app en orden
+        loadSequential(appFiles, 0, function () {
+            console.log('[map.html] Todos los scripts cargados correctamente.');
+        });
+    });
+})();
+</script>
+
+<!-- ══════════════════════════════════════════════════
+     APP SCRIPTS — cargados dinámicamente por el loader de arriba
+     (barrierLayer.js, mapSetting.js, navSetting.js, siteSwitcher.js)
+     ══════════════════════════════════════════════════ -->
+
+<script>
+$(document).ready(function () {
+
+    // ── Toolbar y botón CSV se desplazan cuando el info-panel abre/cierra ──────
+    (function () {
+        var INFO_W  = 260;
+        var MARGIN  = 14;
+        var toolbar = document.getElementById('top-toolbar');
+        var btnCsv  = document.getElementById('btn-download-barriers');
+        function sync() {
+            var open = document.getElementById('info-panel').classList.contains('open');
+            toolbar.style.right = (open ? INFO_W + MARGIN : MARGIN) + 'px';
+            btnCsv.style.right  = (open ? INFO_W + MARGIN : MARGIN) + 'px';
+        }
+        new MutationObserver(sync)
+            .observe(document.getElementById('info-panel'), { attributes: true });
+    })();
+
+    // ── Panels toggle: único handler, delegado a navSetting.js
+    //    navSetting.js registra $('#btn-fp-layers') y $('#btn-fp-legend').
+    //    NO añadimos handlers duplicados aquí. ─────────────────────────────────
+
+    // ── Botones de site (Lorca / Puerto Lumbreras) ───────────────────────────
+    // navSetting.js NO gestiona estos botones en map.html (usa siteSwitcher.js)
+    $('#locality-switcher .locality-btn').on('click', function () {
+        var site = $(this).data('site');
+        if (window.toggleSite) window.toggleSite(site);
+    });
+
+    // ── Buscador (Nominatim) ─────────────────────────────────────────────────
+    var $input   = $('#search-input');
+    var $results = $('#search-results');
+    var $clear   = $('#search-clear');
+    var _searchTimer, _searchMarker;
+
+    $input.on('input', function () {
+        var q = $.trim($(this).val());
+        $clear.toggle(q.length > 0);
+        clearTimeout(_searchTimer);
+        if (q.length < 3) { $results.hide().empty(); return; }
+        _searchTimer = setTimeout(function () { doSearch(q); }, 350);
+    });
+
+    $clear.on('click', function () {
+        $input.val('').trigger('input').focus();
+        if (_searchMarker && window.map) { window.map.removeLayer(_searchMarker); _searchMarker = null; }
+    });
+
+    function doSearch(q) {
+        $results.show().html("<li class='loading'><i class='fa fa-spinner fa-spin sr-icon'></i><span>Searching…</span></li>");
+        $.getJSON('https://nominatim.openstreetmap.org/search', {
+            q: q, format: 'json', limit: 6,
+            viewbox: '-2.5,38.5,-0.5,37.0', bounded: 0
+        }).done(function (data) {
+            $results.empty();
+            if (!data.length) {
+                $results.html("<li class='no-results'>No results found</li>");
+                return;
+            }
+            data.forEach(function (item) {
+                var parts = item.display_name.split(',');
+                var main  = parts[0];
+                var sub   = parts.slice(1, 3).join(',').trim();
+                $('<li>')
+                    .html("<i class='fa fa-map-marker sr-icon'></i>" +
+                          "<span><span class='sr-main'>" + main + "</span>" +
+                          "<span class='sr-sub'>" + sub + "</span></span>")
+                    .on('click', function () {
+                        var lat = parseFloat(item.lat), lng = parseFloat(item.lon);
+                        window.map.setView([lat, lng], 17);
+                        if (_searchMarker) window.map.removeLayer(_searchMarker);
+                        _searchMarker = L.circleMarker([lat, lng], {
+                            radius: 7, color: '#2563eb', fillColor: '#2563eb',
+                            fillOpacity: 1, weight: 2
+                        }).addTo(window.map).bindPopup(main).openPopup();
+                        $results.hide();
+                        $input.val(main);
+                    })
+                    .appendTo($results);
+            });
+        }).fail(function () {
+            $results.html("<li class='no-results'>Search error. Try again.</li>");
+        });
+    }
+
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('#map-search-box').length) $results.hide();
+    });
+
+}); // end document.ready
+
+    function cargarSismoSinAcumularArchivos(municipio) {
+        // ── 1. Eliminar scripts de datos del sismo anterior ───────────────────
+        // Los IDs genéricos cubren ambos municipios; si se usaron IDs con sufijo
+        // también se eliminan aquí.
+        var scriptIds = [
+            'script-result', 'script-buffers', 'script-barriers',
+            'script-result-LORCA',   'script-buffers-LORCA',   'script-barriers-LORCA',
+            'script-result-PL',      'script-buffers-PL',      'script-barriers-PL'
+        ];
+        scriptIds.forEach(function (id) { var el = document.getElementById(id); if (el) el.remove(); });
+
+        // Vaciar leyendas dinámicas
+        $('.listLegends ul').empty();
+        $('.listLegendsTematic').empty();
+
+        // ── 2. Invalidar variables JS del sismo anterior ──────────────────────
+        // Esto evita que SITE_DATA.get() devuelva datos cacheados en memoria
+        // antes de que los nuevos scripts terminen de ejecutarse.
+        var siteCodes = municipio === 'all' ? ['LORCA', 'PL'] : [municipio];
+        siteCodes.forEach(function (code) {
+            try { window['excelData_'    + code] = undefined; } catch(e) {}
+            try { window['json_Bufferin_'+ code] = undefined; } catch(e) {}
+            try { window['barrierData_'  + code] = undefined; } catch(e) {}
+        });
+
+        // ── 3. Inyectar los nuevos scripts con timestamp anti-caché ──────────
+        var t = new Date().getTime();
+
+        // Construir lista de archivos a cargar.
+        // Si municipio === 'all' cargamos los dos; si no, solo el indicado.
+        var fileSets = [];
+        siteCodes.forEach(function (code) {
+            fileSets.push(
+                { id: 'script-result-'   + code, src: 'pythonCode/output/result_'           + code + '.js' },
+                { id: 'script-buffers-'  + code, src: 'pythonCode/output/Colored_Buffers_'  + code + '.js' },
+                { id: 'script-barriers-' + code, src: 'pythonCode/output/barriers_'         + code + '.js' }
+            );
+        });
+
+        var totalScripts  = fileSets.length;
+        var loadedScripts = 0;
+
+        function onScriptLoaded() {
+            loadedScripts++;
+            console.log('[cargarSismo] script ' + loadedScripts + '/' + totalScripts + ' cargado');
+            if (loadedScripts === totalScripts) {
+                // Todos los datos nuevos están en memoria → resetear capas
+                console.log('[cargarSismo] Todos los scripts cargados → resetSiteCache()');
+                if (window.resetSiteCache) {
+                    window.resetSiteCache();
+                } else {
+                    console.warn('[cargarSismo] resetSiteCache no disponible');
+                }
+            }
+        }
+
+        function onScriptError(src) {
+            console.warn('[cargarSismo] Error cargando: ' + src + ' (puede no existir todavía)');
+            loadedScripts++;
+            if (loadedScripts === totalScripts && window.resetSiteCache) {
+                window.resetSiteCache();
+            }
+        }
+
+        fileSets.forEach(function (item) {
+            var script = document.createElement('script');
+            script.id   = item.id;
+            script.src  = item.src + '?t=' + t;
+            script.async = false;
+            script.onload = onScriptLoaded;
+            script.onerror = function () { onScriptError(item.src); };
+            document.head.appendChild(script);
+        });
+
+        console.log('[cargarSismo] Inyectando ' + totalScripts + ' scripts para: ' + siteCodes.join(', '));
+    }
+
+    // NOTA: cargarSismoSinAcumularArchivos() NO debe llamarse al inicio.
+    // Sólo debe invocarse tras un nuevo cálculo sísmico desde selectSetting.js.
+    // Llamarla aquí borraba las capas de edificios antes de que siteSwitcher.js las añadiera.
+</script>
+
+
+<!-- ══════════════════════════════════════════════════
+     BOTÓN FLOTANTE — Descargar CSV barreras
+     ══════════════════════════════════════════════════ -->
+<button id="btn-download-barriers" title="Download barriers as CSV">
+    <i class="fa fa-download" aria-hidden="true"></i> Download Barriers CSV
+</button>
+
+<script>
+(function () {
+    /**
+     * Descarga un CSV con las barreras de los sites activos.
+     * Columnas: id, lat, lng, gap_real_m, barrier_level, municipality
+     *
+     * - Site activo  → barriers_LORCA.csv / barriers_PL.csv
+     * - Ambos activos → barriers_all.csv
+     *
+     * El estado de visibilidad se lee de los botones de localidad:
+     * un botón SIN clase "inactive" significa que ese site está visible.
+     */
+    document.getElementById('btn-download-barriers').addEventListener('click', function () {
+
+        // Detectar qué sites están activos según el estado visual de los botones
+        var SITES = ['LORCA', 'PL'];
+        var activeSites = SITES.filter(function (code) {
+            var $btn = $('.locality-btn[data-site="' + code + '"]');
+            return $btn.length && !$btn.hasClass('inactive');
+        });
+
+        // Si por alguna razón no hay ninguno activo, usar LORCA como fallback
+        if (!activeSites.length) activeSites = ['LORCA'];
+
+        // Mapeo de código → nombre legible
+        var SITE_NAME = { 'LORCA': 'Lorca', 'PL': 'Puerto Lumbreras' };
+
+        // Mapeo de barrier_level numérico → etiqueta de daño
+        var DAMAGE_LABEL = { 1: 'Critical', 2: 'Severe', 3: 'Caution' };
+
+        var rows = ['id,lat,lng,gap_real_m,barrier_level,municipality'];
+        var globalId = 1;
+
+        activeSites.forEach(function (site) {
+            var raw = window['barrierData_' + site];
+            if (!raw || !raw.length) return;
+
+            raw.forEach(function (b) {
+                var lat    = Array.isArray(b.centroid) ? b.centroid[0] : '';
+                var lng    = Array.isArray(b.centroid) ? b.centroid[1] : '';
+                var gap    = b.gap_real_m    !== undefined ? b.gap_real_m    : '';
+                var level  = b.barrier_level !== undefined ? b.barrier_level : '';
+                var damage = DAMAGE_LABEL[level] !== undefined ? DAMAGE_LABEL[level] : level;
+                var muni   = b.site ? (SITE_NAME[b.site.toUpperCase()] || b.site) : (SITE_NAME[site] || site);
+
+                rows.push([globalId++, lat, lng, gap, damage, muni].join(','));
+            });
+        });
+
+        if (rows.length <= 1) {
+            alert('No barrier data available for the active site(s).\nMake sure the Debris Barriers layer is loaded.');
+            return;
+        }
+
+        // Nombre del archivo según cuántos sites hay activos
+        var filename = activeSites.length > 1
+            ? 'barriers_all.csv'
+            : 'barriers_' + activeSites[0] + '.csv';
+
+        var csv  = rows.join('\r\n');
+        var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        var url  = URL.createObjectURL(blob);
+        var a    = document.createElement('a');
+        a.href     = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+})();
+</script>
+
+</body>
+</html>
