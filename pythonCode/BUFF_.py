@@ -101,18 +101,22 @@ def merge_results(feat, resultados, localidad_id):
     res   = resultados.get(cusec)
 
     if res:
-        props["NumEdif"]      = res.get("NumEdif",  props.get("Num_Edif", 0))
-        props["Vs30"]         = res.get("Vs30",  0)
-        props["Rjb"]          = res.get("Rjb",   0)
-        props["dMean"]        = res.get("dMean", 0.0)
-        props["DamageTotals"] = res.get("DamageTotals", {})
-        props["Resultados"]   = res.get("Resultados",   {})
+        props["NumEdif"]       = res.get("NumEdif",       props.get("Num_Edif", 0))
+        props["NumEdifSinVul"] = res.get("NumEdifSinVul", 0)
+        props["Vs30"]          = res.get("Vs30",  0)
+        props["Rjb"]           = res.get("Rjb",   0)
+        props["dMean"]         = res.get("dMean", None)
+        props["noData"]        = res.get("noData", False)
+        props["DamageTotals"]  = res.get("DamageTotals", {})
+        props["Resultados"]    = res.get("Resultados",   {})
     else:
-        props["NumEdif"]      = props.get("Num_Edif", 0)
-        props["Vs30"]         = 0
-        props["dMean"]        = 0.0
-        props["DamageTotals"] = {}
-        props["Resultados"]   = {}
+        props["NumEdif"]       = props.get("Num_Edif", 0)
+        props["NumEdifSinVul"] = 0
+        props["Vs30"]          = 0
+        props["dMean"]         = None
+        props["noData"]        = True
+        props["DamageTotals"]  = {}
+        props["Resultados"]    = {}
 
     props["localidad"] = localidad_id
 

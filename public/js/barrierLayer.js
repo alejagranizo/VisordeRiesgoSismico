@@ -133,7 +133,7 @@ function buildBarrierLayer(barrierDataArray) {
             4: "Critical",
             3: "Severe",
             2: "Caution",
-            1: "Mild"
+            1: "Slight"
         };
 
         var desc  = BARRIER_DESCRIPTION[blvl] || "";

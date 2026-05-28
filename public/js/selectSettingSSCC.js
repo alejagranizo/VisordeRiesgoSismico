@@ -739,8 +739,8 @@ function createFault(lati_long, dist, angulo ){
     //console.log(xyUTM);
     $('#xy-coordenadas').val(lati_long.lat.toFixed(5) + '  ;  '+lati_long.lng.toFixed(5));
    // $('#l-w').val("L: "+ dist + ' ; '+"W: "+dist*0.5);
-    LocationXC = lati_long.lat.toFixed(5);
-    LocationYC = lati_long.lng.toFixed(5);
+    LocationXC = lati_long.lng.toFixed(5);
+    LocationYC = lati_long.lat.toFixed(5);
     
     var new_xy = calculateSecondCoord (xyUTM, dist, angulo);
     //console.log(new_xy);

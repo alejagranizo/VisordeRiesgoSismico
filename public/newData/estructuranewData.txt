@@ -1,0 +1,41 @@
+Listado de rutas de carpetas para el volumen Windows
+El número de serie del volumen es 000000C0 3AE5:4B6C
+C:.
+    EdificioEnd_Lorca.geojsonl
+    EdificioEnd_LORCA.js
+    EdificioEnd_LORCA2015.js
+    EdificioEnd_Lorca2015.json
+    EdificioEnd_LorcaYMurciaF1intID.js
+    EdificioEnd_MurciaF1intID.js
+    EdificioEnd_PL.js
+    EdificioEnd_PL.json
+    EdificioEnd_PLum_Lorca.qmd
+    EdificiosLorca.cpg
+    EdificiosLorca.dbf
+    EdificiosLorca.prj
+    EdificiosLorca.qmd
+    EdificiosLorca.shp
+    EdificiosLorca.shp.LAPTOP-IUU7GBTU.384.21632.sr.lock
+    EdificiosLorca.shp.LAPTOP-IUU7GBTU.4728.21632.sr.lock
+    EdificiosLorca.shp.LAPTOP-IUU7GBTU.6356.21632.sr.lock
+    EdificiosLorca.shp.LAPTOP-IUU7GBTU.7100.21632.sr.lock
+    EdificiosLorca.shx
+    EdificiosPuertoLumbreras.cpg
+    EdificiosPuertoLumbreras.dbf
+    EdificiosPuertoLumbreras.prj
+    EdificiosPuertoLumbreras.sbn
+    EdificiosPuertoLumbreras.sbx
+    EdificiosPuertoLumbreras.shp
+    EdificiosPuertoLumbreras.shp.LAPTOP-IUU7GBTU.384.21632.sr.lock
+    EdificiosPuertoLumbreras.shp.LAPTOP-IUU7GBTU.6356.21632.sr.lock
+    EdificiosPuertoLumbreras.shp.LAPTOP-IUU7GBTU.7100.21632.sr.lock
+    EdificiosPuertoLumbreras.shp.xml
+    EdificiosPuertoLumbreras.shx
+    estructuranewData.txt
+    SinConstrucionEnd_LORCA.js
+    SSCCEnd.js
+    SSCCEnd_Completo.js
+    SSCCEnd_PL.js
+    
+No existe ninguna subcarpeta 
+

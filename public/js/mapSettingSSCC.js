@@ -140,7 +140,8 @@
   // ---------------------------------------------------------------------------
 
   function setDamageColor(d) {
-    if (d === undefined || d === null || d === 0) return "#ffe6e6";
+    if (d === undefined || d === null) return null;   // noData → sin color
+    if (d === 0) return "#ffe6e6";
     return d > 3.5 ? "#7E080C"
          : d > 2.5 ? "#DE2D26"
          : d > 1.5 ? "#FB6A4A"
@@ -183,6 +184,11 @@
     return { color: "#444", weight: 0.9, fillOpacity: 0.85, fillColor: setVulColor(base) };
   }
   function styleDamage(f) {
+    var props = f.properties;
+    var noData = props.noData || props.dMean === null || props.dMean === undefined;
+    if (noData) {
+      return styleBase(f);
+    }
     return { color: "#333", weight: 0.9, fillOpacity: 0.9, fillColor: setDamageColor(f.properties.dMean) };
   }
 
@@ -240,7 +246,9 @@
   // ---------------------------------------------------------------------------
 
   function buildPopupHtml(props) {
-    var numEdif    = parseFloat(props.NumEdif) || 0;
+    var numEdif       = parseFloat(props.NumEdif) || 0;
+    var numEdifSinVul = parseFloat(props.NumEdifSinVul) || 0;
+    var numEdifConVul = numEdif - numEdifSinVul;
     var resultados = props.Resultados || {};
     var loc = props.localidad || localidadDesdeCusec(props.CUSEC);
     var localidadLabel = loc === "PuertoLumbreras" ? "Puerto Lumbreras" : (loc || "—");
@@ -257,7 +265,11 @@
     html += "<h3>" + localidadLabel + "</h3>";
     html += sectionBtn("sec_geo", "GeoID: " + props.CUSEC);
     html += row("Municipality", localidadLabel, 10);
-    html += row("Buildings", props.NumEdif || "-", 10);
+    html += row("Buildings (total)", numEdif || "-", 10);
+    if (numEdifSinVul > 0) {
+      html += row("— with vul. code", numEdifConVul + " (" + pct(numEdifConVul, numEdif) + ")", 10);
+      html += row("— no vul. code", numEdifSinVul + " (" + pct(numEdifSinVul, numEdif) + ")", 10);
+    }
     html += "</div>";
     html += sectionBtn("sec_vul", "Vulnerability");
     vulsToShow.forEach(function (base) {
@@ -283,14 +295,26 @@
     html += row("PGA Rock (Vs30=760)", pgaRock, 10);
     html += row("PGA Soil (Vs30=" + safeNum(props.Vs30, 0) + ")", pgaSoil, 10);
     html += "</div>";
+
     var d = props.DamageTotals || {};
+    var noData = props.noData || props.dMean === null || props.dMean === undefined;
     html += sectionBtn("sec_dmg", "Damage");
-    html += row("Mean damage",      safeNum(props.dMean, 3), 10);
-    html += row("Null damage",      (d.dmgNull || 0) + " edif. (" + pct(d.dmgNull || 0, numEdif) + ")", 10);
-    html += row("Slight damage",    (d.dmgLow  || 0) + " edif. (" + pct(d.dmgLow  || 0, numEdif) + ")", 10);
-    html += row("Moderate damage",  (d.dmgMod  || 0) + " edif. (" + pct(d.dmgMod  || 0, numEdif) + ")", 10);
-    html += row("Extensive damage", (d.dmgExt  || 0) + " edif. (" + pct(d.dmgExt  || 0, numEdif) + ")", 10);
-    html += row("Complete damage",  (d.dmgCom  || 0) + " edif. (" + pct(d.dmgCom  || 0, numEdif) + ")", 10);
+    if (noData) {
+      html += row("Mean damage", "No data", 10);
+      if (numEdifSinVul > 0) {
+        html += row("No vul. code",
+          numEdifSinVul + " edif. (" + pct(numEdifSinVul, numEdif) + ")", 10);
+      }
+    } else {
+      // numEdif calculable = total - sin vul
+      var calcEdif = numEdifConVul || numEdif;
+      html += row("Mean damage",      safeNum(props.dMean, 3), 10);
+      html += row("Null damage",      (d.dmgNull || 0) + " edif. (" + pct(d.dmgNull || 0, calcEdif) + ")", 10);
+      html += row("Slight damage",    (d.dmgLow  || 0) + " edif. (" + pct(d.dmgLow  || 0, calcEdif) + ")", 10);
+      html += row("Moderate damage",  (d.dmgMod  || 0) + " edif. (" + pct(d.dmgMod  || 0, calcEdif) + ")", 10);
+      html += row("Extensive damage", (d.dmgExt  || 0) + " edif. (" + pct(d.dmgExt  || 0, calcEdif) + ")", 10);
+      html += row("Complete damage",  (d.dmgCom  || 0) + " edif. (" + pct(d.dmgCom  || 0, calcEdif) + ")", 10);
+    }
     html += "</div>";
     html += "</div>";
     return html;
@@ -510,6 +534,7 @@
       ].forEach(function (r) {
         html += '<li class="text"><i class="fa fa-square" style="color:' + setDamageColor(r.v) + '"></i> ' + r.l + "</li>";
       });
+      html += '<li class="text"><i class="fa fa-square-o" style="color:#999"></i> No data</li>';
       html += "</ul>";
     }
     c.innerHTML = html;
@@ -721,7 +746,6 @@
   }
 
   function initSearch() {
-    buildSearchUI();
 
     var input = document.getElementById("search-input");
     var clear = document.getElementById("search-clear");

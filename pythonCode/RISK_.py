@@ -33,7 +33,6 @@ FAULT_JSON       = os.path.join(inputpath, "fault_params.json")
 BUILDINGS_TXT    = os.path.join(inputpath, "allBuildings_cusec.txt")
 BUILDINGS_TXT_PL = os.path.join(inputpath, "allBuildings_cusec_PL.txt")
 BEDROCK_VS30     = 760
-MAX_DIST_KM      = 200   # Límite máximo del modelo Akkar-Sandikkaya-Bommer 2014
 
 # ---------------------------------------------------------------------------
 # Configuración de municipios
@@ -77,26 +76,62 @@ def clean_cusec(raw):
 def load_buildings_file(filepath):
     """
     Lee un archivo de edificios: col[6]=vul_code, col[-1]=CUSEC.
-    Compatible con 8 columnas (PL) y 9 columnas (Lorca).
+
+    Formatos soportados:
+      - 9 columnas separadas por TAB (Lorca): idx lng lat REFCAT nplants year vul_code col7 CUSEC
+        Las columnas pueden estar vacías (edificios sin vul_code válido).
+      - 8 columnas separadas por ESPACIO (PuertoLumbreras): idx lng lat REFCAT nplants year vul_code CUSEC
+
+    El separador se autodetecta en la primera línea válida.
+    Solo se almacenan edificios con vul_code válido (no vacío, no 'none', no 'nan').
     """
     cusec_vuls = defaultdict(lambda: defaultdict(int))
     if not os.path.exists(filepath):
         print(f"  Warning: {filepath} no encontrado, omitiendo.")
         return cusec_vuls
 
-    count = 0
+    # Autodetectar separador
+    sep = None
     with open(filepath, "r", encoding="utf-8") as f:
         for line in f:
-            parts = line.strip().split()
-            if len(parts) < 8:
+            if line.strip():
+                sep = "\t" if "\t" in line else " "
+                break
+
+    count = 0
+    count_no_vul = 0
+    with open(filepath, "r", encoding="utf-8") as f:
+        for line in f:
+            parts = line.strip().split(sep)
+            if sep == " ":
+                parts = [p for p in parts if p]
+
+            n = len(parts)
+            if n < 8:
                 continue
-            vul_code = parts[6]
-            cusec    = clean_cusec(parts[-1])
-            cusec_vuls[cusec][vul_code] += 1
+
+            if sep == "\t":
+                if n < 9:
+                    continue
+                vul_code = parts[6].strip()
+                cusec    = clean_cusec(parts[8])
+            else:
+                vul_code = parts[6].strip()
+                cusec    = clean_cusec(parts[7])
+
+            if not cusec:
+                continue
+
             count += 1
+            if vul_code and vul_code.lower() not in ("none", "nan", "-", ""):
+                cusec_vuls[cusec][vul_code] += 1
+            else:
+                count_no_vul += 1
 
     print(f"  {count} edificios leídos de {os.path.basename(filepath)}")
     print(f"  {len(cusec_vuls)} CUSECs únicos")
+    if count_no_vul:
+        print(f"  {count_no_vul} edificios sin vul_code (excluidos del cálculo de daño)")
     return cusec_vuls
 
 # ---------------------------------------------------------------------------
@@ -123,9 +158,14 @@ def effective_displacement(vs30, te, sa_gal, ay):
     if soil in ("A", "B"): a = 130
     elif soil == "C":      a = 90
     else:                  a = 60
-    C1    = 1 + ((sa_gal - ay) / (a * ay * te**2))
-    C2    = 1 + ((sa_gal - ay)**2 / (800 * ay**2 * te**2))
-    return C1 * C2 * (sa_gal * (te / (2 * pi))**2)
+    sd_elastic = sa_gal * (te / (2 * pi))**2
+    # C1/C2 son correcciones de inelasticidad: solo aplican cuando SA > ay
+    # (el edificio supera su límite elástico). Si SA <= ay, respuesta elástica pura.
+    if sa_gal <= ay:
+        return sd_elastic
+    C1 = 1 + ((sa_gal - ay) / (a * ay * te**2))
+    C2 = 1 + ((sa_gal - ay)**2 / (800 * ay**2 * te**2))
+    return C1 * C2 * sd_elastic
 
 def calc_damage(r, vs30, vul_code, mag, mechanism, scenario, vul_table, num_edif_vul):
     vs30 = min(vs30, 1200)
@@ -283,15 +323,17 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
         if not vuls_en_seccion:
             sin_edificios += 1
             resultados.append({
-                "OBJECTID":     oid,
-                "CUSEC":        cusec,
-                "localidad":    localidad,
-                "NumEdif":      0,
-                "Vs30":         vs30,
-                "Rjb":          None,
-                "dMean":        0.0,
-                "Resultados":   {},
-                "DamageTotals": {},
+                "OBJECTID":      oid,
+                "CUSEC":         cusec,
+                "localidad":     localidad,
+                "NumEdif":       0,
+                "NumEdifSinVul": 0,
+                "Vs30":          vs30,
+                "Rjb":           None,
+                "dMean":         None,
+                "noData":        True,
+                "Resultados":    {},
+                "DamageTotals":  {},
             })
             continue
 
@@ -311,18 +353,6 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
             print(f"    Distancia fallida para {cusec}: {e} -> usando r=10 km")
             r = 10.0
 
-        # Validar que la distancia esté dentro del rango del modelo GMM
-        if r > MAX_DIST_KM:
-            msg = (
-                f"DISTANCE_ERROR: La falla está demasiado lejos de {localidad} "
-                f"(Rjb={r:.1f} km). "
-                f"El modelo sísmico (Akkar-Sandikkaya-Bommer 2014) solo es válido "
-                f"hasta {MAX_DIST_KM} km. "
-                f"Por favor, selecciona una falla más cercana a la zona de estudio."
-            )
-            print(msg, file=sys.stderr)
-            sys.exit(1)
-
         # Daño por código de vulnerabilidad
         resultados_vul = {}
         for vul_code in sorted(vuls_en_seccion.keys()):
@@ -335,20 +365,28 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
             except Exception as e:
                 print(f"    Error {cusec}/{vul_code}: {e}")
 
+        no_data      = (len(resultados_vul) == 0)
         DamageTotals = compute_damage_totals(resultados_vul, num_edif)
         vals_dmean   = [v["dMean"] for v in resultados_vul.values()]
-        dMean        = round(sum(vals_dmean) / len(vals_dmean), 4) if vals_dmean else 0.0
+        # dMean ponderado por número de edificios de cada tipología
+        total_edif_vul = sum(v["numEdif"] for v in resultados_vul.values())
+        if vals_dmean and total_edif_vul > 0:
+            dMean = round(sum(v["dMean"] * v["numEdif"] for v in resultados_vul.values()) / total_edif_vul, 4)
+        else:
+            dMean = None
 
         resultados.append({
-            "OBJECTID":     oid,
-            "CUSEC":        cusec,
-            "localidad":    localidad,
-            "NumEdif":      num_edif,
-            "Vs30":         vs30,
-            "Rjb":          round(r, 3),
-            "dMean":        dMean,
-            "Resultados":   resultados_vul,
-            "DamageTotals": DamageTotals,
+            "OBJECTID":      oid,
+            "CUSEC":         cusec,
+            "localidad":     localidad,
+            "NumEdif":       num_edif,
+            "NumEdifSinVul": 0,
+            "Vs30":          vs30,
+            "Rjb":           round(r, 3),
+            "dMean":         dMean,
+            "noData":        no_data,
+            "Resultados":    resultados_vul,
+            "DamageTotals":  DamageTotals,
         })
 
     con_res = len(resultados) - sin_edificios
