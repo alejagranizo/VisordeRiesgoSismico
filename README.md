@@ -1,1 +1,0 @@
-# Visor-Riesgo-Sismico-MERISUR
