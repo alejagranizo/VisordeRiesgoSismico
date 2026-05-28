@@ -1,27 +1,3 @@
-<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="3.40.11-Bratislava">
-  <identifier></identifier>
-  <parentidentifier></parentidentifier>
-  <language></language>
-  <type></type>
-  <title></title>
-  <abstract></abstract>
-  <links/>
-  <dates/>
-  <fees></fees>
-  <encoding></encoding>
-  <crs>
-    <spatialrefsys nativeFormat="Wkt">
-      <wkt></wkt>
-      <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-      <srsid>0</srsid>
-      <srid>0</srid>
-      <authid></authid>
-      <description></description>
-      <projectionacronym></projectionacronym>
-      <ellipsoidacronym></ellipsoidacronym>
-      <geographicflag>false</geographicflag>
-    </spatialrefsys>
-  </crs>
-  <extent/>
-</qgis>
+version https://git-lfs.github.com/spec/v1
+oid sha256:7f678ed76180c59beb1567cffa7672400c305742f73e9baa305ae0831bcba468
+size 716

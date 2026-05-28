@@ -1,28 +1,46 @@
-node_modules/
+# Entornos virtuales Python
+.venv/
 venv/
+
+# Node.js
+node_modules/
+
+# Variables de entorno
+.env
 .env/
 
+# Archivos GIS (QGIS / ArcGIS)
+*.sr.lock
+*.lock
+*.sbn
+*.sbx
+
+# Builds y compilados
 dist/
 build/
 out/
 
-*.log
-
-.DS_Store
-Thumbs.db
-
-.vscode/
-
-*.tmp
-*.cache
-
+# Python compilado
 __pycache__/
 *.pyc
 
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Temporales y caché
+*.log
+*.tmp
+*.cache
+
+# Archivos multimedia / comprimidos
 *.zip
 *.rar
 *.7z
 *.mp4
 *.mov
+
+# Carpetas de output
 
 output/
