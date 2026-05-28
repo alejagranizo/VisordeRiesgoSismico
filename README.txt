@@ -1,10 +1,10 @@
 # VisordeRiesgoSismico — MERISUR
 
-Seismic Risk Viewer developed as a Final Degree Project (TFG) at the Universidad Politécnica de Madrid, Department of Topography and Cartography.
+Seismic Risk Viewer developed as a Final Degree Project (TFG) at the Universidad Politécnica de Madrid, TERRA Research Group.
 
-The application calculates and visualises the expected seismic damage to buildings in Lorca and Puerto Lumbreras (Murcia, Spain) for user-defined earthquake scenarios, including debris estimation and census-section-level analysis.
+The application calculates and visualises the expected seismic damage to buildings in Lorca and Puerto Lumbreras (Murcia, Spain) for user-defined earthquake scenarios, including debris estimation, debris barriers and census-section-level analysis.
 
-> **Acknowledgement:** The original seismic calculation engine (distance metrics, ground motion model, vulnerability and debris functions) was developed by **Pouye Yazdi** at the Department of Topography and Cartography, Universidad Politécnica de Madrid (2017). This project extends and integrates that work into a full-stack web application.
+> **Acknowledgement:** The original seismic calculation engine (distance metrics, ground motion model, vulnerability and debris functions) was developed by **Pouye Yazdi** at the Universidad Politécnica de Madrid (2017). This project extends and integrates that work.
 
 ---
 
@@ -141,7 +141,6 @@ The following files must be present in `pythonCode/inputs/` and are included in 
 
 ## Author
 
-**Alejandra Granizo**
-Department of Topography and Cartography
+**Alejandra Granizo Caballo**
 Universidad Politécnica de Madrid
 May 2026
