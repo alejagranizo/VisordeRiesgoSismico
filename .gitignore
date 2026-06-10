@@ -1,6 +1,7 @@
 # Entornos virtuales Python
 .venv/
 venv/
+env/
 
 # Node.js
 node_modules/
