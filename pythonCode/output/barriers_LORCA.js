@@ -49,30 +49,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6763687193137,
-      -1.696499486658241
-    ],
-    "building_ids": [
-      "5110017XG1751A",
-      "5110018XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.204,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.29,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.674185690869464,
       -1.7037455387587492
     ],
@@ -117,30 +93,6 @@ var barrierData_LORCA = [
     "gap_real_m": 0.264,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.6,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.677168461354654,
-      -1.6971907786625287
-    ],
-    "building_ids": [
-      "4909311XG1740H",
-      "4910606XG1741B"
-    ],
-    "damage_levels": [
-      3,
-      1
-    ],
-    "buff_dist_m": [
-      3.0,
-      1.0
-    ],
-    "debris_m": 4.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.351,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.36,
     "site": "LORCA"
   },
   {
@@ -217,30 +169,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67830795483736,
-      -1.6972802146729646
-    ],
-    "building_ids": [
-      "5011006XG1751A",
-      "4910301XG1741B"
-    ],
-    "damage_levels": [
-      2,
-      0
-    ],
-    "buff_dist_m": [
-      2.0,
-      null
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.427,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.91,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67501114379582,
       -1.6992755038112384
     ],
@@ -261,6 +189,30 @@ var barrierData_LORCA = [
     "gap_real_m": 0.438,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.18,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67865304899632,
+      -1.6974152152153583
+    ],
+    "building_ids": [
+      "4911304XG1741B",
+      "5011001XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 3,
+    "gap_real_m": 0.443,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.37,
     "site": "LORCA"
   },
   {
@@ -361,30 +313,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67747008967156,
-      -1.697177058714116
-    ],
-    "building_ids": [
-      "4910401XG1741B",
-      "5010803XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.5,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.21,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67575398023564,
       -1.7021721211990894
     ],
@@ -433,6 +361,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.677464810083336,
+      -1.6992336701773716
+    ],
+    "building_ids": [
+      "4810026XG1741B",
+      "4810109XG1741B"
+    ],
+    "damage_levels": [
+      3,
+      1
+    ],
+    "buff_dist_m": [
+      3.0,
+      1.0
+    ],
+    "debris_m": 4.0,
+    "barrier_level": 3,
+    "gap_real_m": 0.527,
+    "barrier_type": "buffer-buffer",
+    "dist_to_road_m": 0.22,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.677458565489424,
       -1.698746587040274
     ],
@@ -453,30 +405,6 @@ var barrierData_LORCA = [
     "gap_real_m": 0.563,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.12,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682541880560265,
-      -1.6955237802770986
-    ],
-    "building_ids": [
-      "5115106XG1751E",
-      "5115201XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.576,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.9,
     "site": "LORCA"
   },
   {
@@ -549,30 +477,6 @@ var barrierData_LORCA = [
     "gap_real_m": 0.598,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.4,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6779458468218,
-      -1.6972011649028662
-    ],
-    "building_ids": [
-      "4910304XG1741B",
-      "5011008XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.606,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.03,
     "site": "LORCA"
   },
   {
@@ -721,12 +625,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68068517354638,
-      -1.6925726270638897
+      37.677709554047944,
+      -1.6992729839250538
     ],
     "building_ids": [
-      "5314005XG1751C",
-      "5314004XG1751C"
+      "4810109XG1741B",
+      "4708202XG1740H"
     ],
     "damage_levels": [
       1,
@@ -738,33 +642,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 3,
-    "gap_real_m": 0.78,
+    "gap_real_m": 0.769,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.65,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6821116425532,
-      -1.6954945937058366
-    ],
-    "building_ids": [
-      "5116010XG1751E",
-      "5115208XG1751E"
-    ],
-    "damage_levels": [
-      3,
-      1
-    ],
-    "buff_dist_m": [
-      3.0,
-      1.0
-    ],
-    "debris_m": 4.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.801,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.89,
+    "dist_to_road_m": 0.45,
     "site": "LORCA"
   },
   {
@@ -837,6 +717,30 @@ var barrierData_LORCA = [
     "gap_real_m": 0.873,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.03,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67698488455308,
+      -1.6991547199843773
+    ],
+    "building_ids": [
+      "4810024XG1741B",
+      "4810027XG1741B"
+    ],
+    "damage_levels": [
+      3,
+      0
+    ],
+    "buff_dist_m": [
+      3.0,
+      null
+    ],
+    "debris_m": 3.0,
+    "barrier_level": 3,
+    "gap_real_m": 0.876,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.69,
     "site": "LORCA"
   },
   {
@@ -937,30 +841,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.678312573708816,
-      -1.6975160217891831
-    ],
-    "building_ids": [
-      "5011009XG1751A",
-      "4910301XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.921,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.52,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.6728532889553,
       -1.7028664805464273
     ],
@@ -979,30 +859,6 @@ var barrierData_LORCA = [
     "debris_m": 1.0,
     "barrier_level": 3,
     "gap_real_m": 0.932,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.63,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67808119503688,
-      -1.6977266196328613
-    ],
-    "building_ids": [
-      "4910201XG1741B",
-      "4911707XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 3,
-    "gap_real_m": 0.935,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.63,
     "site": "LORCA"
@@ -1081,26 +937,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682373769809615,
-      -1.6966349933984333
+      37.67759423750776,
+      -1.697356102615001
     ],
     "building_ids": [
-      "5016028XG1751E",
-      "5016030XG1751E"
+      "4910303XG1741B",
+      "4910401XG1741B"
     ],
     "damage_levels": [
       1,
-      1
+      0
     ],
     "buff_dist_m": [
       1.0,
-      1.0
+      null
     ],
-    "debris_m": 2.0,
+    "debris_m": 1.0,
     "barrier_level": 3,
-    "gap_real_m": 0.958,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 4.26,
+    "gap_real_m": 0.964,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.39,
     "site": "LORCA"
   },
   {
@@ -1149,54 +1005,6 @@ var barrierData_LORCA = [
     "gap_real_m": 0.993,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.58,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.678641484613856,
-      -1.6974109363968641
-    ],
-    "building_ids": [
-      "4911304XG1741B",
-      "5011002XG1751A"
-    ],
-    "damage_levels": [
-      2,
-      1
-    ],
-    "buff_dist_m": [
-      2.0,
-      1.0
-    ],
-    "debris_m": 3.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.029,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.63,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682258516789105,
-      -1.6951785838769131
-    ],
-    "building_ids": [
-      "5115208XG1751E",
-      "5215940XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.064,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.34,
     "site": "LORCA"
   },
   {
@@ -1273,54 +1081,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.676925646356594,
-      -1.6979485565811676
-    ],
-    "building_ids": [
-      "4910610XG1741B",
-      "4909308XG1740H"
-    ],
-    "damage_levels": [
-      3,
-      1
-    ],
-    "buff_dist_m": [
-      3.0,
-      1.0
-    ],
-    "debris_m": 4.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.243,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.11,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68155696297369,
-      -1.6936425577824217
-    ],
-    "building_ids": [
-      "5214301XG1751C",
-      "5314101XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.304,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.0,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67674682588194,
       -1.6988495682964802
     ],
@@ -1345,50 +1105,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.677764351184095,
-      -1.697836125494606
+      37.677172916546894,
+      -1.6971917276409525
     ],
     "building_ids": [
-      "4910204XG1741B",
-      "4910802XG1741B"
+      "4909311XG1740H",
+      "4910606XG1741B"
     ],
     "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.317,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.02,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.678874732070994,
-      -1.6981080906715822
-    ],
-    "building_ids": [
-      "4912608XG1741B",
-      "4912002XG1741B"
-    ],
-    "damage_levels": [
-      2,
+      3,
       0
     ],
     "buff_dist_m": [
-      2.0,
+      3.0,
       null
     ],
-    "debris_m": 2.0,
+    "debris_m": 3.0,
     "barrier_level": 3,
-    "gap_real_m": 1.33,
+    "gap_real_m": 1.354,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.32,
+    "dist_to_road_m": 1.86,
     "site": "LORCA"
   },
   {
@@ -1417,12 +1153,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68196873031712,
-      -1.695159657415686
+      37.67772256603664,
+      -1.6977823422526979
     ],
     "building_ids": [
-      "5115205XG1751E",
-      "5215940XG1751E"
+      "4910203XG1741B",
+      "4910802XG1741B"
     ],
     "damage_levels": [
       1,
@@ -1434,33 +1170,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 2.0,
     "barrier_level": 3,
-    "gap_real_m": 1.396,
+    "gap_real_m": 1.355,
     "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.49,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6750910067618,
-      -1.6993969224590477
-    ],
-    "building_ids": [
-      "4807817XG1740F",
-      "4807909XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.413,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.08,
+    "dist_to_road_m": 0.02,
     "site": "LORCA"
   },
   {
@@ -1509,54 +1221,6 @@ var barrierData_LORCA = [
     "gap_real_m": 1.46,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.87,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682173733289545,
-      -1.695174925362246
-    ],
-    "building_ids": [
-      "5115204XG1751E",
-      "5215940XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.492,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.84,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68139597873934,
-      -1.694969106433826
-    ],
-    "building_ids": [
-      "5214003XG1751C",
-      "5214005XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.503,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.1,
     "site": "LORCA"
   },
   {
@@ -1633,30 +1297,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67649024082334,
-      -1.6979830057059968
-    ],
-    "building_ids": [
-      "4909701XG1740H",
-      "4909805XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.6,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.39,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67500259188224,
       -1.6991801144293734
     ],
@@ -1677,78 +1317,6 @@ var barrierData_LORCA = [
     "gap_real_m": 1.611,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 1.75,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67672253055256,
-      -1.698273980655523
-    ],
-    "building_ids": [
-      "4809402XG1740H",
-      "4809414XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.615,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.94,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67704089243241,
-      -1.6990270619619414
-    ],
-    "building_ids": [
-      "4810010XG1741B",
-      "4810027XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.673,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.44,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682319054908234,
-      -1.6919378557983715
-    ],
-    "building_ids": [
-      "5415322XG1751E",
-      "5416622XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.69,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.21,
     "site": "LORCA"
   },
   {
@@ -1801,30 +1369,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.677814525868364,
-      -1.6971869630590988
-    ],
-    "building_ids": [
-      "4910303XG1741B",
-      "5011008XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.857,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.5,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67640298801101,
       -1.6977684406439524
     ],
@@ -1845,30 +1389,6 @@ var barrierData_LORCA = [
     "gap_real_m": 1.863,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 1.07,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67471150217572,
-      -1.7003405650933883
-    ],
-    "building_ids": [
-      "4708008XG1740H",
-      "4707606XG1740F"
-    ],
-    "damage_levels": [
-      2,
-      1
-    ],
-    "buff_dist_m": [
-      2.0,
-      1.0
-    ],
-    "debris_m": 3.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.929,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.68,
     "site": "LORCA"
   },
   {
@@ -1897,50 +1417,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67836532354707,
-      -1.6988511793514771
+      37.67692149235398,
+      -1.6979464040989027
     ],
     "building_ids": [
-      "4811915XG1741B",
-      "4811913XG1741B"
+      "4910610XG1741B",
+      "4909308XG1740H"
     ],
     "damage_levels": [
-      2,
+      3,
       0
     ],
     "buff_dist_m": [
-      2.0,
+      3.0,
       null
     ],
-    "debris_m": 2.0,
+    "debris_m": 3.0,
     "barrier_level": 3,
-    "gap_real_m": 1.972,
+    "gap_real_m": 2.24,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.13,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67548609529953,
-      -1.7001267313078086
-    ],
-    "building_ids": [
-      "4708702XG1740H",
-      "4708810XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 3,
-    "gap_real_m": 1.977,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.01,
+    "dist_to_road_m": 0.39,
     "site": "LORCA"
   },
   {
@@ -2017,30 +1513,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.678026579578784,
-      -1.6977926610946865
-    ],
-    "building_ids": [
-      "4911708XG1741B",
-      "4910201XG1741B"
-    ],
-    "damage_levels": [
-      2,
-      1
-    ],
-    "buff_dist_m": [
-      2.0,
-      1.0
-    ],
-    "debris_m": 3.0,
-    "barrier_level": 3,
-    "gap_real_m": 2.974,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.36,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.676349149679176,
       -1.697566769780443
     ],
@@ -2061,30 +1533,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.031,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.7,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6816294191137,
-      -1.6953590400890213
-    ],
-    "building_ids": [
-      "5214001XG1751C",
-      "5215004XG1751E"
-    ],
-    "damage_levels": [
-      3,
-      1
-    ],
-    "buff_dist_m": [
-      3.0,
-      1.0
-    ],
-    "debris_m": 4.0,
-    "barrier_level": 3,
-    "gap_real_m": 3.231,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.52,
     "site": "LORCA"
   },
   {
@@ -2281,6 +1729,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.67637281398625,
+      -1.696502009041548
+    ],
+    "building_ids": [
+      "5110017XG1751A",
+      "5110018XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 1.201,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.1,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.679112668302764,
       -1.698384018781798
     ],
@@ -2397,30 +1869,6 @@ var barrierData_LORCA = [
     "gap_real_m": 1.272,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.21,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67551224867285,
-      -1.6989988161248644
-    ],
-    "building_ids": [
-      "4807201XG1740F",
-      "4808606XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 1.324,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.53,
     "site": "LORCA"
   },
   {
@@ -2569,6 +2017,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.678311525497996,
+      -1.6972767892192322
+    ],
+    "building_ids": [
+      "5011006XG1751A",
+      "4910301XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 1.423,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.51,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.67555323992056,
       -1.6990929467979439
     ],
@@ -2613,6 +2085,30 @@ var barrierData_LORCA = [
     "gap_real_m": 1.475,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.64,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67747039392558,
+      -1.6971827179945647
+    ],
+    "building_ids": [
+      "5010803XG1751A",
+      "4910401XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 1.5,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.29,
     "site": "LORCA"
   },
   {
@@ -2929,6 +2425,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.67547596319504,
+      -1.7001163131373516
+    ],
+    "building_ids": [
+      "4708810XG1740H",
+      "4708703XG1740H"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 1.901,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.51,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.68309973925389,
       -1.6959610784031434
     ],
@@ -2949,78 +2469,6 @@ var barrierData_LORCA = [
     "gap_real_m": 1.908,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.7,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.671295725503576,
-      -1.7021380047915555
-    ],
-    "building_ids": [
-      "4502201XG1740B",
-      "4604009XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 1.917,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.3,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68209341860108,
-      -1.6968017623401759
-    ],
-    "building_ids": [
-      "5016040XG1751E",
-      "5016042XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 1.934,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.54,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67456178113485,
-      -1.7014902943152057
-    ],
-    "building_ids": [
-      "4607019XG1740F",
-      "4607004XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 1.938,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.93,
     "site": "LORCA"
   },
   {
@@ -3169,30 +2617,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68237652720119,
-      -1.696290748999753
-    ],
-    "building_ids": [
-      "5116027XG1751E",
-      "5015301XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.042,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.31,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.675843988758466,
       -1.7000454802019092
     ],
@@ -3213,6 +2637,30 @@ var barrierData_LORCA = [
     "gap_real_m": 2.056,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.62,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.68225742845869,
+      -1.6951841509860306
+    ],
+    "building_ids": [
+      "5215940XG1751E",
+      "5115203XG1751E"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 2.058,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 2.84,
     "site": "LORCA"
   },
   {
@@ -3529,36 +2977,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66843224287884,
-      -1.7025129525377045
+      37.67795992613993,
+      -1.6978740834333363
     ],
     "building_ids": [
-      "4500007XG1740B",
-      "4500009XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.262,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.24,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.673491820744815,
-      -1.6992491866430077
-    ],
-    "building_ids": [
-      "4806706XG1740F",
-      "4806003XG1740F"
+      "4911708XG1741B",
+      "4910205XG1741B"
     ],
     "damage_levels": [
       1,
@@ -3570,9 +2994,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 2,
-    "gap_real_m": 2.274,
+    "gap_real_m": 2.267,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.27,
+    "dist_to_road_m": 0.08,
     "site": "LORCA"
   },
   {
@@ -3597,6 +3021,30 @@ var barrierData_LORCA = [
     "gap_real_m": 2.295,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.36,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.68155713834385,
+      -1.6936368862067543
+    ],
+    "building_ids": [
+      "5214301XG1751C",
+      "5314101XG1751C"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 2.305,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.5,
     "site": "LORCA"
   },
   {
@@ -3673,6 +3121,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.67887362818774,
+      -1.6981025940550287
+    ],
+    "building_ids": [
+      "4912608XG1741B",
+      "4912002XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 2.33,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.82,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.671756972219406,
       -1.7034459187664146
     ],
@@ -3745,30 +3217,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67190155349085,
-      -1.7008628910863988
-    ],
-    "building_ids": [
-      "4604607XG1740D",
-      "4604909XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.37,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.8,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68242785971083,
       -1.6926785051865887
     ],
@@ -3817,54 +3265,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.670013429100095,
-      -1.701385550611185
-    ],
-    "building_ids": [
-      "4601101XG1740B",
-      "4602903XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.387,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.44,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682389506842895,
-      -1.694022945681139
-    ],
-    "building_ids": [
-      "5215936XG1751E",
-      "5215937XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.414,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.28,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67434066289462,
       -1.701994776437448
     ],
@@ -3885,54 +3285,6 @@ var barrierData_LORCA = [
     "gap_real_m": 2.416,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.05,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68232645255853,
-      -1.6916896888568598
-    ],
-    "building_ids": [
-      "5416622XG1751E",
-      "5415318XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.417,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.03,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67778221364768,
-      -1.6975205994563556
-    ],
-    "building_ids": [
-      "4910202XG1741B",
-      "4910303XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.426,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.15,
     "site": "LORCA"
   },
   {
@@ -4009,30 +3361,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6814123045117,
-      -1.6929497627453793
-    ],
-    "building_ids": [
-      "5314101XG1751C",
-      "5415012XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.502,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.34,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68260832597988,
       -1.6984186831028758
     ],
@@ -4053,30 +3381,6 @@ var barrierData_LORCA = [
     "gap_real_m": 2.51,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.51,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67366813381193,
-      -1.699079194061979
-    ],
-    "building_ids": [
-      "4806708XG1740F",
-      "4805204XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.511,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.37,
     "site": "LORCA"
   },
   {
@@ -4129,30 +3433,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67842425599705,
-      -1.6984515379268674
-    ],
-    "building_ids": [
-      "4811904XG1741B",
-      "4811523XG1741B"
-    ],
-    "damage_levels": [
-      2,
-      0
-    ],
-    "buff_dist_m": [
-      2.0,
-      null
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.524,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.47,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68273265116302,
       -1.6960220065440155
     ],
@@ -4197,30 +3477,6 @@ var barrierData_LORCA = [
     "gap_real_m": 2.532,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.3,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68203392508042,
-      -1.6975438539865002
-    ],
-    "building_ids": [
-      "4915928XG1741F",
-      "4915907XG1741F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.571,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.2,
     "site": "LORCA"
   },
   {
@@ -4321,54 +3577,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.673001900431075,
-      -1.698063103568451
-    ],
-    "building_ids": [
-      "4905808XG1740F",
-      "4905908XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.62,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.55,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.677545107088754,
-      -1.6985411176007068
-    ],
-    "building_ids": [
-      "4810409XG1741B",
-      "4811518XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.628,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.26,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68393114870888,
       -1.6907630231539081
     ],
@@ -4389,54 +3597,6 @@ var barrierData_LORCA = [
     "gap_real_m": 2.63,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 4.84,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682618136038656,
-      -1.6891479151866486
-    ],
-    "building_ids": [
-      "5616606XG1751F",
-      "5716025XG1751F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.63,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.11,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.675207331387924,
-      -1.6990842371868102
-    ],
-    "building_ids": [
-      "4807901XG1740F",
-      "4807207XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.657,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.63,
     "site": "LORCA"
   },
   {
@@ -4489,6 +3649,54 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.677044255844834,
+      -1.6990308135370455
+    ],
+    "building_ids": [
+      "4810010XG1741B",
+      "4810027XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 2.67,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.93,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.682323575327985,
+      -1.6919375860386932
+    ],
+    "building_ids": [
+      "5415322XG1751E",
+      "5416610XG1751E"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 2.694,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.71,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.682721029100726,
       -1.6910756396387472
     ],
@@ -4533,30 +3741,6 @@ var barrierData_LORCA = [
     "gap_real_m": 2.715,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.56,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.66850836842108,
-      -1.701922955781362
-    ],
-    "building_ids": [
-      "4601013XG1740B",
-      "4601012XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.736,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.44,
     "site": "LORCA"
   },
   {
@@ -4633,30 +3817,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67662597436893,
-      -1.6983709587216975
-    ],
-    "building_ids": [
-      "4809414XG1740H",
-      "4909801XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.768,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.34,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.683670218599126,
       -1.6902445557850172
     ],
@@ -4729,6 +3889,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.68211102319302,
+      -1.6954941900424607
+    ],
+    "building_ids": [
+      "5116010XG1751E",
+      "5115208XG1751E"
+    ],
+    "damage_levels": [
+      2,
+      0
+    ],
+    "buff_dist_m": [
+      2.0,
+      null
+    ],
+    "debris_m": 2.0,
+    "barrier_level": 2,
+    "gap_real_m": 2.796,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.9,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.68344992364568,
       -1.6922843246718955
     ],
@@ -4749,30 +3933,6 @@ var barrierData_LORCA = [
     "gap_real_m": 2.805,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.03,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68186018397138,
-      -1.6928741679977453
-    ],
-    "building_ids": [
-      "5315612XG1751E",
-      "5415014XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.806,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.63,
     "site": "LORCA"
   },
   {
@@ -4897,30 +4057,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67697028108391,
-      -1.699141912017277
-    ],
-    "building_ids": [
-      "4810027XG1741B",
-      "4810009XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.866,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.29,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.678146587343505,
       -1.7002661111554902
     ],
@@ -4969,26 +4105,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67253783434502,
-      -1.7008375831523865
+      37.67476528474412,
+      -1.7006749138394055
     ],
     "building_ids": [
-      "4705017XG1740F",
-      "4604229XG1740D"
+      "4708008XG1740H",
+      "4607411XG1740F"
     ],
     "damage_levels": [
-      1,
+      2,
       0
     ],
     "buff_dist_m": [
-      1.0,
+      2.0,
       null
     ],
-    "debris_m": 1.0,
+    "debris_m": 2.0,
     "barrier_level": 2,
-    "gap_real_m": 2.871,
+    "gap_real_m": 2.886,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.09,
+    "dist_to_road_m": 1.55,
     "site": "LORCA"
   },
   {
@@ -5013,54 +4149,6 @@ var barrierData_LORCA = [
     "gap_real_m": 2.898,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.21,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68120473153741,
-      -1.6955334503833175
-    ],
-    "building_ids": [
-      "5115601XG1751E",
-      "5214011XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.901,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.1,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68091116679378,
-      -1.6945466673339475
-    ],
-    "building_ids": [
-      "5214015XG1751C",
-      "5214901XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.907,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.79,
     "site": "LORCA"
   },
   {
@@ -5185,30 +4273,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6821774913482,
-      -1.692887129286965
-    ],
-    "building_ids": [
-      "5415814XG1751E",
-      "5315202XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.933,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.57,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66969452919506,
       -1.7022561001450782
     ],
@@ -5281,6 +4345,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.67836811954958,
+      -1.6988467379308432
+    ],
+    "building_ids": [
+      "4811915XG1741B",
+      "4811913XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 2.966,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 3.18,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.683341150660965,
       -1.6917067178719702
     ],
@@ -5325,30 +4413,6 @@ var barrierData_LORCA = [
     "gap_real_m": 2.987,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.28,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.681361452901044,
-      -1.6948839233715292
-    ],
-    "building_ids": [
-      "5214005XG1751C",
-      "5214007XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 2.989,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.09,
     "site": "LORCA"
   },
   {
@@ -5401,54 +4465,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682041103026016,
-      -1.695460394616938
-    ],
-    "building_ids": [
-      "5115206XG1751E",
-      "5116028XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.006,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.24,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.681631621276374,
-      -1.6950957546026357
-    ],
-    "building_ids": [
-      "5215007XG1751E",
-      "5215009XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.012,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.68,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68245571504945,
       -1.6903835427900418
     ],
@@ -5469,30 +4485,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.012,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.18,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67731231809659,
-      -1.6971822774130552
-    ],
-    "building_ids": [
-      "4910605XG1741B",
-      "5010803XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.028,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.27,
     "site": "LORCA"
   },
   {
@@ -5593,36 +4585,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68176115366252,
-      -1.6932360822107582
+      37.68069460309834,
+      -1.692505142446751
     ],
     "building_ids": [
-      "5215531XG1751E",
-      "5315612XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.074,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.64,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68232753991667,
-      -1.697027660519107
-    ],
-    "building_ids": [
-      "5016025XG1751E",
-      "5016046XG1751E"
+      "5314002XG1751C",
+      "5314004XG1751C"
     ],
     "damage_levels": [
       1,
@@ -5634,33 +4602,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 2,
-    "gap_real_m": 3.1,
+    "gap_real_m": 3.102,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.63,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67375155572801,
-      -1.6990294067578853
-    ],
-    "building_ids": [
-      "4806705XG1740F",
-      "4805203XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.117,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.07,
+    "dist_to_road_m": 4.4,
     "site": "LORCA"
   },
   {
@@ -5685,54 +4629,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.119,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.07,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682379856158526,
-      -1.695206463214129
-    ],
-    "building_ids": [
-      "5115304XG1751E",
-      "5115202XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.151,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.51,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68247796027087,
-      -1.6936706220533373
-    ],
-    "building_ids": [
-      "5216707XG1751E",
-      "5216705XH1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.157,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.79,
     "site": "LORCA"
   },
   {
@@ -5809,30 +4705,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68235684032003,
-      -1.696734655426665
-    ],
-    "building_ids": [
-      "5016026XG1751E",
-      "5016028XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.171,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.84,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68294655471358,
       -1.6892670496280229
     ],
@@ -5905,30 +4777,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67459911289627,
-      -1.7001299989165934
-    ],
-    "building_ids": [
-      "4707606XG1740F",
-      "4807022XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.197,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.42,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67346379183837,
       -1.7054380594843948
     ],
@@ -5949,30 +4797,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.23,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.81,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67708640381099,
-      -1.6998471912517552
-    ],
-    "building_ids": [
-      "4810025XG1741B",
-      "4710501XG1741B"
-    ],
-    "damage_levels": [
-      2,
-      1
-    ],
-    "buff_dist_m": [
-      2.0,
-      1.0
-    ],
-    "debris_m": 3.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.235,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.5,
     "site": "LORCA"
   },
   {
@@ -6001,50 +4825,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682267637478176,
-      -1.6914373815388515
+      37.66843103387066,
+      -1.702507448054964
     ],
     "building_ids": [
-      "5515112XG1751F",
-      "5515126XG1751F"
+      "4500007XG1740B",
+      "4500009XG1740B"
     ],
     "damage_levels": [
       1,
-      1
+      0
     ],
     "buff_dist_m": [
       1.0,
-      1.0
+      null
     ],
-    "debris_m": 2.0,
+    "debris_m": 1.0,
     "barrier_level": 2,
-    "gap_real_m": 3.252,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.14,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.669802193945365,
-      -1.701991885493301
-    ],
-    "building_ids": [
-      "4501501XG1740B",
-      "4602001XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.255,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.66,
+    "gap_real_m": 3.261,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.3,
     "site": "LORCA"
   },
   {
@@ -6073,30 +4873,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.680794579943516,
-      -1.694373393072076
-    ],
-    "building_ids": [
-      "5214016XG1751C",
-      "5214901XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.278,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.87,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.681235116739344,
       -1.6958254829206136
     ],
@@ -6117,30 +4893,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.29,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.27,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682361012754804,
-      -1.6968527802093614
-    ],
-    "building_ids": [
-      "5016015XG1751E",
-      "5016041XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.295,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.92,
     "site": "LORCA"
   },
   {
@@ -6169,30 +4921,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67810393586982,
-      -1.6982230906663327
-    ],
-    "building_ids": [
-      "4911715XG1741B",
-      "4811515XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.317,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.42,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.682668586132664,
       -1.686985150440594
     ],
@@ -6213,30 +4941,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.319,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.27,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68126337752862,
-      -1.6960861537640128
-    ],
-    "building_ids": [
-      "5014410XG1751C",
-      "5115010XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.33,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.66,
     "site": "LORCA"
   },
   {
@@ -6289,30 +4993,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682282520378315,
-      -1.69631132045053
-    ],
-    "building_ids": [
-      "5016033XG1751E",
-      "5015301XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.349,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.28,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.676726140957406,
       -1.698957349736676
     ],
@@ -6361,30 +5041,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67731848238386,
-      -1.6999168237834466
-    ],
-    "building_ids": [
-      "4710501XG1741B",
-      "4710702XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.357,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.91,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68359217896332,
       -1.6900836313830345
     ],
@@ -6405,54 +5061,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.361,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.5,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68218703387376,
-      -1.697383587211126
-    ],
-    "building_ids": [
-      "4915905XG1741F",
-      "5016051XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.38,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.46,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67486738851314,
-      -1.7001081447530193
-    ],
-    "building_ids": [
-      "4707905XG1740F",
-      "4707602XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.381,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.31,
     "site": "LORCA"
   },
   {
@@ -6505,12 +5113,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67334601445487,
-      -1.7022011164019
+      37.68238884058286,
+      -1.6940285122884284
     ],
     "building_ids": [
-      "4505919XG1740F",
-      "4505921XG1740F"
+      "5215936XG1751E",
+      "5215937XG1751E"
     ],
     "damage_levels": [
       1,
@@ -6522,33 +5130,33 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 2,
-    "gap_real_m": 3.422,
+    "gap_real_m": 3.406,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.63,
+    "dist_to_road_m": 2.29,
     "site": "LORCA"
   },
   {
     "centroid": [
-      37.6776714086189,
-      -1.6994326887039573
+      37.674624321036845,
+      -1.7000766940658252
     ],
     "building_ids": [
-      "4810109XG1741B",
-      "4810112XG1741B"
+      "4707603XG1740F",
+      "4807023XG1740F"
     ],
     "damage_levels": [
-      2,
-      1
+      1,
+      0
     ],
     "buff_dist_m": [
-      2.0,
-      1.0
+      1.0,
+      null
     ],
-    "debris_m": 3.0,
+    "debris_m": 1.0,
     "barrier_level": 2,
-    "gap_real_m": 3.434,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.83,
+    "gap_real_m": 3.436,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.44,
     "site": "LORCA"
   },
   {
@@ -6573,54 +5181,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.449,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.94,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682352387506846,
-      -1.6914455096270062
-    ],
-    "building_ids": [
-      "5415311XG1751E",
-      "5515126XG1751F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.456,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.63,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.676855176454936,
-      -1.6980180170034225
-    ],
-    "building_ids": [
-      "4909308XG1740H",
-      "4909801XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.469,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.05,
     "site": "LORCA"
   },
   {
@@ -6697,6 +5257,54 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.678426336516544,
+      -1.6984565670619878
+    ],
+    "building_ids": [
+      "4811904XG1741B",
+      "4811523XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 3.524,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.97,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.68216933294998,
+      -1.691495960775247
+    ],
+    "building_ids": [
+      "5515112XG1751F",
+      "5415312XG1751E"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 3.546,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 2.48,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.66730949907089,
       -1.7033454327984037
     ],
@@ -6765,30 +5373,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.559,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.04,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68240257230192,
-      -1.6941235525848573
-    ],
-    "building_ids": [
-      "5215914XG1751E",
-      "5216011XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.56,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.23,
     "site": "LORCA"
   },
   {
@@ -6937,54 +5521,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67726224259062,
-      -1.6984726470429579
-    ],
-    "building_ids": [
-      "4810405XG1741B",
-      "4810028XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.599,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.07,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67591199365228,
-      -1.6978931568642905
-    ],
-    "building_ids": [
-      "4908803XG1740H",
-      "4909706XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.607,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.34,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66969841333578,
       -1.7014308100617306
     ],
@@ -7033,6 +5569,54 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.673003859633404,
+      -1.6980682455775482
+    ],
+    "building_ids": [
+      "4905908XG1740F",
+      "4905808XG1740F"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 3.624,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 2.05,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.682615940376145,
+      -1.6891429169674168
+    ],
+    "building_ids": [
+      "5616606XG1751F",
+      "5716025XG1751F"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 3.626,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.61,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.68283511293322,
       -1.6889378598671254
     ],
@@ -7053,30 +5637,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.629,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.18,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67459600060086,
-      -1.6993192991047712
-    ],
-    "building_ids": [
-      "4807005XG1740F",
-      "4807813XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.631,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.19,
     "site": "LORCA"
   },
   {
@@ -7177,30 +5737,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6771824453947,
-      -1.697082256454029
-    ],
-    "building_ids": [
-      "5009816XG1750G",
-      "4910606XG1741B"
-    ],
-    "damage_levels": [
-      2,
-      1
-    ],
-    "buff_dist_m": [
-      2.0,
-      1.0
-    ],
-    "debris_m": 3.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.728,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.46,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67784030108801,
       -1.6999357664047778
     ],
@@ -7249,30 +5785,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66627366533922,
-      -1.70393450712151
-    ],
-    "building_ids": [
-      "4498048XG1649G",
-      "4498054XG1649G"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.752,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.49,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.676824353306955,
       -1.7006023083594628
     ],
@@ -7297,30 +5809,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682323147739716,
-      -1.694786425510056
-    ],
-    "building_ids": [
-      "5215919XG1751E",
-      "5215922XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.809,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.1,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67537301697142,
       -1.6981976267899999
     ],
@@ -7341,30 +5829,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.817,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.03,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67820887608898,
-      -1.6944980435465653
-    ],
-    "building_ids": [
-      "5212017XG1751A",
-      "5311033XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.823,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.87,
     "site": "LORCA"
   },
   {
@@ -7413,30 +5877,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.841,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.02,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67960303760868,
-      -1.6956671416402687
-    ],
-    "building_ids": [
-      "5112101XG1751A",
-      "5112801XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.855,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.18,
     "site": "LORCA"
   },
   {
@@ -7509,6 +5949,30 @@ var barrierData_LORCA = [
     "gap_real_m": 3.882,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.98,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.68091363095398,
+      -1.6945418400752423
+    ],
+    "building_ids": [
+      "5214015XG1751C",
+      "5214901XG1751C"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 2,
+    "gap_real_m": 3.904,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 3.28,
     "site": "LORCA"
   },
   {
@@ -7609,54 +6073,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.666907710667154,
-      -1.7008914254812788
-    ],
-    "building_ids": [
-      "4698501XG1649H",
-      "4799025XG1649H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.966,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.13,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67766211733679,
-      -1.6952136110020308
-    ],
-    "building_ids": [
-      "5311020XG1751A",
-      "5110001XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.972,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.3,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66707750239557,
       -1.6967251381323323
     ],
@@ -7677,30 +6093,6 @@ var barrierData_LORCA = [
     "gap_real_m": 3.974,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.92,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68099597989665,
-      -1.6922915995330958
-    ],
-    "building_ids": [
-      "5414903XG1751C",
-      "5414801XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 2,
-    "gap_real_m": 3.974,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.44,
     "site": "LORCA"
   },
   {
@@ -7777,26 +6169,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68255356046804,
-      -1.696544406099247
+      37.68187833758558,
+      -1.692875169655463
     ],
     "building_ids": [
-      "5016011XG1751E",
-      "5016604XG1751E"
+      "5315601XG1751E",
+      "5415014XG1751E"
     ],
     "damage_levels": [
       1,
-      1
+      0
     ],
     "buff_dist_m": [
       1.0,
-      1.0
+      null
     ],
-    "debris_m": 2.0,
+    "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 4.022,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.05,
+    "gap_real_m": 4.031,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 3.31,
     "site": "LORCA"
   },
   {
@@ -7821,54 +6213,6 @@ var barrierData_LORCA = [
     "gap_real_m": 4.04,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 4.41,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67836720466893,
-      -1.6948810997706967
-    ],
-    "building_ids": [
-      "5212020XG1751A",
-      "5212025XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.05,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.87,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68156746260358,
-      -1.694263839973439
-    ],
-    "building_ids": [
-      "5215533XG1751E",
-      "5314915XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.083,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.68,
     "site": "LORCA"
   },
   {
@@ -7921,54 +6265,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67683504306456,
-      -1.6972570237567257
-    ],
-    "building_ids": [
-      "4909312XG1740H",
-      "5009813XG1750G"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.123,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.45,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67215254349867,
-      -1.6986721658043755
-    ],
-    "building_ids": [
-      "4905014XG1740F",
-      "4905012XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.136,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.5,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67688098539279,
       -1.6986568792871708
     ],
@@ -8017,78 +6313,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.673309251133624,
-      -1.698021427533047
-    ],
-    "building_ids": [
-      "4905802XG1740F",
-      "4906903XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.161,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.37,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.673107013043875,
-      -1.6998460293988709
-    ],
-    "building_ids": [
-      "4805001XG1740F",
-      "4806010XG1740F"
-    ],
-    "damage_levels": [
-      3,
-      1
-    ],
-    "buff_dist_m": [
-      3.0,
-      1.0
-    ],
-    "debris_m": 4.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.165,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.67,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68167882527195,
-      -1.6918214797826523
-    ],
-    "building_ids": [
-      "5415022XG1751E",
-      "5415023XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.177,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.46,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67143553470628,
       -1.7037516427073962
     ],
@@ -8113,122 +6337,74 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.676351085584145,
-      -1.6951592438184537
+      37.673102142441344,
+      -1.6997530554101583
     ],
     "building_ids": [
-      "5110012XG1751A",
-      "5110015XG1751A"
+      "4805001XG1740F",
+      "4806007XG1740F"
     ],
     "damage_levels": [
-      1,
+      3,
       1
     ],
     "buff_dist_m": [
-      1.0,
+      3.0,
       1.0
+    ],
+    "debris_m": 4.0,
+    "barrier_level": 1,
+    "gap_real_m": 4.218,
+    "barrier_type": "buffer-buffer",
+    "dist_to_road_m": 1.62,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.677091039139924,
+      -1.6998488215434995
+    ],
+    "building_ids": [
+      "4810025XG1741B",
+      "4710501XG1741B"
+    ],
+    "damage_levels": [
+      2,
+      0
+    ],
+    "buff_dist_m": [
+      2.0,
+      null
     ],
     "debris_m": 2.0,
     "barrier_level": 1,
-    "gap_real_m": 4.197,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.94,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67066248979118,
-      -1.700681891903802
-    ],
-    "building_ids": [
-      "4703024XG1740D",
-      "4703016XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.208,
+    "gap_real_m": 4.231,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.88,
+    "dist_to_road_m": 2.0,
     "site": "LORCA"
   },
   {
     "centroid": [
-      37.677199572164106,
-      -1.6983632827296373
+      37.68162495912636,
+      -1.695359847899473
     ],
     "building_ids": [
-      "4810404XG1741B",
-      "4810028XG1741B"
+      "5214001XG1751C",
+      "5215004XG1751E"
     ],
     "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.22,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.04,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68187844023333,
-      -1.6846739445792014
-    ],
-    "building_ids": [
-      "6015404XG1761E",
-      "6116006XG1761E"
-    ],
-    "damage_levels": [
-      1,
+      2,
       1
     ],
     "buff_dist_m": [
-      1.0,
+      2.0,
       1.0
     ],
-    "debris_m": 2.0,
+    "debris_m": 3.0,
     "barrier_level": 1,
-    "gap_real_m": 4.238,
+    "gap_real_m": 4.231,
     "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.1,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67747088229815,
-      -1.6974685220763541
-    ],
-    "building_ids": [
-      "4910602XG1741B",
-      "4910403XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.245,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.01,
+    "dist_to_road_m": 0.02,
     "site": "LORCA"
   },
   {
@@ -8281,6 +6457,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.68079869309649,
+      -1.6943710998858845
+    ],
+    "building_ids": [
+      "5214016XG1751C",
+      "5214901XG1751C"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 4.276,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 2.38,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.68254824376592,
       -1.6884137736335516
     ],
@@ -8329,54 +6529,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682278685236085,
-      -1.693228309467997
-    ],
-    "building_ids": [
-      "5315204XG1751E",
-      "5315208XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.314,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.25,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.66836538743833,
-      -1.701720714651155
-    ],
-    "building_ids": [
-      "4600032XG1740B",
-      "4699123XG1649H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.316,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.52,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66533548525868,
       -1.703793580549797
     ],
@@ -8401,26 +6553,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67939211870216,
-      -1.696027152233363
+      37.681267836738506,
+      -1.696085400904403
     ],
     "building_ids": [
-      "5112701XG1751A",
-      "5112801XG1751A"
+      "5014410XG1751C",
+      "5115010XG1751E"
     ],
     "damage_levels": [
       1,
-      1
+      0
     ],
     "buff_dist_m": [
       1.0,
-      1.0
+      null
     ],
-    "debris_m": 2.0,
+    "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 4.329,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.82,
+    "gap_real_m": 4.328,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.17,
     "site": "LORCA"
   },
   {
@@ -8521,6 +6673,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.68218702847095,
+      -1.6973779023499835
+    ],
+    "building_ids": [
+      "4915905XG1741F",
+      "5016051XG1751E"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 4.383,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.96,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.68376200226934,
       -1.6924407336117737
     ],
@@ -8545,60 +6721,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67147392668805,
-      -1.6999777778808267
+      37.682351452186595,
+      -1.6914399830658855
     ],
     "building_ids": [
-      "4703006XG1740D",
-      "4704609XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.394,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.84,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682339304404294,
-      -1.6949786196560763
-    ],
-    "building_ids": [
-      "5115303XG1751E",
-      "5215940XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.407,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.6,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68222472735073,
-      -1.684730314061185
-    ],
-    "building_ids": [
-      "6116006XG1761E",
-      "6015410XG1761E"
+      "5415311XG1751E",
+      "5515126XG1751F"
     ],
     "damage_levels": [
       1,
@@ -8610,57 +6738,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 4.436,
+    "gap_real_m": 4.453,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.87,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.668396749171514,
-      -1.7015424259482217
-    ],
-    "building_ids": [
-      "4600908XG1740B",
-      "4699101XG1649H"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.448,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.15,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67010318280111,
-      -1.701037196303548
-    ],
-    "building_ids": [
-      "4601401XG1740B",
-      "4703018XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.463,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.68,
+    "dist_to_road_m": 2.14,
     "site": "LORCA"
   },
   {
@@ -8737,30 +6817,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67701201739723,
-      -1.6977334536192186
-    ],
-    "building_ids": [
-      "4909310XG1740H",
-      "4910609XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.509,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.62,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67479700193868,
       -1.698308277187537
     ],
@@ -8781,6 +6837,30 @@ var barrierData_LORCA = [
     "gap_real_m": 4.522,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.7,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67655036204032,
+      -1.6950340343905281
+    ],
+    "building_ids": [
+      "5110012XG1751A",
+      "5110010XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 4.545,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 4.98,
     "site": "LORCA"
   },
   {
@@ -8833,30 +6913,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.677556590689676,
-      -1.6951824748068502
-    ],
-    "building_ids": [
-      "5110002XG1751A",
-      "5311020XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.569,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.25,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.682863461056016,
       -1.6970569733144711
     ],
@@ -8905,30 +6961,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68220424952278,
-      -1.6932216387186254
-    ],
-    "building_ids": [
-      "5215902XG1751E",
-      "5315204XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.609,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.59,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66712708575824,
       -1.7030479511055425
     ],
@@ -8953,78 +6985,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.667995113429555,
-      -1.7028814588454015
-    ],
-    "building_ids": [
-      "4499314XG1649G",
-      "4499301XG1649G"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.653,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.17,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6819092913039,
-      -1.6956328466071315
-    ],
-    "building_ids": [
-      "5116013XG1751E",
-      "5116015XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.653,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.91,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.681326085106704,
-      -1.694148727191222
-    ],
-    "building_ids": [
-      "5314915XG1751C",
-      "5314916XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.654,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.54,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67777812994853,
       -1.7010304781137517
     ],
@@ -9045,30 +7005,6 @@ var barrierData_LORCA = [
     "gap_real_m": 4.672,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.99,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.673744002415084,
-      -1.6975490489534861
-    ],
-    "building_ids": [
-      "5006012XG1750E",
-      "4906913XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.695,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.57,
     "site": "LORCA"
   },
   {
@@ -9169,30 +7105,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.681851531968725,
-      -1.6842392367216765
-    ],
-    "building_ids": [
-      "6115206XG1761E",
-      "6116006XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.742,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.97,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67526939681701,
       -1.6983156515939772
     ],
@@ -9237,30 +7149,6 @@ var barrierData_LORCA = [
     "gap_real_m": 4.76,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 1.27,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.66656200175219,
-      -1.7034163872731343
-    ],
-    "building_ids": [
-      "4498409XG1649G",
-      "4498040XG1649G"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.767,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.94,
     "site": "LORCA"
   },
   {
@@ -9357,54 +7245,6 @@ var barrierData_LORCA = [
     "gap_real_m": 4.799,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.34,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68469496164735,
-      -1.6993301311529212
-    ],
-    "building_ids": [
-      "4818611XG1741H",
-      "4818809XG1741H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.822,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.28,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67548067176837,
-      -1.6999433061725395
-    ],
-    "building_ids": [
-      "4707901XG1740F",
-      "4708808XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.832,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.46,
     "site": "LORCA"
   },
   {
@@ -9529,6 +7369,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.67959969443609,
+      -1.6956709154395315
+    ],
+    "building_ids": [
+      "5112101XG1751A",
+      "5112801XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 4.851,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.32,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.675425168638476,
       -1.694962726692455
     ],
@@ -9549,78 +7413,6 @@ var barrierData_LORCA = [
     "gap_real_m": 4.855,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.08,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67891801306472,
-      -1.697768565439565
-    ],
-    "building_ids": [
-      "4912606XG1741B",
-      "4811503XG1741B"
-    ],
-    "damage_levels": [
-      2,
-      0
-    ],
-    "buff_dist_m": [
-      2.0,
-      null
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.859,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.85,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.658195706129945,
-      -1.709735933857864
-    ],
-    "building_ids": [
-      "3988802XG1638H",
-      "3888401XG1638H"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.865,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.1,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.671484342130775,
-      -1.7012463436159742
-    ],
-    "building_ids": [
-      "4603723XG1740D",
-      "4604610XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.873,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.37,
     "site": "LORCA"
   },
   {
@@ -9669,30 +7461,6 @@ var barrierData_LORCA = [
     "gap_real_m": 4.884,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.59,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682042882420276,
-      -1.6939583234706739
-    ],
-    "building_ids": [
-      "5215912XG1751E",
-      "5215910XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 4.904,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.85,
     "site": "LORCA"
   },
   {
@@ -9817,26 +7585,50 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6772782102534,
-      -1.6995172532007574
+      37.6669097562238,
+      -1.7008124051297466
     ],
     "building_ids": [
-      "4810026XG1741B",
-      "4710501XG1741B"
+      "4698501XG1649H",
+      "4799024XG1649H"
     ],
     "damage_levels": [
-      3,
-      1
+      1,
+      0
     ],
     "buff_dist_m": [
-      3.0,
-      1.0
+      1.0,
+      null
     ],
-    "debris_m": 4.0,
+    "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 4.962,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.13,
+    "gap_real_m": 4.945,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.35,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.678225199880934,
+      -1.6944752065361115
+    ],
+    "building_ids": [
+      "5311034XG1751A",
+      "5212016XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 4.978,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.36,
     "site": "LORCA"
   },
   {
@@ -9913,54 +7705,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68049731693748,
-      -1.6924981186901222
-    ],
-    "building_ids": [
-      "5314003XG1751C",
-      "5314005XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.022,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.77,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.681620299861756,
-      -1.6945977214018444
-    ],
-    "building_ids": [
-      "5215003XG1751E",
-      "5215515XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.031,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.65,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67761694306304,
       -1.695744941440734
     ],
@@ -9981,30 +7725,6 @@ var barrierData_LORCA = [
     "gap_real_m": 5.033,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.06,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.673381951862424,
-      -1.697808191999431
-    ],
-    "building_ids": [
-      "5006009XG1750E",
-      "4906902XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.04,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.16,
     "site": "LORCA"
   },
   {
@@ -10057,6 +7777,54 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.6754363950619,
+      -1.6999873357884205
+    ],
+    "building_ids": [
+      "4707901XG1740F",
+      "4708809XG1740H"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 5.051,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.43,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.68156298513523,
+      -1.6942635540861135
+    ],
+    "building_ids": [
+      "5215533XG1751E",
+      "5314915XG1751C"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 5.078,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.17,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.68360728464465,
       -1.6881848248725175
     ],
@@ -10105,54 +7873,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67735937224092,
-      -1.6951188083616116
-    ],
-    "building_ids": [
-      "5110003XG1751A",
-      "5311018XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.131,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.11,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.678031765597765,
-      -1.6991026290746696
-    ],
-    "building_ids": [
-      "4811911XG1741B",
-      "4810116XG1741B"
-    ],
-    "damage_levels": [
-      2,
-      0
-    ],
-    "buff_dist_m": [
-      2.0,
-      null
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.141,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.43,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.682366411035005,
       -1.694492127654275
     ],
@@ -10173,30 +7893,6 @@ var barrierData_LORCA = [
     "gap_real_m": 5.148,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.48,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67048969219819,
-      -1.7001262132434531
-    ],
-    "building_ids": [
-      "4702804XG1740B",
-      "4702901XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.16,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.0,
     "site": "LORCA"
   },
   {
@@ -10225,6 +7921,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.68168270764203,
+      -1.691824427703368
+    ],
+    "building_ids": [
+      "5415023XG1751E",
+      "5415022XG1751E"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 5.175,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.03,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.670962285664295,
       -1.6997832209626405
     ],
@@ -10245,6 +7965,30 @@ var barrierData_LORCA = [
     "gap_real_m": 5.176,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.39,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.676670631278704,
+      -1.6973834352805837
+    ],
+    "building_ids": [
+      "5009810XG1750G",
+      "4909312XG1740H"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 5.206,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.43,
     "site": "LORCA"
   },
   {
@@ -10273,30 +8017,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.671838866267734,
-      -1.7004029699169163
-    ],
-    "building_ids": [
-      "4703003XG1740D",
-      "4703001XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.242,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.52,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67190167530589,
       -1.6977281876765111
     ],
@@ -10317,6 +8037,30 @@ var barrierData_LORCA = [
     "gap_real_m": 5.251,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.69,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.66836666685783,
+      -1.7017261771171202
+    ],
+    "building_ids": [
+      "4699123XG1649H",
+      "4600032XG1740B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 5.317,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.03,
     "site": "LORCA"
   },
   {
@@ -10417,30 +8161,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67949806748179,
-      -1.695586816957019
-    ],
-    "building_ids": [
-      "5112801XG1751A",
-      "5212001XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.374,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.61,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.677189311868,
       -1.7008841879244205
     ],
@@ -10485,6 +8205,30 @@ var barrierData_LORCA = [
     "gap_real_m": 5.397,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.27,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67147109028009,
+      -1.6999822559255042
+    ],
+    "building_ids": [
+      "4704609XG1740D",
+      "4703006XG1740D"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 5.404,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.34,
     "site": "LORCA"
   },
   {
@@ -10585,12 +8329,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68156476833747,
-      -1.6944557039916013
+      37.67591771842016,
+      -1.6978392113075769
     ],
     "building_ids": [
-      "5215515XG1751E",
-      "5314915XG1751C"
+      "4908916XG1740H",
+      "4909706XG1740H"
     ],
     "damage_levels": [
       1,
@@ -10602,9 +8346,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 2.0,
     "barrier_level": 1,
-    "gap_real_m": 5.436,
+    "gap_real_m": 5.442,
     "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.11,
+    "dist_to_road_m": 1.13,
     "site": "LORCA"
   },
   {
@@ -10633,30 +8377,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.673472855388056,
-      -1.700107825056589
-    ],
-    "building_ids": [
-      "4706017XG1740F",
-      "4806921XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.473,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.73,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.673295627892415,
       -1.703185067499759
     ],
@@ -10677,30 +8397,6 @@ var barrierData_LORCA = [
     "gap_real_m": 5.484,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.62,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.681571722238196,
-      -1.6941012034023304
-    ],
-    "building_ids": [
-      "5215511XG1751E",
-      "5314901XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.491,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.94,
     "site": "LORCA"
   },
   {
@@ -10825,30 +8521,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67618317599467,
-      -1.6953460493298453
-    ],
-    "building_ids": [
-      "5110014XG1751A",
-      "5110015XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.621,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.05,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.684183037423004,
       -1.690411099507547
     ],
@@ -10869,54 +8541,6 @@ var barrierData_LORCA = [
     "gap_real_m": 5.624,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 4.07,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68314319061978,
-      -1.6831811220161619
-    ],
-    "building_ids": [
-      "6216211XG1761E",
-      "6217001XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.624,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.61,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67032219612231,
-      -1.7006939274994486
-    ],
-    "building_ids": [
-      "4703017XG1740D",
-      "4702812XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.629,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.27,
     "site": "LORCA"
   },
   {
@@ -10969,30 +8593,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67835276086721,
-      -1.6942192627250556
-    ],
-    "building_ids": [
-      "5212013XG1751A",
-      "5311034XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.71,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.96,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68214165049477,
       -1.6911876454187866
     ],
@@ -11017,26 +8617,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66959141622533,
-      -1.7021731035291747
+      37.677181701021425,
+      -1.6970825638890095
     ],
     "building_ids": [
-      "4501502XG1740B",
-      "4501901XG1740B"
+      "5009816XG1750G",
+      "4910606XG1741B"
     ],
     "damage_levels": [
       1,
-      1
+      0
     ],
     "buff_dist_m": [
       1.0,
-      1.0
+      null
     ],
-    "debris_m": 2.0,
+    "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 5.723,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.31,
+    "gap_real_m": 5.726,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.39,
     "site": "LORCA"
   },
   {
@@ -11113,30 +8713,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68157726821075,
-      -1.6949318700148799
-    ],
-    "building_ids": [
-      "5215010XG1751E",
-      "5214004XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.751,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.02,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67423750387918,
       -1.700328696816446
     ],
@@ -11157,6 +8733,30 @@ var barrierData_LORCA = [
     "gap_real_m": 5.77,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.59,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.68451201356176,
+      -1.6992939736921733
+    ],
+    "building_ids": [
+      "4818611XG1741H",
+      "4818807XG1741H"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 5.779,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.22,
     "site": "LORCA"
   },
   {
@@ -11233,30 +8833,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67729673257198,
-      -1.6963536274103015
-    ],
-    "building_ids": [
-      "5110029XG1751A",
-      "5111053XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.824,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.14,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67038172822961,
       -1.7017766962811693
     ],
@@ -11281,12 +8857,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66575435781369,
-      -1.7036067993105328
+      37.67891916044818,
+      -1.6977740479385228
     ],
     "building_ids": [
-      "4498049XG1649G",
-      "4497608XG1649E"
+      "4912606XG1741B",
+      "4811503XG1741B"
     ],
     "damage_levels": [
       1,
@@ -11298,33 +8874,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 5.849,
+    "gap_real_m": 5.856,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.3,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.681525744662046,
-      -1.6855617100895186
-    ],
-    "building_ids": [
-      "6015002XG1761E",
-      "6015817XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.855,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.28,
+    "dist_to_road_m": 2.41,
     "site": "LORCA"
   },
   {
@@ -11425,30 +8977,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6816521894126,
-      -1.691924071708669
-    ],
-    "building_ids": [
-      "5415023XG1751E",
-      "5415020XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 5.953,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.27,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.675599111566626,
       -1.6962790487058101
     ],
@@ -11497,102 +9025,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68221888016376,
-      -1.685757257330493
-    ],
-    "building_ids": [
-      "6015811XG1761E",
-      "6015001XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.01,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.07,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67073184950936,
-      -1.7013077191451877
-    ],
-    "building_ids": [
-      "4602901XG1740B",
-      "4603713XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.011,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.22,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68198351210324,
-      -1.6930526911200547
-    ],
-    "building_ids": [
-      "5315203XG1751E",
-      "5315601XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.012,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.34,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67156361024351,
-      -1.7000736752556267
-    ],
-    "building_ids": [
-      "4704610XG1740D",
-      "4703005XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.016,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.15,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.676069145691876,
       -1.6999892718735437
     ],
@@ -11613,30 +9045,6 @@ var barrierData_LORCA = [
     "gap_real_m": 6.022,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.0,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.678064525739345,
-      -1.6948154741523858
-    ],
-    "building_ids": [
-      "5212038XG1751A",
-      "5311033XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.064,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.06,
     "site": "LORCA"
   },
   {
@@ -11709,6 +9117,30 @@ var barrierData_LORCA = [
     "gap_real_m": 6.093,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.25,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67803498804251,
+      -1.6990986663919874
+    ],
+    "building_ids": [
+      "4811911XG1741B",
+      "4810116XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 6.141,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.05,
     "site": "LORCA"
   },
   {
@@ -11809,30 +9241,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68115445649485,
-      -1.6917335450711468
-    ],
-    "building_ids": [
-      "5415010XG1751E",
-      "5414901XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.195,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.21,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68363746160899,
       -1.689544423707188
     ],
@@ -11877,30 +9285,6 @@ var barrierData_LORCA = [
     "gap_real_m": 6.214,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.17,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.683166608275414,
-      -1.6830668922230416
-    ],
-    "building_ids": [
-      "6216234XG1761E",
-      "6317007XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.22,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.74,
     "site": "LORCA"
   },
   {
@@ -11953,12 +9337,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67656648682488,
-      -1.695100944343164
+      37.67577597842417,
+      -1.697940760032287
     ],
     "building_ids": [
-      "5110011XG1751A",
-      "5110013XG1751A"
+      "4908915XG1740H",
+      "4908803XG1740H"
     ],
     "damage_levels": [
       1,
@@ -11970,9 +9354,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 6.333,
+    "gap_real_m": 6.312,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.44,
+    "dist_to_road_m": 1.56,
     "site": "LORCA"
   },
   {
@@ -12025,12 +9409,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66466264441591,
-      -1.7044803873233816
+      37.67950138253142,
+      -1.6955906814533273
     ],
     "building_ids": [
-      "4396501XG1649E",
-      "4395305XG1649E"
+      "5212001XG1751A",
+      "5112801XG1751A"
     ],
     "damage_levels": [
       1,
@@ -12042,9 +9426,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 6.369,
+    "gap_real_m": 6.377,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.18,
+    "dist_to_road_m": 0.11,
     "site": "LORCA"
   },
   {
@@ -12145,78 +9529,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66864509234467,
-      -1.702539010451497
-    ],
-    "building_ids": [
-      "4500204XG1740B",
-      "4500211XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.457,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.26,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6848287568697,
-      -1.6993644195398725
-    ],
-    "building_ids": [
-      "4818809XG1741H",
-      "4818608XG1741H"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.468,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.33,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.683257300828586,
-      -1.6826036683461758
-    ],
-    "building_ids": [
-      "6216235XG1761E",
-      "6317005XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.471,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.62,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.666649275789,
       -1.6953769050758174
     ],
@@ -12309,30 +9621,6 @@ var barrierData_LORCA = [
     "gap_real_m": 6.517,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.7,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68157790194711,
-      -1.693809122467934
-    ],
-    "building_ids": [
-      "5215510XG1751E",
-      "5214203XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.534,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.5,
     "site": "LORCA"
   },
   {
@@ -12481,6 +9769,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.67618071365341,
+      -1.6953412669660002
+    ],
+    "building_ids": [
+      "5110014XG1751A",
+      "5110015XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 6.626,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.56,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.67084391682513,
       -1.7034291889137212
     ],
@@ -12525,78 +9837,6 @@ var barrierData_LORCA = [
     "gap_real_m": 6.648,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.36,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.66473229146484,
-      -1.704604296316982
-    ],
-    "building_ids": [
-      "4396401XG1649E",
-      "4396602XG1649E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.68,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.4,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67559879926216,
-      -1.6998659053183527
-    ],
-    "building_ids": [
-      "4708808XG1740H",
-      "4708806XG1740H"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.695,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.58,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.684489136898684,
-      -1.6992953491613736
-    ],
-    "building_ids": [
-      "4818610XG1741H",
-      "4818806XG1741H"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.695,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.23,
     "site": "LORCA"
   },
   {
@@ -12649,30 +9889,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67819444094996,
-      -1.6977694388921567
-    ],
-    "building_ids": [
-      "4911704XG1741B",
-      "4911706XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.748,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.68,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.672886476363075,
       -1.6984955131800619
     ],
@@ -12693,6 +9909,30 @@ var barrierData_LORCA = [
     "gap_real_m": 6.753,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 1.3,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67837481500945,
+      -1.69418672633337
+    ],
+    "building_ids": [
+      "5311001XG1751A",
+      "5212013XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 6.763,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.36,
     "site": "LORCA"
   },
   {
@@ -12721,54 +9961,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67715006137145,
-      -1.6967099656466254
-    ],
-    "building_ids": [
-      "5009818XG1750G",
-      "5110024XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.786,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.95,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.670510125036735,
-      -1.7013925877359573
-    ],
-    "building_ids": [
-      "4602906XG1740B",
-      "4602809XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.795,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.44,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.662922369662695,
       -1.702750816919621
     ],
@@ -12789,78 +9981,6 @@ var barrierData_LORCA = [
     "gap_real_m": 6.812,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.3,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.666952182760454,
-      -1.701096903145282
-    ],
-    "building_ids": [
-      "4698108XG1649H",
-      "4799025XG1649H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.818,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.61,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.66704064431055,
-      -1.7011092039718623
-    ],
-    "building_ids": [
-      "4698103XG1649H",
-      "4799025XG1649H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.835,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.58,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68226819481296,
-      -1.6862176916634475
-    ],
-    "building_ids": [
-      "5915914XG1751F",
-      "6015001XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.837,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.8,
     "site": "LORCA"
   },
   {
@@ -12913,12 +10033,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67723410117117,
-      -1.6950684853591667
+      37.681524717948825,
+      -1.6855672474137378
     ],
     "building_ids": [
-      "5110004XG1751A",
-      "5311017XG1751A"
+      "6015817XG1761E",
+      "6015002XG1761E"
     ],
     "damage_levels": [
       1,
@@ -12930,57 +10050,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 6.872,
+    "gap_real_m": 6.858,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.49,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68423988996341,
-      -1.6992523306570624
-    ],
-    "building_ids": [
-      "4818603XG1741H",
-      "4818804XG1741H"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.887,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.1,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.677462083085196,
-      -1.6967744268885852
-    ],
-    "building_ids": [
-      "5111022XG1751A",
-      "5010803XG1751A"
-    ],
-    "damage_levels": [
-      2,
-      1
-    ],
-    "buff_dist_m": [
-      2.0,
-      1.0
-    ],
-    "debris_m": 3.0,
-    "barrier_level": 1,
-    "gap_real_m": 6.889,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.02,
+    "dist_to_road_m": 0.79,
     "site": "LORCA"
   },
   {
@@ -13033,6 +10105,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.68200264118774,
+      -1.6975799367504605
+    ],
+    "building_ids": [
+      "5015015XG1751E",
+      "4915928XG1741F"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 6.93,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.13,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.677629398294556,
       -1.6995775422846715
     ],
@@ -13081,78 +10177,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67036196867799,
-      -1.7014519159085146
-    ],
-    "building_ids": [
-      "4602805XG1740B",
-      "4602906XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.009,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.15,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67339409970386,
-      -1.6998839497898015
-    ],
-    "building_ids": [
-      "4806010XG1740F",
-      "4806012XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.017,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.6,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67792972716949,
-      -1.6950803224895528
-    ],
-    "building_ids": [
-      "5311023XG1751A",
-      "5212029XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.017,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.76,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.682150179120086,
       -1.6893049882701894
     ],
@@ -13173,30 +10197,6 @@ var barrierData_LORCA = [
     "gap_real_m": 7.032,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.33,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67217350870332,
-      -1.6988505921891008
-    ],
-    "building_ids": [
-      "4804603XG1740D",
-      "4905014XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.052,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.02,
     "site": "LORCA"
   },
   {
@@ -13249,30 +10249,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.681396949341746,
-      -1.695461027651007
-    ],
-    "building_ids": [
-      "5214011XG1751C",
-      "5214013XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.194,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.64,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.6837955325678,
       -1.6902939354482773
     ],
@@ -13293,30 +10269,6 @@ var barrierData_LORCA = [
     "gap_real_m": 7.276,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.37,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.671673788064936,
-      -1.7001666512084306
-    ],
-    "building_ids": [
-      "4703004XG1740D",
-      "4704611XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.282,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.16,
     "site": "LORCA"
   },
   {
@@ -13489,78 +10441,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68101493321641,
-      -1.6921721270492183
-    ],
-    "building_ids": [
-      "5414902XG1751C",
-      "5414801XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.393,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.11,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67703647730931,
-      -1.6963613716556305
-    ],
-    "building_ids": [
-      "5110027XG1751A",
-      "5110029XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.441,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.04,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67601374384517,
-      -1.697074111999899
-    ],
-    "building_ids": [
-      "4908903XG1740H",
-      "5108022XG1750G"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.451,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.62,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.656393749456015,
       -1.6993662869517683
     ],
@@ -13609,26 +10489,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66753318046858,
-      -1.7011775375974414
+      37.67712334206761,
+      -1.6958812913043402
     ],
     "building_ids": [
-      "4698112XG1649H",
-      "4799028XG1649H"
+      "5110027XG1751A",
+      "5110028XG1751A"
     ],
     "damage_levels": [
       1,
-      0
+      1
     ],
     "buff_dist_m": [
       1.0,
-      null
+      1.0
     ],
-    "debris_m": 1.0,
+    "debris_m": 2.0,
     "barrier_level": 1,
-    "gap_real_m": 7.563,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.09,
+    "gap_real_m": 7.517,
+    "barrier_type": "buffer-buffer",
+    "dist_to_road_m": 1.08,
     "site": "LORCA"
   },
   {
@@ -13677,78 +10557,6 @@ var barrierData_LORCA = [
     "gap_real_m": 7.618,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.31,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67350600276729,
-      -1.6998503140511325
-    ],
-    "building_ids": [
-      "4806013XG1740F",
-      "4806910XG1740F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.643,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.26,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68145845177566,
-      -1.6859981273254276
-    ],
-    "building_ids": [
-      "5915903XG1751F",
-      "6015002XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.683,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.13,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67687799247705,
-      -1.696436372842082
-    ],
-    "building_ids": [
-      "5110021XG1751A",
-      "5110027XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.7,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.9,
     "site": "LORCA"
   },
   {
@@ -13825,60 +10633,36 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68160875593755,
-      -1.6954553079993682
+      37.66725786096296,
+      -1.7011362591470454
     ],
     "building_ids": [
-      "5115002XG1751E",
-      "5214001XG1751C"
-    ],
-    "damage_levels": [
-      3,
-      3
-    ],
-    "buff_dist_m": [
-      3.0,
-      3.0
-    ],
-    "debris_m": 6.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.794,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.26,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.677144060098634,
-      -1.6964270359655862
-    ],
-    "building_ids": [
-      "5110024XG1751A",
-      "5110029XG1751A"
+      "4698103XG1649H",
+      "4799026XG1649H"
     ],
     "damage_levels": [
       1,
-      1
+      0
     ],
     "buff_dist_m": [
       1.0,
-      1.0
+      null
     ],
-    "debris_m": 2.0,
+    "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 7.806,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.39,
+    "gap_real_m": 7.775,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.22,
     "site": "LORCA"
   },
   {
     "centroid": [
-      37.673088294787334,
-      -1.6984336026755098
+      37.67304809767244,
+      -1.6984584628789394
     ],
     "building_ids": [
       "4805301XG1740F",
-      "4905808XG1740F"
+      "4905806XG1740F"
     ],
     "damage_levels": [
       1,
@@ -13890,9 +10674,33 @@ var barrierData_LORCA = [
     ],
     "debris_m": 2.0,
     "barrier_level": 1,
-    "gap_real_m": 7.809,
+    "gap_real_m": 7.81,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.62,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.66695268249211,
+      -1.7010912727105307
+    ],
+    "building_ids": [
+      "4698108XG1649H",
+      "4799025XG1649H"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 7.817,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 1.11,
     "site": "LORCA"
   },
   {
@@ -14017,6 +10825,30 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
+      37.67346382707836,
+      -1.700089776914537
+    ],
+    "building_ids": [
+      "4806910XG1740F",
+      "4706017XG1740F"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 7.893,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 2.01,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
       37.670922236340814,
       -1.703355290332971
     ],
@@ -14041,50 +10873,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.676633020241276,
-      -1.6967716079027269
+      37.6721167839086,
+      -1.6988215165430678
     ],
     "building_ids": [
-      "5009807XG1750G",
-      "5110019XG1751A"
+      "4804603XG1740D",
+      "4804605XG1740D"
     ],
     "damage_levels": [
       1,
-      1
+      0
     ],
     "buff_dist_m": [
       1.0,
-      1.0
+      null
     ],
-    "debris_m": 2.0,
+    "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 7.965,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.66,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6768273221675,
-      -1.6967363060589442
-    ],
-    "building_ids": [
-      "5009806XG1750G",
-      "5110021XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 7.968,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.51,
+    "gap_real_m": 7.919,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 4.65,
     "site": "LORCA"
   },
   {
@@ -14305,30 +11113,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66661142477516,
-      -1.7058341933531878
-    ],
-    "building_ids": [
-      "4498076XG1649G",
-      "4397015XG1649E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 8.141,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.81,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67263119252522,
       -1.6978224080898323
     ],
@@ -14377,30 +11161,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.673867322028045,
-      -1.6995138628948054
-    ],
-    "building_ids": [
-      "4806906XG1740F",
-      "4806708XG1740F"
-    ],
-    "damage_levels": [
-      3,
-      1
-    ],
-    "buff_dist_m": [
-      3.0,
-      1.0
-    ],
-    "debris_m": 4.0,
-    "barrier_level": 1,
-    "gap_real_m": 8.18,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.43,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.671563195938575,
       -1.6990565497202168
     ],
@@ -14425,30 +11185,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68183263589781,
-      -1.6855979425784735
-    ],
-    "building_ids": [
-      "6015817XG1761E",
-      "6015810XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 8.241,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.7,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67225449405648,
       -1.6998759061253395
     ],
@@ -14469,6 +11205,30 @@ var barrierData_LORCA = [
     "gap_real_m": 8.266,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.48,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67167096319386,
+      -1.700171050981402
+    ],
+    "building_ids": [
+      "4704611XG1740D",
+      "4703004XG1740D"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 8.28,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.34,
     "site": "LORCA"
   },
   {
@@ -14541,6 +11301,30 @@ var barrierData_LORCA = [
     "gap_real_m": 8.303,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 4.66,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67732237665203,
+      -1.697232505266813
+    ],
+    "building_ids": [
+      "4910604XG1741B",
+      "5010803XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      1
+    ],
+    "buff_dist_m": [
+      1.0,
+      1.0
+    ],
+    "debris_m": 2.0,
+    "barrier_level": 1,
+    "gap_real_m": 8.379,
+    "barrier_type": "buffer-buffer",
+    "dist_to_road_m": 0.32,
     "site": "LORCA"
   },
   {
@@ -14641,12 +11425,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682061795644906,
-      -1.696658254542546
+      37.67601600386822,
+      -1.6970790159365083
     ],
     "building_ids": [
-      "5015025XG1751E",
-      "5016038XG1751E"
+      "5108022XG1750G",
+      "4908903XG1740H"
     ],
     "damage_levels": [
       1,
@@ -14658,9 +11442,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 8.46,
+    "gap_real_m": 8.45,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.07,
+    "dist_to_road_m": 1.12,
     "site": "LORCA"
   },
   {
@@ -14857,50 +11641,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66598642045316,
-      -1.702660159297489
+      37.67670010989192,
+      -1.6967587983695702
     ],
     "building_ids": [
-      "4697018XG1649F",
-      "4697014XG1649F"
+      "5009806XG1750G",
+      "5110019XG1751A"
     ],
     "damage_levels": [
       1,
-      0
+      1
     ],
     "buff_dist_m": [
       1.0,
-      null
+      1.0
     ],
-    "debris_m": 1.0,
+    "debris_m": 2.0,
     "barrier_level": 1,
     "gap_real_m": 8.593,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.84,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.682219229466284,
-      -1.6909980471414203
-    ],
-    "building_ids": [
-      "5515802XG1751F",
-      "5516519XG1751F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 8.6,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.49,
+    "barrier_type": "buffer-buffer",
+    "dist_to_road_m": 0.9,
     "site": "LORCA"
   },
   {
@@ -14953,12 +11713,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6756254173834,
-      -1.694587595511052
+      37.68145940496667,
+      -1.685992600510718
     ],
     "building_ids": [
-      "5207102XG1750E",
-      "5208901XG1750G"
+      "5915903XG1751F",
+      "6015002XG1761E"
     ],
     "damage_levels": [
       1,
@@ -14970,9 +11730,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 8.714,
+    "gap_real_m": 8.68,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.22,
+    "dist_to_road_m": 1.63,
     "site": "LORCA"
   },
   {
@@ -15001,12 +11761,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.675803314060666,
-      -1.6972194957267785
+      37.6735146512954,
+      -1.6997674876440059
     ],
     "building_ids": [
-      "5108021XG1750G",
-      "4908905XG1740H"
+      "4806014XG1740F",
+      "4806012XG1740F"
     ],
     "damage_levels": [
       1,
@@ -15018,9 +11778,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 8.752,
+    "gap_real_m": 8.748,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.55,
+    "dist_to_road_m": 4.35,
     "site": "LORCA"
   },
   {
@@ -15045,30 +11805,6 @@ var barrierData_LORCA = [
     "gap_real_m": 8.78,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.18,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.681029074644734,
-      -1.6919352628542834
-    ],
-    "building_ids": [
-      "5413302XG1751C",
-      "5414902XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 8.789,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.92,
     "site": "LORCA"
   },
   {
@@ -15117,54 +11853,6 @@ var barrierData_LORCA = [
     "gap_real_m": 8.822,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 2.63,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68203199455125,
-      -1.6970847816250845
-    ],
-    "building_ids": [
-      "5015021XG1751E",
-      "5016046XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 8.835,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.06,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68200692021882,
-      -1.6932544873256599
-    ],
-    "building_ids": [
-      "5215938XG1751E",
-      "5315601XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 8.839,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.34,
     "site": "LORCA"
   },
   {
@@ -15313,30 +12001,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682322597388996,
-      -1.683931111052977
-    ],
-    "building_ids": [
-      "6216007XG1761E",
-      "6115202XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 8.981,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.49,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.667859944907356,
       -1.6963829824867884
     ],
@@ -15361,50 +12025,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68201199564701,
-      -1.6935080826116873
+      37.67388270376098,
+      -1.6994921485713523
     ],
     "building_ids": [
-      "5215906XG1751E",
-      "5215528XG1751E"
+      "4806906XG1740F",
+      "4806709XG1740F"
     ],
     "damage_levels": [
-      1,
+      3,
       0
     ],
     "buff_dist_m": [
-      1.0,
+      3.0,
       null
     ],
-    "debris_m": 1.0,
+    "debris_m": 3.0,
     "barrier_level": 1,
-    "gap_real_m": 9.099,
+    "gap_real_m": 9.011,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.84,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67824095458465,
-      -1.6969671817599647
-    ],
-    "building_ids": [
-      "5111026XG1751A",
-      "5011007XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.112,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.17,
+    "dist_to_road_m": 0.92,
     "site": "LORCA"
   },
   {
@@ -15457,12 +12097,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.668011370596005,
-      -1.702553887928888
+      37.66845092825996,
+      -1.7011817748447922
     ],
     "building_ids": [
-      "4500022XG1740B",
-      "4499307XG1649G"
+      "4701010XG1740B",
+      "4600908XG1740B"
     ],
     "damage_levels": [
       1,
@@ -15474,9 +12114,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 9.213,
+    "gap_real_m": 9.179,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.23,
+    "dist_to_road_m": 1.84,
     "site": "LORCA"
   },
   {
@@ -15501,78 +12141,6 @@ var barrierData_LORCA = [
     "gap_real_m": 9.224,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 2.08,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68323281480611,
-      -1.6801229367518817
-    ],
-    "building_ids": [
-      "6517004XG1761F",
-      "6416201XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.231,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.6,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.668498720820445,
-      -1.7011764643526783
-    ],
-    "building_ids": [
-      "4701010XG1740B",
-      "4600907XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.257,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.81,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.679119639675484,
-      -1.6960982121127646
-    ],
-    "building_ids": [
-      "5112001XG1751A",
-      "5112701XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.258,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.45,
     "site": "LORCA"
   },
   {
@@ -15697,30 +12265,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682068227581624,
-      -1.6837794862336126
-    ],
-    "building_ids": [
-      "6115205XG1761E",
-      "6216007XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.392,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.47,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.672087107655386,
       -1.6977604455397612
     ],
@@ -15741,30 +12285,6 @@ var barrierData_LORCA = [
     "gap_real_m": 9.413,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 2.36,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.671722644449225,
-      -1.697116462637149
-    ],
-    "building_ids": [
-      "5004806XG1750C",
-      "4903005XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.421,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.22,
     "site": "LORCA"
   },
   {
@@ -15889,54 +12409,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682669296420364,
-      -1.6823405479459075
-    ],
-    "building_ids": [
-      "6216004XG1761E",
-      "6316611XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.666,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.22,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67108139313951,
-      -1.7011174306019268
-    ],
-    "building_ids": [
-      "4603707XG1740D",
-      "4703033XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.692,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.0,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67076351915944,
       -1.7028925517318592
     ],
@@ -15985,50 +12457,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67670369663278,
-      -1.6973192583697383
+      37.68160882653859,
+      -1.6954552788723762
     ],
     "building_ids": [
-      "5009810XG1750G",
-      "5009812XG1750G"
+      "5115002XG1751E",
+      "5214001XG1751C"
     ],
     "damage_levels": [
-      1,
-      0
+      2,
+      2
     ],
     "buff_dist_m": [
-      1.0,
-      null
+      2.0,
+      2.0
     ],
-    "debris_m": 1.0,
+    "debris_m": 4.0,
     "barrier_level": 1,
-    "gap_real_m": 9.732,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.86,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68195813837166,
-      -1.6947398976772474
-    ],
-    "building_ids": [
-      "5215012XG1751E",
-      "5215920XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.795,
+    "gap_real_m": 9.794,
     "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.48,
+    "dist_to_road_m": 1.26,
     "site": "LORCA"
   },
   {
@@ -16053,30 +12501,6 @@ var barrierData_LORCA = [
     "gap_real_m": 9.821,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.11,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68087634888781,
-      -1.6923317230938637
-    ],
-    "building_ids": [
-      "5414701XG1751C",
-      "5314001XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 9.822,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.74,
     "site": "LORCA"
   },
   {
@@ -16125,6 +12549,30 @@ var barrierData_LORCA = [
     "gap_real_m": 9.834,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.48,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67905580229581,
+      -1.695802641627314
+    ],
+    "building_ids": [
+      "5112001XG1751A",
+      "5212036XG1751A"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 9.836,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 2.94,
     "site": "LORCA"
   },
   {
@@ -16269,6 +12717,30 @@ var barrierData_LORCA = [
     "gap_real_m": 10.034,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.37,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.68191332273764,
+      -1.695602656473534
+    ],
+    "building_ids": [
+      "5116015XG1751E",
+      "5116028XG1751E"
+    ],
+    "damage_levels": [
+      1,
+      1
+    ],
+    "buff_dist_m": [
+      1.0,
+      1.0
+    ],
+    "debris_m": 2.0,
+    "barrier_level": 1,
+    "gap_real_m": 10.052,
+    "barrier_type": "buffer-buffer",
+    "dist_to_road_m": 4.12,
     "site": "LORCA"
   },
   {
@@ -16585,30 +13057,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67860218429687,
-      -1.6955209024893971
-    ],
-    "building_ids": [
-      "5112401XG1751A",
-      "5212032XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 10.931,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.78,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.68238883577585,
       -1.6977154806480457
     ],
@@ -16629,30 +13077,6 @@ var barrierData_LORCA = [
     "gap_real_m": 10.937,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.9,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68103184025848,
-      -1.6905003772250453
-    ],
-    "building_ids": [
-      "5614702XG1751D",
-      "5514402XG1751D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 10.948,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.58,
     "site": "LORCA"
   },
   {
@@ -16681,36 +13105,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.671187395064415,
-      -1.7010819754882545
-    ],
-    "building_ids": [
-      "4703033XG1740D",
-      "4603703XG1740D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 10.98,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.41,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68184602707445,
-      -1.6957342766065677
+      37.68184622022348,
+      -1.695729091130359
     ],
     "building_ids": [
       "5115001XG1751E",
-      "5116016XG1751E"
+      "5116015XG1751E"
     ],
     "damage_levels": [
       1,
@@ -16722,33 +13122,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 2.0,
     "barrier_level": 1,
-    "gap_real_m": 10.987,
+    "gap_real_m": 11.01,
     "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.72,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68587914905416,
-      -1.6950059091823602
-    ],
-    "building_ids": [
-      "5119203XG1751G",
-      "5219003XG1751G"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 11.039,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.23,
+    "dist_to_road_m": 0.49,
     "site": "LORCA"
   },
   {
@@ -16773,30 +13149,6 @@ var barrierData_LORCA = [
     "gap_real_m": 11.113,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 3.89,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68106422165981,
-      -1.6902592453484755
-    ],
-    "building_ids": [
-      "5614701XG1751D",
-      "5514401XG1751D"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 11.113,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.93,
     "site": "LORCA"
   },
   {
@@ -16921,30 +13273,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68131768676516,
-      -1.6913150154764263
-    ],
-    "building_ids": [
-      "5415024XG1751E",
-      "5415004XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 11.46,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.17,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.681542013068096,
       -1.6869902709520765
     ],
@@ -16969,30 +13297,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67708522630267,
-      -1.700190384417397
-    ],
-    "building_ids": [
-      "4709803XG1740H",
-      "4710501XG1741B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 11.567,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.34,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.677809874103765,
       -1.6836149570786763
     ],
@@ -17013,6 +13317,30 @@ var barrierData_LORCA = [
     "gap_real_m": 11.589,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 1.13,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.68195291200422,
+      -1.6947803790952596
+    ],
+    "building_ids": [
+      "5215939XG1751E",
+      "5215012XG1751E"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 11.594,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.66,
     "site": "LORCA"
   },
   {
@@ -17061,30 +13389,6 @@ var barrierData_LORCA = [
     "gap_real_m": 11.655,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.44,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6813765573216,
-      -1.6955530913794608
-    ],
-    "building_ids": [
-      "5115006XG1751E",
-      "5214011XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 11.799,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.78,
     "site": "LORCA"
   },
   {
@@ -17205,30 +13509,6 @@ var barrierData_LORCA = [
     "gap_real_m": 11.94,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.12,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68107380592216,
-      -1.6956761076362121
-    ],
-    "building_ids": [
-      "5014405XG1751C",
-      "5115610XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 11.944,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.07,
     "site": "LORCA"
   },
   {
@@ -17401,30 +13681,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68194560928738,
-      -1.6948496189693636
-    ],
-    "building_ids": [
-      "5215939XG1751E",
-      "5215011XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 12.28,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.78,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67786531425774,
       -1.6936467450891808
     ],
@@ -17469,6 +13725,30 @@ var barrierData_LORCA = [
     "gap_real_m": 12.553,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 0.16,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.677088917551515,
+      -1.7001870119489977
+    ],
+    "building_ids": [
+      "4709803XG1740H",
+      "4710501XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 12.562,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.78,
     "site": "LORCA"
   },
   {
@@ -17545,30 +13825,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67723154764335,
-      -1.6941344406841083
-    ],
-    "building_ids": [
-      "5309009XG1750G",
-      "5311012XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 12.707,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.65,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67740049786815,
       -1.6940045952936476
     ],
@@ -17641,30 +13897,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.681974816557656,
-      -1.6981303371686798
-    ],
-    "building_ids": [
-      "4915704XG1741F",
-      "4915918XG1741F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 12.798,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.03,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66503003761805,
       -1.7027360208148803
     ],
@@ -17713,50 +13945,26 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.670217476453765,
-      -1.687103074102355
+      37.67708371390564,
+      -1.6942509139372972
     ],
     "building_ids": [
-      "5802923XG1750B",
-      "5902810XG1750B"
+      "5309009XG1750G",
+      "5311014XG1751A"
     ],
     "damage_levels": [
       1,
-      0
+      1
     ],
     "buff_dist_m": [
       1.0,
-      null
+      1.0
     ],
-    "debris_m": 1.0,
+    "debris_m": 2.0,
     "barrier_level": 1,
-    "gap_real_m": 12.995,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.58,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.681622866085156,
-      -1.6928603258393302
-    ],
-    "building_ids": [
-      "5415014XG1751E",
-      "5415012XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 13.028,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.5,
+    "gap_real_m": 13.077,
+    "barrier_type": "buffer-buffer",
+    "dist_to_road_m": 2.1,
     "site": "LORCA"
   },
   {
@@ -18025,30 +14233,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.681960365072804,
-      -1.6926908399526872
-    ],
-    "building_ids": [
-      "5415016XG1751E",
-      "5415814XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 13.673,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.77,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67352916949972,
       -1.6970077814633167
     ],
@@ -18145,30 +14329,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68564904781821,
-      -1.699771948980838
-    ],
-    "building_ids": [
-      "4719402XG1741H",
-      "4819013XG1741H"
-    ],
-    "damage_levels": [
-      2,
-      0
-    ],
-    "buff_dist_m": [
-      2.0,
-      null
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 13.755,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 2.46,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66223184434469,
       -1.7029039191773852
     ],
@@ -18189,30 +14349,6 @@ var barrierData_LORCA = [
     "gap_real_m": 13.822,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.56,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.67743667699109,
-      -1.6951039159362393
-    ],
-    "building_ids": [
-      "5311018XG1751A",
-      "5311020XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 13.899,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.39,
     "site": "LORCA"
   },
   {
@@ -18309,30 +14445,6 @@ var barrierData_LORCA = [
     "gap_real_m": 14.084,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.37,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.6670934323432,
-      -1.702023507410559
-    ],
-    "building_ids": [
-      "4598215XG1649H",
-      "4698108XG1649H"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 14.085,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.6,
     "site": "LORCA"
   },
   {
@@ -18457,54 +14569,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66611405119546,
-      -1.702790280266546
-    ],
-    "building_ids": [
-      "4598231XG1649H",
-      "4697018XG1649F"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 14.208,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.1,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.667833941689814,
-      -1.701430477067183
-    ],
-    "building_ids": [
-      "4699108XG1649H",
-      "4698101XG1649H"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 14.291,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.22,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67489203651181,
       -1.6959531946312458
     ],
@@ -18529,30 +14593,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.66837145593278,
-      -1.7010183707977968
-    ],
-    "building_ids": [
-      "4700011XG1740B",
-      "4701010XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 14.315,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.18,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.680049043081816,
       -1.7030801176777028
     ],
@@ -18573,30 +14613,6 @@ var barrierData_LORCA = [
     "gap_real_m": 14.355,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.02,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.680784903289066,
-      -1.6923079924655953
-    ],
-    "building_ids": [
-      "5414702XG1751C",
-      "5314001XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 14.426,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 0.71,
     "site": "LORCA"
   },
   {
@@ -18673,12 +14689,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.682007871793864,
-      -1.685180218546317
+      37.68564879049177,
+      -1.6997776141292817
     ],
     "building_ids": [
-      "6015406XG1761E",
-      "6015804XG1761E"
+      "4719402XG1741H",
+      "4819013XG1741H"
     ],
     "damage_levels": [
       1,
@@ -18690,9 +14706,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 15.097,
+    "gap_real_m": 14.755,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 3.58,
+    "dist_to_road_m": 1.96,
     "site": "LORCA"
   },
   {
@@ -18721,30 +14737,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67602426855013,
-      -1.6950754013144658
-    ],
-    "building_ids": [
-      "5107214XG1750E",
-      "5110015XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 15.254,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.56,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66609831896365,
       -1.6944873662261501
     ],
@@ -18765,30 +14757,6 @@ var barrierData_LORCA = [
     "gap_real_m": 15.297,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.69,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68138737690749,
-      -1.6963375145159536
-    ],
-    "building_ids": [
-      "5015010XG1751E",
-      "5115010XG1751E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 15.401,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.38,
     "site": "LORCA"
   },
   {
@@ -18841,12 +14809,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6821991258851,
-      -1.691285691333787
+      37.6659732864819,
+      -1.7028907927304588
     ],
     "building_ids": [
-      "5515807XG1751F",
-      "5515113XG1751F"
+      "4598231XG1649H",
+      "4697014XG1649F"
     ],
     "damage_levels": [
       1,
@@ -18858,9 +14826,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 15.573,
+    "gap_real_m": 15.611,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.94,
+    "dist_to_road_m": 0.36,
     "site": "LORCA"
   },
   {
@@ -18937,30 +14905,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67724566083509,
-      -1.696733679812538
-    ],
-    "building_ids": [
-      "5010802XG1751A",
-      "5110024XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 15.885,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.14,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.681322545091334,
       -1.690664044594585
     ],
@@ -18981,30 +14925,6 @@ var barrierData_LORCA = [
     "gap_real_m": 16.067,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.84,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.678292545851434,
-      -1.698935568817968
-    ],
-    "building_ids": [
-      "4811914XG1741B",
-      "4811912XG1741B"
-    ],
-    "damage_levels": [
-      2,
-      0
-    ],
-    "buff_dist_m": [
-      2.0,
-      null
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 16.068,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 4.18,
     "site": "LORCA"
   },
   {
@@ -19033,12 +14953,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67131705072367,
-      -1.6997565715963565
+      37.67310228864078,
+      -1.6983629303044867
     ],
     "building_ids": [
-      "4804009XG1740D",
-      "4703008XG1740D"
+      "4905806XG1740F",
+      "4905809XG1740F"
     ],
     "damage_levels": [
       1,
@@ -19050,9 +14970,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 1.0,
     "barrier_level": 1,
-    "gap_real_m": 16.131,
+    "gap_real_m": 16.229,
     "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.23,
+    "dist_to_road_m": 4.29,
     "site": "LORCA"
   },
   {
@@ -19177,30 +15097,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.668684675455324,
-      -1.702211197004587
-    ],
-    "building_ids": [
-      "4500203XG1740B",
-      "4601013XG1740B"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 16.649,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 3.28,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.670210520988746,
       -1.6976510513552574
     ],
@@ -19221,6 +15117,54 @@ var barrierData_LORCA = [
     "gap_real_m": 16.705,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 0.8,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67657606005652,
+      -1.6973738853132374
+    ],
+    "building_ids": [
+      "5009809XG1750G",
+      "4909312XG1740H"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 16.743,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 3.31,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.67829546684778,
+      -1.6989312821915914
+    ],
+    "building_ids": [
+      "4811914XG1741B",
+      "4811912XG1741B"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 17.051,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 4.18,
     "site": "LORCA"
   },
   {
@@ -19365,30 +15309,6 @@ var barrierData_LORCA = [
     "gap_real_m": 18.054,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 3.73,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.676768085896526,
-      -1.6964392790436311
-    ],
-    "building_ids": [
-      "5110019XG1751A",
-      "5110027XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 18.175,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.83,
     "site": "LORCA"
   },
   {
@@ -19561,30 +15481,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68173106857045,
-      -1.6842447384547836
-    ],
-    "building_ids": [
-      "6114305XG1761C",
-      "6116006XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 19.181,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 1.05,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66538293323449,
       -1.68631475930475
     ],
@@ -19629,6 +15525,30 @@ var barrierData_LORCA = [
     "gap_real_m": 20.446,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 4.73,
+    "site": "LORCA"
+  },
+  {
+    "centroid": [
+      37.6816977242628,
+      -1.6843983315350703
+    ],
+    "building_ids": [
+      "6114305XG1761C",
+      "6116003XG1761E"
+    ],
+    "damage_levels": [
+      1,
+      0
+    ],
+    "buff_dist_m": [
+      1.0,
+      null
+    ],
+    "debris_m": 1.0,
+    "barrier_level": 1,
+    "gap_real_m": 20.835,
+    "barrier_type": "buffer-building",
+    "dist_to_road_m": 0.2,
     "site": "LORCA"
   },
   {
@@ -19705,30 +15625,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.65649528871233,
-      -1.7131515611207213
-    ],
-    "building_ids": [
-      "3585015XG1638F",
-      "3585051XG1638F"
-    ],
-    "damage_levels": [
-      1,
-      0
-    ],
-    "buff_dist_m": [
-      1.0,
-      null
-    ],
-    "debris_m": 1.0,
-    "barrier_level": 1,
-    "gap_real_m": 22.784,
-    "barrier_type": "buffer-building",
-    "dist_to_road_m": 1.22,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.66306421097122,
       -1.6930173605334595
     ],
@@ -19801,12 +15697,12 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6790130697331,
-      -1.694498733841411
+      37.67572031217333,
+      -1.6953126985755145
     ],
     "building_ids": [
-      "5212007XG1751A",
-      "5312009XG1751A"
+      "5107214XG1750E",
+      "5108010XG1750G"
     ],
     "damage_levels": [
       1,
@@ -19818,9 +15714,9 @@ var barrierData_LORCA = [
     ],
     "debris_m": 2.0,
     "barrier_level": 1,
-    "gap_real_m": 26.053,
+    "gap_real_m": 25.567,
     "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 4.94,
+    "dist_to_road_m": 1.97,
     "site": "LORCA"
   },
   {
@@ -19849,30 +15745,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.68083773711069,
-      -1.691024861657892
-    ],
-    "building_ids": [
-      "5415005XG1751E",
-      "5514601XG1751D"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 26.947,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 2.29,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.680870885002044,
       -1.6889326478086486
     ],
@@ -19897,30 +15769,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.6827619220885,
-      -1.6828396504955074
-    ],
-    "building_ids": [
-      "6216003XG1761E",
-      "6216234XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 27.598,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.72,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67555848018008,
       -1.696823493139696
     ],
@@ -19941,30 +15789,6 @@ var barrierData_LORCA = [
     "gap_real_m": 27.727,
     "barrier_type": "buffer-buffer",
     "dist_to_road_m": 1.0,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68272394186448,
-      -1.6832276437760614
-    ],
-    "building_ids": [
-      "6216002XG1761E",
-      "6216211XG1761E"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 27.896,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.64,
     "site": "LORCA"
   },
   {
@@ -20017,30 +15841,6 @@ var barrierData_LORCA = [
   },
   {
     "centroid": [
-      37.67640536967002,
-      -1.6969527395087294
-    ],
-    "building_ids": [
-      "5009809XG1750G",
-      "5110017XG1751A"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 28.952,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 0.16,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
       37.67587565222309,
       -1.695927340078659
     ],
@@ -20085,30 +15885,6 @@ var barrierData_LORCA = [
     "gap_real_m": 29.965,
     "barrier_type": "buffer-building",
     "dist_to_road_m": 2.81,
-    "site": "LORCA"
-  },
-  {
-    "centroid": [
-      37.68094296307206,
-      -1.6952140137323173
-    ],
-    "building_ids": [
-      "5115610XG1751E",
-      "5214016XG1751C"
-    ],
-    "damage_levels": [
-      1,
-      1
-    ],
-    "buff_dist_m": [
-      1.0,
-      1.0
-    ],
-    "debris_m": 2.0,
-    "barrier_level": 1,
-    "gap_real_m": 31.468,
-    "barrier_type": "buffer-buffer",
-    "dist_to_road_m": 4.07,
     "site": "LORCA"
   },
   {

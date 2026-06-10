@@ -1,13 +1,13 @@
 {
-  "lat": 37.696793,
-  "lng": -1.447662,
-  "mag": 6.3,
-  "strike": 245,
-  "dip": 45,
+  "lat": 37.678757,
+  "lng": -1.696551,
+  "mag": 6.9,
+  "strike": 215,
+  "dip": 70,
   "mechanism": "RS",
-  "length": 7.21,
+  "length": 30,
   "ztop": 0,
-  "width": 11.313709,
+  "width": 12.770133,
   "scenario": 0,
-  "Id": "'ES749'"
+  "Id": "'ES626'"
 }

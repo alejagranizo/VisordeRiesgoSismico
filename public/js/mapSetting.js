@@ -272,49 +272,51 @@ function buildSiteLayers(data) {
         return refcatIndex[rc] || uidIndex[uid] || uidIndex[rc] || null;
     }
 
-    function onEachEdificio(feature, layer) {
-        // Identificador visible en el panel (Building ID)
-        var rc = String(
-            feature.properties['REFCAT'] || feature.properties['RefCat'] ||
-            feature.properties['refcat'] || ''
-        ).trim();
+    // makeOnEach devuelve una función onEachFeature vinculada a una capa concreta.
+    // Así cada capa tiene su propio closure con su propio ownerRef, y resetStyle
+    // usa siempre la función style() correcta sin importar qué capa esté activa.
+    function makeOnEach(ownerRef) {
+        return function onEachEdificio(feature, layer) {
+            var rc = String(
+                feature.properties['REFCAT'] || feature.properties['RefCat'] ||
+                feature.properties['refcat'] || ''
+            ).trim();
 
-        // Rellenar propiedades sólo una vez: el style function puede haber corrido
-        // antes del click y ya haber puesto los valores correctos.
-        // La bandera _propsLoaded evita sobreescribir con "unknown" en el segundo paso.
-        if (!feature.properties['_propsLoaded']) {
-            var row = findRow(feature);
-            if (!row) {
-                ['Vulnerabilidad','GradoDanio','H_MAX','YEAR','Suelo','PGA','SA',
-                 'ojo','pMean','pCom','pExt','pMod','pLow','pNull',
-                 'totalEscombro','perareaunitEscombro'].forEach(function (k) {
-                    if (feature.properties[k] === undefined) {
-                        feature.properties[k] = (k === 'ojo') ? '-' : 'unknown';
-                    }
-                });
-            } else {
-                fillFeatureProps(feature, row);
+            if (!feature.properties['_propsLoaded']) {
+                var row = findRow(feature);
+                if (!row) {
+                    ['Vulnerabilidad','GradoDanio','H_MAX','YEAR','Suelo','PGA','SA',
+                     'ojo','pMean','pCom','pExt','pMod','pLow','pNull',
+                     'totalEscombro','perareaunitEscombro'].forEach(function (k) {
+                        if (feature.properties[k] === undefined) {
+                            feature.properties[k] = (k === 'ojo') ? '-' : 'unknown';
+                        }
+                    });
+                } else {
+                    fillFeatureProps(feature, row);
+                }
+                feature.properties['_propsLoaded'] = true;
             }
-            feature.properties['_propsLoaded'] = true;
-        }
 
-        layer.on({
-            click: function (e) {
-                var html  = buildDetalleHtml(rc, feature);
-                var group = getActiveGroup();
-                window.openInfoPanel(html, e.target, group);
-            },
-            mouseover: function (e) {
-                if (window.activeFeatureLayer === e.target) return;
-                e.target.setStyle({ color: 'rgba(255,255,255,0.8)', fillOpacity: 0.7, weight: 3 });
-                if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) e.target.bringToFront();
-            },
-            mouseout: function (e) {
-                if (window.activeFeatureLayer === e.target) return;
-                var group = getActiveGroup();
-                if (group) group.resetStyle(e.target);
-            }
-        });
+            layer.on({
+                click: function (e) {
+                    var html  = buildDetalleHtml(rc, feature);
+                    var group = getActiveGroup();
+                    window.openInfoPanel(html, e.target, group);
+                },
+                mouseover: function (e) {
+                    if (window.activeFeatureLayer === e.target) return;
+                    e.target.setStyle({ color: 'rgba(255,255,255,0.8)', fillOpacity: 0.7, weight: 3 });
+                    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) e.target.bringToFront();
+                },
+                mouseout: function (e) {
+                    if (window.activeFeatureLayer === e.target) return;
+                    // ownerRef.layer apunta a la capa GeoJSON propietaria de este feature.
+                    // Siempre usamos SU función style(), no la de la capa activa en ese instante.
+                    if (ownerRef.layer) ownerRef.layer.resetStyle(e.target);
+                }
+            });
+        };
     }
 
     var layers = {};
@@ -324,10 +326,18 @@ function buildSiteLayers(data) {
     }
 
     if (data.edificios) {
+        // Cada capa necesita su propio objeto ownerRef para que el closure de
+        // makeOnEach capture una referencia distinta. Si usáramos una sola variable
+        // todos los listeners acabarían apuntando al último valor asignado.
+        var refEdificios     = { layer: null };
+        var refEdificiosVuln = { layer: null };
+        var refEdificiosDanio = { layer: null };
+
         layers.Edificios = L.geoJSON(data.edificios, {
             style: style_Edificios,
-            onEachFeature: onEachEdificio
+            onEachFeature: makeOnEach(refEdificios)
         });
+        refEdificios.layer = layers.Edificios;
 
         layers.EdificiosVuln = L.geoJSON(data.edificios, {
             style: function (feature) {
@@ -338,8 +348,9 @@ function buildSiteLayers(data) {
                          lineCap: 'butt', lineJoin: 'miter',
                          fillOpacity: 1, fillColor: setVulColor(vul) };
             },
-            onEachFeature: onEachEdificio
+            onEachFeature: makeOnEach(refEdificiosVuln)
         });
+        refEdificiosVuln.layer = layers.EdificiosVuln;
 
         layers.EdificiosDanio = L.geoJSON(data.edificios, {
             style: function (feature) {
@@ -350,8 +361,9 @@ function buildSiteLayers(data) {
                          lineCap: 'butt', lineJoin: 'miter',
                          fillOpacity: 1, fillColor: setDanColor(dan) };
             },
-            onEachFeature: onEachEdificio
+            onEachFeature: makeOnEach(refEdificiosDanio)
         });
+        refEdificiosDanio.layer = layers.EdificiosDanio;
 
     }
     if (data.bufferin) {
