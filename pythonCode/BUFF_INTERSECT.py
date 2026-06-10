@@ -1,33 +1,37 @@
 """
-BUFF_INTERSECT.py  v6
+BUFF_INTERSECT.py  v7
 =====================
 Regla fundamental:
-  El barrier_level refleja el espacio libre real (gap) entre los polígonos
-  de escombros ya calculados, NO una expansión artificial.
+  El barrier_level compara el espacio OCUPADO por escombros con el espacio
+  LIBRE (gap real) entre los polígonos de escombros.
 
+  debris_m  = suma de buff_dist_m de ambos lados del par
+               (para buffer-building: solo el lado con buffer)
   gap_real_m = distancia métrica entre geom_A y geom_B (o huella edificio B)
 
-  Nivel 4  ->  gap_real <= 2 m   (rojo    / critico:  paso practicamente bloqueado)
-  Nivel 3  ->  gap_real <= 3.5 m (naranja / grave:    paso muy restringido)
-  Nivel 2  ->  gap_real <= 5 m   (amarillo/ aviso:    paso limitado, posible)
-  Nivel 1  ->  gap_real <= 6 m   (verde   / leve:     paso estrecho pero posible)
+  Clasificación (3 niveles):
+    Nivel 3 — ROJO    : debris_m > gap_real_m
+                        Los escombros ocupan MÁS espacio que el hueco libre.
+    Nivel 2 — NARANJA : debris_m <= gap_real_m  Y  gap_real_m <= 4 m
+                        El hueco es estrecho (≤ 4 m) aunque los escombros no lo colapsen.
+    Nivel 1 — AMARILLO: debris_m <= gap_real_m  Y  gap_real_m > 4 m
+                        Paso posible; los escombros son menores que el espacio libre.
 
-Reglas nuevas en v6:
+  Si gap_real_m == 0 → sin barrera (los polígonos se solapan: bloqueo físico
+  ya contemplado en otro análisis; aquí no se emite marcador).
+
+Reglas mantenidas de v6:
   * buffer-building solo si el edificio B NO tiene buffer propio.
-    Si B tiene buffer, el par ya se evalua (o se evaluara) como buffer-buffer
-    y el caso buffer-building seria redundante / menos preciso.
-
-  * Supresion por proximidad: una vez calculadas todas las barreras, dentro
-    de un radio de DEDUP_RADIUS_M (5 m) se conserva solo la de mayor urgencia
-    (menor gap_real_m). Elimina marcadores apilados sobre el mismo cuello de
-    botella y hace el mapa mas limpio.
+  * Supresion por proximidad: radio DEDUP_RADIUS_M → se conserva la de mayor
+    urgencia (mayor nivel).
+  * Pre-filtro: el buffer debe tener visibilidad a una calle (≤ SNAP_DIST_M).
 
 Flujo por buffer A:
   1. Recopilar candidatos B dentro de exp_max de A.
   2. Bloque A -> solo otros buffers (buffer-buffer).
   3. Bloque B -> solo edificios SIN buffer propio (buffer-building).
-  4. Calcular gap real; clasificar nivel; verificar proximidad a carretera.
-  5. Emitir la barrera de menor gap para A.
+  4. Calcular gap real y debris_m; clasificar nivel; verificar proximidad a carretera.
+  5. Emitir la barrera de mayor urgencia para A.
   6. Post-proceso: suprimir duplicados en radio DEDUP_RADIUS_M.
 """
 
@@ -51,22 +55,24 @@ from pyproj import Transformer
 CRS_GEO    = "EPSG:4326"
 CRS_METRIC = "EPSG:25830"
 
-# Umbrales de gap real (metros) para asignar el nivel de barrera
-GAP_LEVEL_THRESHOLDS = {
-    4: 2.0,  # gap ≤ 2 m → nivel 4 (muy crítico)
-    3: 3.5,  # gap ≤ 3.5 m → nivel 3 (grave)
-    2: 5.0,  # gap ≤ 5 m → nivel 2 (aviso)
-    1: 6.0,  # gap ≤ 6 m → nivel 1 (leve)
-}
-MAX_GAP_M = max(GAP_LEVEL_THRESHOLDS.values())   # 6 m — candidatos fuera de este radio se descartan
+# Umbral de gap libre para distinguir naranja de amarillo
+GAP_NARROW_M = 4.0   # gap <= 4 m con debris <= gap -> naranja; gap > 4 m -> amarillo
+
+# Radio de busqueda de candidatos vecinos (metros sobre el buffer ya expandido)
+MAX_SEARCH_M = 12.0
 
 ADJACENCY_TOL_M = 1.0   # medianeras: distancia entre HUELLAS de edificio (no buffers)
-SNAP_DIST_M     = 5.0   # distancia máxima del punto de barrera a la carretera
-ROAD_REACH_M    = SNAP_DIST_M + MAX_GAP_M   # pre-filtro
+SNAP_DIST_M     = 5.0   # distancia maxima del punto de barrera a la carretera
+ROAD_REACH_M    = SNAP_DIST_M + MAX_SEARCH_M   # pre-filtro
 
 # Radio de supresion por proximidad: si dos barreras estan a menos de
-# esta distancia entre si, se conserva solo la de mayor urgencia (menor gap).
+# esta distancia entre si, se conserva solo la de mayor urgencia (mayor nivel).
 DEDUP_RADIUS_M  = 8.0
+
+# Alias de nivel para claridad
+LEVEL_RED    = 3   # rojo    — debris > gap
+LEVEL_ORANGE = 2   # naranja — debris <= gap  Y  gap <= GAP_NARROW_M
+LEVEL_YELLOW = 1   # amarillo— debris <= gap  Y  gap >  GAP_NARROW_M
 
 
 # ── Transformadores ───────────────────────────────────────────────────────────
@@ -79,16 +85,27 @@ def _to_metric(geom, tr): return shp_transform(tr.transform, geom)
 def _to_geo   (geom, tr): return shp_transform(tr.transform, geom)
 
 
-# ── Nivel de barrera a partir del gap real ────────────────────────────────────
-def _gap_to_level(gap_m):
+# ── Clasificacion de barrera: debris vs gap ───────────────────────────────────
+def _classify_barrier(gap_m, debris_m):
     """
-    Convierte el gap real (metros) al nivel de urgencia.
-    Devuelve None si el gap supera MAX_GAP_M (sin barrera).
+    Compara el espacio ocupado por escombros (debris_m) con el espacio libre
+    (gap_m) para asignar el nivel de urgencia.
+
+    Reglas:
+      gap_m == 0              -> None  (sin hueco: no se emite marcador)
+      debris_m > gap_m        -> LEVEL_RED    (3, rojo)
+      debris_m <= gap_m  y  gap_m <= GAP_NARROW_M -> LEVEL_ORANGE (2, naranja)
+      debris_m <= gap_m  y  gap_m >  GAP_NARROW_M -> LEVEL_YELLOW (1, amarillo)
+
+    debris_m = buff_dist_A + buff_dist_B  (o solo buff_dist_A en buffer-building)
     """
-    for lvl in sorted(GAP_LEVEL_THRESHOLDS, reverse=True):   # 4 → 3 → 2 → 1
-        if gap_m <= GAP_LEVEL_THRESHOLDS[lvl]:
-            return lvl
-    return None
+    if gap_m <= 0:
+        return None   # solapamiento o contacto: sin marcador de barrera
+    if debris_m > gap_m:
+        return LEVEL_RED
+    if gap_m <= GAP_NARROW_M:
+        return LEVEL_ORANGE
+    return LEVEL_YELLOW
 
 
 # ── Centroide del gap: punto medio entre los dos bordes más próximos ─────────
@@ -216,8 +233,8 @@ def _load_buffers_metric(buffer_js_input, to_metric, site):
             "damage_level": dmg_level,
             "buff_dist_m":  buff_dist,             # distancia real del buffer
             "geom_m":       geom_m,
-            # Expansión máxima para pre-filtro: MAX_GAP_M adicionales sobre el buffer real
-            "exp_max":      geom_m.buffer(MAX_GAP_M),
+            # Expansión máxima para pre-filtro: MAX_SEARCH_M adicionales sobre el buffer real
+            "exp_max":      geom_m.buffer(MAX_SEARCH_M),
         })
 
     print(f'  [{site}] {len(out)} buffers cargados')
@@ -242,22 +259,23 @@ def _buffer_reaches_road(geom_m, roads_geoms, roads_tree,
 
 
 # ── Evaluación de un par (A, B) ───────────────────────────────────────────────
-def _eval_pair(geom_a, geom_b, all_bldg_union, roads_geoms, roads_tree):
+def _eval_pair(geom_a, geom_b, all_bldg_union, roads_geoms, roads_tree, debris_m):
     """
     Calcula el gap real entre las geometrías originales de A y B.
-    Devuelve (nivel, punto_métrico, dist_a_carretera) o None.
+    debris_m = espacio total ocupado por escombros en el corredor (buff_dist_A + buff_dist_B).
+    Devuelve (nivel, punto_métrico, dist_a_carretera, gap_m) o None.
 
-    - Si gap > MAX_GAP_M           → None (demasiado lejos)
-    - Si gap ≤ 0 (ya se solapan)  → nivel 1 forzado (bloqueo completo)
+    - Si gap_m == 0  → None (solapamiento; sin marcador)
+    - Nivel asignado por _classify_barrier(gap_m, debris_m)
     """
     try:
         gap_m = geom_a.distance(geom_b)
     except Exception:
         return None
 
-    lvl = _gap_to_level(gap_m)
+    lvl = _classify_barrier(gap_m, debris_m)
     if lvl is None:
-        return None   # gap > 3 m → sin barrera
+        return None   # gap == 0 o sin nivel asignable
 
     pt_m, dist_road = _closest_point_to_road(
         geom_a, geom_b, all_bldg_union, roads_geoms, roads_tree
@@ -275,7 +293,7 @@ def _eval_pair(geom_a, geom_b, all_bldg_union, roads_geoms, roads_tree):
 def Compute_Barriers(cfg):
     site       = cfg['site']
     outputpath = cfg['outputpath']
-    print(f'\n[{site}] Compute_Barriers v6 (gap real, dedup {DEDUP_RADIUS_M} m, buffer-building solo sin buffer propio)')
+    print(f'\n[{site}] Compute_Barriers v7 (debris vs gap, dedup {DEDUP_RADIUS_M} m, buffer-building solo sin buffer propio)')
 
     buffer_js   = os.path.join(outputpath, cfg['final_buffer_filename'])
     output_path = os.path.join(outputpath, cfg['final_barriers_filename'])
@@ -337,13 +355,29 @@ def Compute_Barriers(cfg):
         'gap_too_large': 0,
     }
 
-    print(f'  [{site}] Calculando barreras (gap real)...')
+    print(f'  [{site}] Calculando barreras (debris vs gap)...')
 
     for i, a in enumerate(buffers):
 
         # ── Recopilar todos los candidatos válidos para A ─────────────────
-        # best = (gap_m, lvl, dist_road, pt_m, refcat_b, dmg_b, btype)
+        # best = (lvl, gap_m, dist_road, pt_m, refcat_b, dmg_b, btype, debris_m_val)
+        # Mayor urgencia = mayor nivel (3 > 2 > 1); en empate, mayor gap gana (más escombros)
         best = None
+
+        def _is_better(lvl, gap_m, dist_road):
+            """True si (lvl, gap_m) es más urgente que best actual."""
+            if best is None:
+                return True
+            if lvl > best[0]:
+                return True
+            if lvl == best[0]:
+                # Mismo nivel: desempate por gap_m descendente (más escombros relativo)
+                if gap_m < best[1]:
+                    return True
+                if gap_m == best[1] and dist_road is not None and \
+                        (best[2] is None or dist_road < best[2]):
+                    return True
+            return False
 
         # A) otros buffers de escombros
         for j in buf_tree.query(a["exp_max"]):
@@ -363,23 +397,21 @@ def Compute_Barriers(cfg):
                 stats['adjacent'] += 1
                 continue
 
+            debris_m_val = a["buff_dist_m"] + b["buff_dist_m"]
             result = _eval_pair(a["geom_m"], b["geom_m"],
-                                 all_bldg_union, roads_geoms, roads_tree)
+                                 all_bldg_union, roads_geoms, roads_tree,
+                                 debris_m_val)
             if result is None:
                 stats['no_road'] += 1
                 continue
 
             lvl, pt_m, dist_road, gap_m = result
-            # Mejor candidato = menor gap (mayor urgencia); en empate, menor dist_road
-            if (best is None
-                    or gap_m < best[0]
-                    or (gap_m == best[0] and dist_road is not None and
-                        (best[2] is None or dist_road < best[2]))):
-                best = (gap_m, lvl, dist_road, pt_m,
-                        b["REFCAT"], b["damage_level"], "buffer-buffer")
+            if _is_better(lvl, gap_m, dist_road):
+                best = (lvl, gap_m, dist_road, pt_m,
+                        b["REFCAT"], b["damage_level"], "buffer-buffer", debris_m_val)
 
-        # B) edificios vecinos (solo si no hay ya nivel 1 con otro buffer)
-        if bldg_tree is not None and (best is None or best[1] > 1):
+        # B) edificios vecinos (solo si aún no hay nivel rojo)
+        if bldg_tree is not None and (best is None or best[0] < LEVEL_RED):
             for j in bldg_tree.query(a["exp_max"]):
                 bldg_refcat = bldg_keys[j]
                 if bldg_refcat == a["REFCAT"]:
@@ -393,31 +425,30 @@ def Compute_Barriers(cfg):
                     stats['adjacent'] += 1
                     continue
 
-                # v6: si el edificio B tiene buffer propio, el par ya se
-                # evalua como buffer-buffer; saltar aqui evita redundancia.
+                # v6: si el edificio B tiene buffer propio, ya se evalua como buffer-buffer
                 if bldg_refcat in refcats_with_buffer:
                     continue
 
+                # buffer-building: solo el buffer de A cuenta como escombros
+                debris_m_val = a["buff_dist_m"]
                 result = _eval_pair(a["geom_m"], bldg_geoms[j],
-                                     all_bldg_union, roads_geoms, roads_tree)
+                                     all_bldg_union, roads_geoms, roads_tree,
+                                     debris_m_val)
                 if result is None:
                     stats['no_road'] += 1
                     continue
 
                 lvl, pt_m, dist_road, gap_m = result
-                if (best is None
-                        or gap_m < best[0]
-                        or (gap_m == best[0] and dist_road is not None and
-                            (best[2] is None or dist_road < best[2]))):
-                    best = (gap_m, lvl, dist_road, pt_m,
-                            bldg_refcat, 0, "buffer-building")
+                if _is_better(lvl, gap_m, dist_road):
+                    best = (lvl, gap_m, dist_road, pt_m,
+                            bldg_refcat, 0, "buffer-building", debris_m_val)
 
         # ── Emitir la mejor barrera para A (si existe) ────────────────────
         if best is None:
             stats['no_inter'] += 1
             continue
 
-        gap_m, lvl, dist_road, pt_m, refcat_b, dmg_b, btype = best
+        lvl, gap_m, dist_road, pt_m, refcat_b, dmg_b, btype, debris_m_val = best
         pair = tuple(sorted([a["REFCAT"], refcat_b]))
         emitted_pairs.add(pair)
         buf_emitted[i] = True
@@ -432,13 +463,16 @@ def Compute_Barriers(cfg):
                 "building_ids":   [a["REFCAT"], refcat_b],
                 # damage_levels = niveles de daño sísmico de cada edificio
                 "damage_levels":  [a["damage_level"], dmg_b],
-                # buff_dist_m = distancias reales de buffer (BUFF_DIST de cada uno)
+                # buff_dist_m = distancias reales de buffer de cada lado
                 "buff_dist_m":    [a["buff_dist_m"],
-                                   buffers[buffers.index(b)]["buff_dist_m"]
+                                   next((b["buff_dist_m"] for b in buffers
+                                         if b["REFCAT"] == refcat_b), None)
                                    if btype == "buffer-buffer" else None],
-                # barrier_level = urgencia basada en el gap real
+                # debris_m = espacio total de escombros en el corredor
+                "debris_m":       round(debris_m_val, 3),
+                # barrier_level: 3=rojo, 2=naranja, 1=amarillo
                 "barrier_level":  lvl,
-                # gap_real_m = espacio libre medido entre los dos polígonos de escombros
+                # gap_real_m = espacio libre medido entre los dos polígonos
                 "gap_real_m":     round(gap_m, 3),
                 "barrier_type":   btype,
                 "dist_to_road_m": round(dist_road, 2) if dist_road is not None else None,
@@ -448,12 +482,13 @@ def Compute_Barriers(cfg):
 
 
     # ── Supresion por proximidad (dedup espacial) ───────────────────────────
-    # Convierte centroides a metrico y aplica supresion greedy:
-    # ordena por gap_real_m asc (mayor urgencia primero) y descarta
-    # cualquier barrera cuyo centroide este a < DEDUP_RADIUS_M de una ya aceptada.
+    # Ordena por barrier_level desc (mayor urgencia primero, 3 > 2 > 1),
+    # luego por gap_m asc como desempate, y descarta cualquier barrera cuyo
+    # centroide este a < DEDUP_RADIUS_M de una ya aceptada.
     if results:
         print(f'  [{site}] Supresion por proximidad ({DEDUP_RADIUS_M} m)...')
-        results_sorted = sorted(results, key=lambda r: r['gap_real_m'])
+        results_sorted = sorted(results,
+                                key=lambda r: (-r['barrier_level'], r['gap_real_m']))
         accepted       = []
         accepted_pts   = []  # puntos metricos de barreras aceptadas
         for r in results_sorted:
@@ -470,15 +505,16 @@ def Compute_Barriers(cfg):
         results = accepted
 
     # ── Resumen final (post-dedup) ────────────────────────────────────────────
+    level_names = {LEVEL_RED: 'ROJO    (debris > gap)',
+                   LEVEL_ORANGE: 'NARANJA (debris<=gap, gap<=4m)',
+                   LEVEL_YELLOW: 'AMARILLO(debris<=gap, gap>4m)'}
     print(f'\n  [{site}] -- Resumen final --')
-    for lvl in sorted(GAP_LEVEL_THRESHOLDS, reverse=True):
+    for lvl in [LEVEL_RED, LEVEL_ORANGE, LEVEL_YELLOW]:
         bb  = sum(1 for r in results
                   if r['barrier_level'] == lvl and r['barrier_type'] == 'buffer-buffer')
         bbl = sum(1 for r in results
                   if r['barrier_level'] == lvl and r['barrier_type'] == 'buffer-building')
-        thr  = GAP_LEVEL_THRESHOLDS[lvl]
-        prev = max((v for v in GAP_LEVEL_THRESHOLDS.values() if v < thr), default=0)
-        print(f'  [{site}]   Nivel {lvl} (gap {prev:.1f}-{thr:.1f} m): '
+        print(f'  [{site}]   Nivel {lvl} {level_names[lvl]}: '
               f'{bb} buf-buf  |  {bbl} buf-edificio')
     print(f'  [{site}]   TOTAL barreras      : {len(results)}')
     print(f'  [{site}]   Adyacentes (skip)   : {stats["adjacent"]}')

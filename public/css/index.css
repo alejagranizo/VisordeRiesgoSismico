@@ -192,13 +192,36 @@ img#img3 { padding: 0.5em 0.1em 0 0; }
     background: rgba(10, 43, 64, 0.1);
 }
 
+.nav-center #nav-auth {
+    display: flex;
+    align-items: center;
+}
+
 /* Right auth */
 .header-right {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: 12px;
     flex-shrink: 0;
     padding-right: 10px;
+}
+
+/* Logos individuales */
+.logo-ministerio {
+    height: 55px !important;
+}
+
+.logo-terra {
+    height: 70px !important;
+}
+
+.logo-upm {
+    height: 65px !important;
+}
+
+.logo-twiner {
+    height: 65px !important;
 }
 
 /* Auth buttons: login (green) / logout (red) */
@@ -364,10 +387,28 @@ hr {
     margin-left: 20px;
     border-left: none;
     padding-left: 0;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.header .inner .steps strong {
+    font-weight: 700;
+    color: #000000;
+}
+
+.header .inner .steps strong.accent-brown { color: #b7645a; }
+.header .inner .steps strong.accent-yellow { color: #ffe206; }
+.header .inner .steps strong.accent-green  { color: green; }
+
+.header .inner .steps ul li {
+    font-weight: 400;
+    color: #1a1a1a;
 }
 
 .header .inner .steps ol li {
     margin-bottom: 15px;
+    font-weight: 400;
+    color: #1a1a1a;
 }
 
 .header .inner .steps select {
@@ -957,12 +998,16 @@ html.slide-host body { padding-top: 0 !important; }
     margin-bottom: 8px;
     font-size: 1em;
     line-height: 1.4;
+    font-weight: 400;
+    color: #1a1a1a;
 }
 
 #slide-intro .header .inner .steps ul li {
     font-size: 1em;
     line-height: 1.35;
     margin-bottom: 4px;
+    font-weight: 400;
+    color: #1a1a1a;
 }
 
 #slide-intro .header .inner .steps select {
@@ -1168,4 +1213,14 @@ a.log:hover   { color: red; }
     color: rgba(255, 255, 255, 0.7) !important;
     background: transparent !important;
 }
+/* ══════════════════════════════════════════
+   PAGE-INFO — márgenes laterales reducidos
+   ══════════════════════════════════════════ */
+body.page-info .header .inner {
+    max-width: 1100px;
+    padding: 0 30px;
+}
 
+body.page-info .header .inner .steps {
+    margin-left: 0;
+}

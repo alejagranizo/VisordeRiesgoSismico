@@ -45,23 +45,6 @@
             <hr> -->
 <div class="container-fluid text-center"> 
 
-
-<!--  
-   <div id="title-intro" class="row">
-       <div class="col-md-8 col-sm-8 ">
-           <h4>Please generate an earthquake via <strong class="accent-green">Automatic</strong> OR <strong class="accent-green">Manual </strong> menu to estimated the associated seismic risk that affects the city of <strong>Lorca</strong> with: </h4>
-       </div>
-       <div class="col-md-4 col-sm-4 ">
-                <select class="form-control" id="seleCaso">
-                  <option value="caso1">High Probability</option>
-                  <option value="caso2">Low Probability (High Impact)</option>
-                  <option value="caso3">Very Low Probability (Very High Impact)</option>
-                </select> 
-       </div>
-   </div>
-   
-   <hr>
-     -->
     
   <div class="row content">
   <!-- map column 3 -->
@@ -69,10 +52,6 @@
     
      <div id="automatic-intro">
       <h3>Automatic</h3>
-      
-<!--       <p><strong class="accent-green">Quick Hint: </strong>Find a source among the <strong>Availible Faults</strong> in the list. 
-            Select it on map an click <strong>Generate Max Magnitude</strong>, to estimated the seismic risk due to the maximum magnitude associated to it.</p> -->
-     
       </div>
       
  
@@ -113,15 +92,7 @@
                             </div>
                             <p> <em>Select a fault on map to locate a rupture on it</em> </p>
                   </div>
-              </div>
-              
-<!--              <div class="row  btns-createFile">
-                <div class="col-md-12 col-sm-12  col-xs-12">
-                    <div class="btn-group btn-group-justified">
-                      <a id="download-data" href="#" class="btn btn-success disabled" download="faultData.txt" >Download file with data</a>
-                    </div>
-                </div>
-             </div>   -->    
+              </div> 
                              
         </div>
         
@@ -129,8 +100,7 @@
         
         <div class="alert alert-info">
             Filter faults by  <i>Style of Faulting</i>
-            
-            
+
             
        </div>
            <select class="form-control" id="seleMag">
@@ -153,95 +123,8 @@
         
         <div id="menu2" class="tab-pane fade">
            
-   <!--         
-                       <div class="row  btns-create">
-                               <div class="btn-group btn-group-justified">
-                                 <li id="star" href="#" class="btn btn-primary">Star</li>
-                                 <li id="end" href="#" class="btn btn-danger disabled">End</li>
-                               </div>
-                        </div> 
-           
-                          <div class="row content-coordenadas">
-                             <div class="col-md-12 col-sm-12  col-xs-12">
-                              <div class="input-group">
-                                 <span class="input-group-addon"><strong>Lat ; Lng: </strong></span>
-                                 <input id="xy-coordenadas" type="text" class="form-control" name="xy-coordenadas" placeholder="Click on map" disabled>
-                                 <span class="input-group-addon">wgs-84</span>
-                               </div>
-                             </div>
-                         </div> 
-           
-                      
-                       <div class="row magnitudes">
-                           <div class="col-md-12 col-sm-12  col-xs-12"> 
-                                <div class="input-group">
-                                 <span class="input-group-addon"><strong>Magnitud: </strong></span>
-                                 <span class="input-group-addon"><strong>4.0</strong> &#8804; </span>
-                                 <input id="l-distancia" type="number" class="form-control" name="l-distancia" placeholder="Magnitude" min="4" max="6" step="0.1" value="5.0" disabled>
-                                 <span class="input-group-addon">&#8804; <strong>6.0</strong> Mw.</span>
-                               </div>
-                           </div>
-                       </div>
-                       
-                       <div class="row createSlider">
-                          <div class="col-md-12 col-sm-12  col-xs-12">
-                          <label for="sliderCreate">Strike: <span>45</span>º</label>
-                           <div class="input-group content-sliderCreate">
-                           <span class="input-group-addon"><strong>0</strong>º</span>
-                           <div id="sliderCreate" class="label-Slider" ></div>
-                           <span class="input-group-addon"><strong>359</strong>º</span>
-                           </div>
-                           </div>
-                       </div>
-                       
-                       <div class="row createSlider-dip">
-                          <div class="col-md-12 col-sm-12  col-xs-12">
-                          <label for="sliderCreate-dip">Dip: <span>45</span>º</label>
-                           <div class="input-group content-sliderCreate">
-                           <span class="input-group-addon"><strong>0</strong>º</span>
-                           <div id="sliderCreate-dip" class="label-Slider"></div>
-                           <span class="input-group-addon"><strong>89</strong>º</span>
-                           </div>
-                           </div>
-                       </div>
-                       
-                       <div class="row createSlider-Ztop">
-                          <div class="col-md-12 col-sm-12  col-xs-12">
-                               <div class="input-group">
-                                   <span class="input-group-addon"><strong>Ztop:</strong></span>
-                                 <input id="input-Ztop" type="number" class="form-control" name="l-distancia" placeholder="Magnitude" min="0" step="0.1" value="5" disabled>
-                                 <span class="input-group-addon">Km.</span>
-                               </div>
-                           </div>
-                       </div>
-           
-                       <div class="row createSlider-Focal">
-                          <div class="col-md-12 col-sm-12  col-xs-12">
-                               <div class="input-group">
-                                   <span class="input-group-addon"><strong>Focal Mechanim:</strong></span>
-                                       <select class="form-control" id="Focal" disabled>
-                                           <option value="SS">SS - Strikeslip</option>
-                                           <option value="N">N - Normal</option>
-                                           <option value="R">R - Reverse</option>
-                                         </select>
-                               </div>
-                           </div>
-                       </div>
-           
-                           <div class="row  btns-createFile">
-                              <div class="col-md-12 col-sm-12  col-xs-12">
-                               <div class="btn-group btn-group-justified">
-                                <a id="view-map" href="#" class="btn btn-success disabled" download="faultData_Custom.txt" >Download file with data (custom)</a>
-                                 <li id="view-map" href="#" class="btn btn-success disabled" >Download file with data (custom)</li>
-                               </div>
-                               </div>
-                        </div> 
-                    -->
-        
         </div>
       </div>
-         
-          <!-- <hr> -->
           
     </div>
     
@@ -270,8 +153,6 @@
             <div id="map"></div>
         </div>
     </div>
-    
-    
     
     <div class="col-md-3 col-sm-3">
     
@@ -360,18 +241,8 @@
                     </div>
              </div> 
         
-     
-     
-     
+
     </div>   
-    
-    
-    
-    
-    
-    
-    
-    
     
   </div>
 </div>

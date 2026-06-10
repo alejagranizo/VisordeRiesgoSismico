@@ -6,7 +6,7 @@ import subprocess
 import sys
 import os
 
-PY   = sys.executable
+PY   = os.environ.get("PYTHON_EXE") or sys.executable
 BASE = os.path.dirname(os.path.abspath(__file__))  # pythonCode/
 ROOT = os.path.dirname(BASE)                        # raíz del proyecto
 

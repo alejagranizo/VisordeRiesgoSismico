@@ -1,0 +1,215 @@
+# VisordeRiesgoSismico — MERISUR
+
+Seismic Risk Viewer developed as a Final Degree Project (TFG) at the Universidad Politécnica de Madrid, TERRA Research Group.
+
+The application calculates and visualises the expected seismic damage to buildings in Lorca and Puerto Lumbreras (Murcia, Spain) for user-defined earthquake scenarios, including debris estimation, debris barriers and census-section-level analysis.
+
+> **Acknowledgement:** The original seismic calculation engine (distance metrics, ground motion model, vulnerability and debris functions) was developed by **Pouye Yazdi** at the Universidad Politécnica de Madrid (2017). This project extends and integrates that work.
+
+---
+
+## Tech Stack
+
+- **Backend:** Node.js + Express
+- **Frontend:** HTML, CSS, JavaScript, Leaflet.js
+- **Seismic calculation:** Python 3.10 (geopandas, shapely, pygmm, scipy, pyproj, geopy)
+- **Database:** MongoDB Atlas (shared cloud database)
+- **Ground motion model:** Akkar-Sandikkaya-Bommer 2014
+
+---
+
+## Architecture
+
+The application runs **locally** on each machine but shares a **common cloud database** (MongoDB Atlas). This means:
+
+- Each user clones the repository and runs the server on their own machine
+- All users read and write to the same Atlas database (shared users, sessions, results)
+- The seismic calculation engine runs locally using Python and the local GIS input files
+- Email verification links use `APP_URL`, which must be set to the machine's local address
+
+---
+
+## Prerequisites
+
+- Node.js v18 or higher
+- Python 3.10
+- Git + Git LFS
+- Access credentials to the shared MongoDB Atlas cluster (contact the project author)
+
+---
+
+## Installation
+
+### 1. Clone the repository
+
+Make sure Git LFS is installed first:
+
+```bash
+git lfs install
+```
+
+Then clone:
+
+```bash
+git clone https://github.com/alejagranizo/VisordeRiesgoSismico.git
+cd VisordeRiesgoSismico
+```
+
+Git LFS will automatically download the large GIS input files (shapefiles, etc.) during clone.
+
+### 2. Install Node.js dependencies
+
+```bash
+npm install
+```
+
+### 3. Create a Python virtual environment and install dependencies
+
+```bash
+python -m venv pythonCode/env
+pythonCode\env\Scripts\activate      # Windows
+pip install -r requirements.txt
+```
+
+### 4. Set up environment variables
+
+Create a `.env` file in the project root based on `.env.example`:
+
+```
+PORT=3000
+
+# Shared cloud database — use the Atlas URI provided by the project author
+MONGO_URI=mongodb+srv://user:password@cluster.mongodb.net/merisurDB
+
+SESSION_SECRET=your_secret_here
+
+# Absolute paths — adjust to your machine
+MAIN_PATH=C:/YourPath/pythonCode/MAIN.py
+MAIN_Secc_PATH=C:/YourPath/pythonCode/MAIN0.py
+FAULT_JSON=C:/YourPath/pythonCode/inputs/fault_params.json
+PYTHON_CODE_PATH=C:/YourPath/pythonCode
+PYTHON_EXE=C:/YourPath/pythonCode/env/Scripts/python.exe
+
+# Email configuration
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USER=your_email@gmail.com
+MAIL_PASS=your_gmail_app_password
+TECH_EMAIL=admin_email@domain.com
+
+# Your machine's local address — used in email verification links
+# Use http://localhost:3000 if you are the only user
+# Use http://192.168.X.X:3000 (your local IP) if others need to open links from a different device
+APP_URL=http://localhost:3000
+```
+
+> **MAIL_PASS** is not your regular Gmail password. Generate an App Password at **Google Account → Security → 2-Step Verification → App Passwords**.
+
+> **APP_URL** is used to build the links inside verification emails. If the email is opened on a different device, `localhost` will not resolve — set this to your local network IP (`ipconfig` on Windows) so links work from any device on the same network.
+
+> **MONGO_URI** must point to the shared Atlas cluster to collaborate. Using `mongodb://localhost:27017/merisurDB` creates a fully isolated local database that no one else can see.
+
+### 5. Generate debris buffers (first time only)
+
+Buffer GeoJSON files are not stored in the repository and must be generated before running any seismic scenario:
+
+```bash
+cd pythonCode
+
+# Generate buffers for both municipalities (recommended)
+python GENERATE_BUFFERS.py
+
+# Generate only for Lorca
+python GENERATE_BUFFERS.py LORCA
+
+# Generate only for Puerto Lumbreras
+python GENERATE_BUFFERS.py PL
+```
+
+This produces the following files:
+- `inputs/Lorca/allBuffers_Lorca1-4.geojson`
+- `inputs/Lorca/allBuildings_Lorca.txt` (updated with facade lengths)
+- `inputs/PuertoLumbreras/allBuffers_PL1-4.geojson`
+- `inputs/PuertoLumbreras/allBuildings_PL.txt` (updated with facade lengths)
+
+> This step can take several minutes. It only needs to be run once, or again if the building shapefiles change.
+
+### 6. Start the server
+
+```bash
+npm start
+```
+
+The application will be available at `http://localhost:3000`.
+
+---
+
+## Project Structure
+
+```
+merisurNode/
+├── app.js                  # Main Node.js server
+├── routes/                 # Express routes (auth, data)
+├── public/                 # Frontend (HTML, CSS, JS, GIS data)
+│   └── newData/            # Census-section geometries as JS files
+├── pythonCode/             # Python seismic calculation modules
+│   ├── MAIN.py             # Per-building calculation (manual scenario)
+│   ├── MAIN0.py            # Orchestrator (RISK_ + BUFF_)
+│   ├── RISK_.py            # Damage calculation by census section
+│   ├── BUFF_.py            # Geometry + results merger
+│   ├── GENERATE_BUFFERS.py # Debris buffer generation (LORCA / PL / both)
+│   ├── inputs/             # Input data (shapefiles, txt) — tracked via Git LFS
+│   └── output/             # Generated results (git-ignored)
+├── requirements.txt        # Python dependencies
+├── package.json            # Node.js dependencies
+├── .env.example            # Environment variable template
+└── README.md               # This file
+```
+
+---
+
+## Usage
+
+1. Open `http://localhost:3000` and log in.
+2. Select a seismic fault and configure the scenario (magnitude, focal mechanism, probability level).
+3. Click **Calculate** — the system runs the Python scripts in the background.
+4. The map updates with the results: per-building damage, debris volumes, and census-section analysis.
+
+---
+
+## Required Input Data
+
+The following files must be present in `pythonCode/inputs/` and are included in the repository via Git LFS:
+
+- `Lorca/allBuildings_cusec.txt` — raw building inventory for Lorca
+- `Lorca/shapefiles/EdificiosLorca2026.shp` — building footprints
+- `Lorca/shapefiles/LorcaSoil_WGS.*` — Vs30 soil map
+- `PuertoLumbreras/allBuildings_cusec_PL.txt` — raw building inventory for Puerto Lumbreras
+- `PuertoLumbreras/shapefiles/EdificiosPuertoLumbreras.shp` — building footprints
+- `params.xlsx` — vulnerability and debris parameter tables
+
+---
+
+## Collaborating
+
+This project uses a shared MongoDB Atlas database. To collaborate:
+
+1. Request the Atlas `MONGO_URI` from the project author
+2. Clone the repository and follow the installation steps above
+3. Set `MONGO_URI` in your `.env` to the shared Atlas URI
+4. Any users registered or data generated will be visible to all collaborators
+
+To pull the latest code changes:
+
+```bash
+git pull
+```
+
+---
+
+## Author
+
+**Alejandra Granizo**
+Department of Topography and Cartography
+Universidad Politécnica de Madrid
+May 2026

@@ -112,7 +112,8 @@ function drawnGem(b,rad){
 /*---------------------------------*/
     map = new L.map('map',{
         zoomControl: false,
-        maxZoom: 28
+        maxZoom: 28,
+        minZoom: 6
     }).setView([37.6710, -1.6982], 10);
     // Create scale bar  
    var scale = new L.control.scale({maxWidth:240, metric:true, imperial:false, position: 'bottomleft'}).addTo(map);

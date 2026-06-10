@@ -34,7 +34,8 @@ router.post('/register', async (req, res) => {
     const approvalToken = crypto.randomBytes(32).toString('hex');
 
     await User.create({
-      user: usuario, password: hash, email, name, lastName, institution,
+      usuario: usuario, 
+      password: hash, email, name, lastName, institution,
       status: 'pending',
       emailVerified: false,
       emailToken,
@@ -91,8 +92,8 @@ router.post('/register', async (req, res) => {
       console.error('Error sending approval email:', mailErr.message);
     }
 
-    res.redirect('/login?msg=pending');
-
+  res.redirect(`/login?msg=pending&email=${encodeURIComponent(email)}`);
+  
   } catch (err) {
     console.error('Error en registro:', err);
     if (err.code === 11000) {

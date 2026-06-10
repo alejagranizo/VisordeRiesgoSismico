@@ -191,22 +191,14 @@ def main(argv):
     cfgs = [get_location_config(code) for code in sites]
 
     errors = []
-    # max_workers=2: un proceso por site; si hay un solo core se degrada a serie
-    with ProcessPoolExecutor(max_workers=2) as executor:
-        futures = {
-            executor.submit(run_site, cfg, fault_dict,
-                            fault_proj_vertices, probability_scenario): cfg['site']
-            for cfg in cfgs
-        }
-        for future in as_completed(futures):
-            site_code = futures[future]
-            try:
-                future.result()
-            except Exception as e:
-                import traceback
-                print(f'\n[{site_code}] ERROR: {e}')
-                traceback.print_exc()
-                errors.append(site_code)
+    for cfg in cfgs:
+        try:
+            run_site(cfg, fault_dict, fault_proj_vertices, probability_scenario)
+        except Exception as e:
+            import traceback
+            print(f'\n[{cfg["site"]}] ERROR: {e}', file=sys.stderr)
+            traceback.print_exc(file=sys.stderr)
+            errors.append(cfg['site'])
 
     if errors:
         print(f'\nSites con errores: {errors}')

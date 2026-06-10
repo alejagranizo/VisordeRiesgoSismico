@@ -148,7 +148,7 @@ termino();
 // ── Leyendas ──────────────────────────────────────────────────────────────────
 var lg_sc   = "<li id='ilg_sc' class='text'><i class='fa fa-square fa-1.5x'> | </i> Urbanized Area</li>";
 var lg_edif = "<li id='ilg_edif' class='text'><i class='fa fa-building fa-1.5x'> | </i> Buildings</li>";
-// ── Leyenda de barreras: 4 niveles con círculo de color + icono ───────────────
+// ── Leyenda de barreras: 3 niveles con círculo de color + icono ───────────────
 // Los colores y etiquetas coinciden exactamente con BARRIER_STYLE en barrierLayer.js
 var lg_barriers = "<li id='ilg_barriers' class='text' style='padding:0'>" +
     "<p class='titles' style='margin:4px 0 6px'>Debris Barriers</p>" +
@@ -161,8 +161,8 @@ var lg_barriers = "<li id='ilg_barriers' class='text' style='padding:0'>" +
             "<img src='css/barrera.png' width='16' height='16' style='display:block'>" +
         "</span>" +
         "<span style='font-size:12px;line-height:1.3'>" +
-            "<strong>Level 4 — Critical</strong><br>" +
-            "<span style='color:#6b7280'>Gap ≤ 2 m — passage almost blocked</span>" +
+            "<strong>Level 3 — Critical</strong><br>" +
+            "<span style='color:#6b7280'>Debris wider than free gap</span>" +
         "</span>" +
     "</li>" +
 
@@ -173,32 +173,20 @@ var lg_barriers = "<li id='ilg_barriers' class='text' style='padding:0'>" +
             "<img src='css/barrera.png' width='16' height='16' style='display:block'>" +
         "</span>" +
         "<span style='font-size:12px;line-height:1.3'>" +
-            "<strong>Level 3 — Severe</strong><br>" +
-            "<span style='color:#6b7280'>Gap ≤ 3.5 m — highly restricted</span>" +
+            "<strong>Level 2 — Restricted</strong><br>" +
+            "<span style='color:#6b7280'>Free gap ≤ 4 m — very limited passage</span>" +
         "</span>" +
     "</li>" +
 
-    "<li style='display:flex;align-items:center;gap:8px;margin-bottom:6px'>" +
+    "<li style='display:flex;align-items:center;gap:8px'>" +
         "<span style='flex-shrink:0;width:26px;height:26px;border-radius:50%;" +
                "background:#f5e100;box-shadow:0 2px 5px rgba(0,0,0,.35);" +
                "display:flex;align-items:center;justify-content:center'>" +
             "<img src='css/barrera.png' width='16' height='16' style='display:block'>" +
         "</span>" +
         "<span style='font-size:12px;line-height:1.3'>" +
-            "<strong>Level 2 — Caution</strong><br>" +
-            "<span style='color:#6b7280'>Gap ≤ 5 m — navigable with care</span>" +
-        "</span>" +
-    "</li>" +
-
-    "<li style='display:flex;align-items:center;gap:8px'>" +
-        "<span style='flex-shrink:0;width:26px;height:26px;border-radius:50%;" +
-               "background:#2ea44f;box-shadow:0 2px 5px rgba(0,0,0,.35);" +
-               "display:flex;align-items:center;justify-content:center'>" +
-            "<img src='css/barrera.png' width='16' height='16' style='display:block'>" +
-        "</span>" +
-        "<span style='font-size:12px;line-height:1.3'>" +
-            "<strong>Level 1 — Mild</strong><br>" +
-            "<span style='color:#6b7280'>Gap ≤ 6 m — narrow but passable</span>" +
+            "<strong>Level 1 — Caution</strong><br>" +
+            "<span style='color:#6b7280'>Free gap > 4 m — passable with care</span>" +
         "</span>" +
     "</li>" +
 

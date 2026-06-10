@@ -833,6 +833,58 @@ li#li_ly_buffer1 { display: none; }
 /* ═══════════════════════════════════════════════════════
    BARRIER POPUP  (map.html inline → style.css)
    ═══════════════════════════════════════════════════════ */
+
+/* 1. Neutralizar el wrapper nativo de Leaflet */
+.barrier-popup .leaflet-popup-content-wrapper {
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 0;
+  overflow: visible;
+}
+
+/* 2. El contenido ocupa exactamente el div interior */
+.barrier-popup .leaflet-popup-content {
+  margin: 0;
+  padding: 0;
+  width: auto !important;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+}
+
+/* 3. Punta del popup — sin hueco */
+.barrier-popup .leaflet-popup-tip-container {
+  margin-top: -1px;
+}
+
+/* 4. Botón × integrado en la cabecera coloreada — esquina superior derecha */
+.barrier-popup .leaflet-popup-close-button {
+  position: absolute !important;
+  top: 6px !important;
+  right: 6px !important;
+  width: 20px !important;
+  height: 20px !important;
+  font-size: 15px !important;
+  line-height: 20px !important;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-weight: 400 !important;
+  background: rgba(0, 0, 0, 0.20) !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  z-index: 20;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none !important;
+}
+
+.barrier-popup .leaflet-popup-close-button:hover {
+  background: rgba(0, 0, 0, 0.40) !important;
+  color: #fff !important;
+}
+
+/* 5. Tabla legacy (si se usa en algún sitio) */
 .barrier-popup .barrier-title {
   margin: 0 0 6px;
   font-size: 13px;
@@ -846,8 +898,8 @@ li#li_ly_buffer1 { display: none; }
   width: 100%;
 }
 
-.barrier-table td              { padding: 2px 6px 2px 0; }
-.barrier-table td:first-child  { color: #666; white-space: nowrap; }
+.barrier-table td             { padding: 2px 6px 2px 0; }
+.barrier-table td:first-child { color: #666; white-space: nowrap; }
 /* ═══════════════════════════════════════════════════════
    MAP EMBED CONTEXT  (map.html / map_.html)
    Estos estilos sólo aplican cuando el mapa ocupa

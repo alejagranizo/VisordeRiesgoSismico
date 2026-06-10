@@ -446,7 +446,7 @@ $(document).ready(function () {
         var SITE_NAME = { 'LORCA': 'Lorca', 'PL': 'Puerto Lumbreras' };
 
         // Exportar el nivel numérico (1..4) en la columna barrier_level
-        var rows = ['id,lat,lng,gap_real_m,barrier_level,municipality'];
+        var rows = ['id,lat,lng,barrier_level,municipality'];
         var globalId = 1;
 
         activeSites.forEach(function (site) {
@@ -456,12 +456,10 @@ $(document).ready(function () {
             raw.forEach(function (b) {
                 var lat    = Array.isArray(b.centroid) ? b.centroid[0] : '';
                 var lng    = Array.isArray(b.centroid) ? b.centroid[1] : '';
-                var gap    = b.gap_real_m    !== undefined ? b.gap_real_m    : '';
                 var level  = b.barrier_level !== undefined ? b.barrier_level : '';
-                var damage = level; // exportar el número de nivel (1..4)
                 var muni   = b.site ? (SITE_NAME[b.site.toUpperCase()] || b.site) : (SITE_NAME[site] || site);
 
-                rows.push([globalId++, lat, lng, gap, damage, muni].join(','));
+                rows.push([globalId++, lat, lng, level, muni].join(','));
             });
         });
 

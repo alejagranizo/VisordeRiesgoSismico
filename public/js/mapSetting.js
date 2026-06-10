@@ -3,13 +3,23 @@
 // Las capas NO se instancian aquí: lo hace siteSwitcher.js al arrancar.
 
 // ── Mapa base ─────────────────────────────────────────────────────────────────
+var peninsulaBounds = L.latLngBounds(
+    L.latLng(35.0, -10.5),   // SW: sur de Canarias / Estrecho
+    L.latLng(44.5,  5.0)    // NE: Pirineos / Costa Mediterránea
+);
+
 var map = new L.map('map', {
     zoomControl: false,
-    maxZoom: 28
+    maxZoom: 28,
+    minZoom: 7,
+    maxBounds: peninsulaBounds,
+    maxBoundsViscosity: 1.0
 }).setView([37.6710, -1.6982], 14);
 
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors'
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 28,
+    maxNativeZoom: 19
 }).addTo(map);
 
 var pnoa = L.tileLayer.wms("https://www.ign.es/wms-inspire/pnoa-ma", { // Usa HTTPS

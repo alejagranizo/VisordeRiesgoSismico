@@ -3,18 +3,21 @@
  * Expone buildBarrierLayer(barrierDataArray) → L.layerGroup
  * Llamado por mapSetting.js al construir las capas de cada site.
  *
- * Niveles de barrera (basados en el gap REAL entre polígonos de escombros):
- *   barrier_level 4  →  gap ≤ 2 m  (rojo    / crítico:  paso prácticamente bloqueado)
- *   barrier_level 3  →  gap ≤ 3.5 m (naranja / grave:    paso muy restringido)
- *   barrier_level 2  →  gap ≤ 5 m   (amarillo/ aviso:    paso limitado pero posible)
- *   barrier_level 1  →  gap ≤ 6 m   (verde   / leve:     paso estrecho pero posible)
+ * Niveles de barrera (basados en la comparación debris vs gap libre):
+ *   barrier_level 3  →  ROJO    — debris_m > gap_real_m
+ *                        Los escombros ocupan más espacio que el hueco libre.
+ *   barrier_level 2  →  NARANJA — debris_m ≤ gap_real_m  y  gap ≤ 4 m
+ *                        El paso es estrecho aunque los escombros no lo colapsen.
+ *   barrier_level 1  →  AMARILLO— debris_m ≤ gap_real_m  y  gap > 4 m
+ *                        Paso posible; los escombros son menores que el espacio libre.
  *
  * barrier_type:
  *   "buffer-buffer"    → dos buffers de escombros enfrentados
  *   "buffer-building"  → un buffer de escombros alcanza la huella de un edificio vecino
  *
- * Campos extra en cada barrera (v5):
+ * Campos extra en cada barrera (v7):
  *   gap_real_m    → distancia real medida entre los dos polígonos (metros)
+ *   debris_m      → espacio total ocupado por escombros en el corredor (metros)
  *   buff_dist_m   → [dist_buffer_A, dist_buffer_B] — BUFF_DIST original de GENERATE_BUFFERS
  */
 
@@ -23,10 +26,9 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 var BARRIER_STYLE = {
-    4: { color: '#e61f1f', label: 'Level 4 — gap ≤ 2 m' },
-    3: { color: '#f76707', label: 'Level 3 — gap ≤ 3.5 m' },
-    2: { color: '#f5e100', label: 'Level 2 — gap ≤ 5 m' },
-    1: { color: '#2ea44f', label: 'Level 1 — gap ≤ 6 m' },
+    3: { color: '#e61f1f', label: 'Level 3 — debris > gap' },
+    2: { color: '#f76707', label: 'Level 2 — gap ≤ 4 m' },
+    1: { color: '#f5e100', label: 'Level 1 — gap > 4 m' },
 };
 
 var BARRIER_ICON_SIZE = 36;
@@ -109,6 +111,10 @@ function buildBarrierLayer(barrierDataArray) {
             ? barrier.gap_real_m + ' m'
             : '—';
 
+        var debrisStr = (barrier.debris_m !== undefined && barrier.debris_m !== null)
+            ? barrier.debris_m + ' m'
+            : '—';
+
         var buffDistArr = barrier.buff_dist_m || [];
         var buffDistStr = buffDistArr.length
             ? buffDistArr.map(d => d !== null ? d + ' m' : '—').join(' / ')
@@ -124,16 +130,14 @@ function buildBarrierLayer(barrierDataArray) {
         });
 
         var BARRIER_DESCRIPTION = {
-            4: "Passage almost impossible due to extremely narrow gap between debris fields.",
-            3: "Movement is difficult and significantly restricted by debris proximity.",
-            2: "Reduced width but still navigable with caution.",
-            1: "Narrow passage remains possible; low urgency."
+            3: "Debris fields occupy more space than the free passage — crossing is critically obstructed.",
+            2: "Free gap is narrow (≤ 4 m); debris does not fully block but passage is very restricted.",
+            1: "Debris is smaller than the free gap (> 4 m); passage remains possible with caution."
         };
         var BARRIER_BADGE = {
-            4: "Critical",
-            3: "Severe",
-            2: "Caution",
-            1: "Slight"
+            3: "Critical",
+            2: "Restricted",
+            1: "Caution"
         };
 
         var desc  = BARRIER_DESCRIPTION[blvl] || "";
@@ -152,8 +156,8 @@ function buildBarrierLayer(barrierDataArray) {
                         "position:relative;background:#ffffff;border-radius:10px;overflow:hidden;border:none;margin:0;'>" +
 
             // ── Header
-            "  <div style='background:" + hdrBg + ";padding:10px 45px 10px 14px;" + 
-                "display:flex;align-items:center;gap:8px;'>" +
+            "  <div style='background:" + hdrBg + ";padding:10px 14px;" + 
+                "display:flex;align-items:center;gap:8px;position:relative;'>" +
             "    <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' " +
                       "fill='none' stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>" +
             "      <path d='M3 7h18M3 17h18M6 7v10M18 7v10M9 7v2M12 7v2M15 7v2M9 15v2M12 15v2M15 15v2'/>" +
@@ -163,7 +167,7 @@ function buildBarrierLayer(barrierDataArray) {
             "      <p style='margin:0;font-size:11px;color:rgba(255,255,255,0.85);'>" + style.label + "</p>" +
             "    </div>" +
             "    <span style='font-size:10px;font-weight:500;background:rgba(255,255,255,0.22);" +
-                             "color:#fff;padding:2px 8px;border-radius:20px;'>" + badge + "</span>" +
+                             "color:#fff;padding:2px 8px;border-radius:20px;margin-right:22px;'>" + badge + "</span>" +
             "  </div>" +
 
             // ── Description
@@ -180,9 +184,20 @@ function buildBarrierLayer(barrierDataArray) {
                           "fill='none' stroke='#6b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>" +
             "          <path d='M5 12h14M5 12l4-4M5 12l4 4M19 12l-4-4M19 12l-4 4'/>" +
             "        </svg>" +
-            "        Gap between debris" +
+            "        Free gap" +
             "      </span>" +
             "      <span style='" + valStyle + "'>" + gapStr + "</span>" +
+            "    </div>" +
+
+            "    <div style='" + rowStyle + "'>" +
+            "      <span style='" + lblStyle + "'>" +
+            "        <svg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' " +
+                          "fill='none' stroke='#6b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>" +
+            "          <path d='M3 6h18M3 12h18M3 18h18'/>" +
+            "        </svg>" +
+            "        Debris width" +
+            "      </span>" +
+            "      <span style='" + valStyle + "'>" + debrisStr + "</span>" +
             "    </div>" +
 
             "    <div style='" + rowStyle + "'>" +
@@ -223,13 +238,12 @@ function buildBarrierLayer(barrierDataArray) {
     });
 
     // Log resumen
-    [4, 3, 2, 1].forEach(function (lvl) {
-        var labels = {
-            4: 'gap ≤ 2 m',
-            3: 'gap ≤ 3.5 m',
-            2: 'gap ≤ 5 m',
-            1: 'gap ≤ 6 m'
-        };
+    var labels = {
+        3: 'debris > gap (rojo)',
+        2: 'gap ≤ 4 m (naranja)',
+        1: 'gap > 4 m (amarillo)'
+    };
+    [3, 2, 1].forEach(function (lvl) {
         var n = barrierDataArray.filter(b => b.barrier_level === lvl).length;
         console.log('[barrierLayer] Nivel ' + lvl + ' (' + labels[lvl] + '): ' + n + ' marcadores');
     });
@@ -240,7 +254,7 @@ function buildBarrierLayer(barrierDataArray) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// FUNCIÓN: filtrar barreras por nivel
+// FUNCIÓN: filtrar barreras por nivel (3=rojo, 2=naranja, 1=amarillo)
 // ─────────────────────────────────────────────────────────────────────────────
 function filterBarriersByLevel(barrierDataArray, level) {
     return (barrierDataArray || []).filter(b => b.barrier_level === level);

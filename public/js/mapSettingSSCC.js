@@ -266,10 +266,8 @@
     html += sectionBtn("sec_geo", "GeoID: " + props.CUSEC);
     html += row("Municipality", localidadLabel, 10);
     html += row("Buildings (total)", numEdif || "-", 10);
-    if (numEdifSinVul > 0) {
-      html += row("— with vul. code", numEdifConVul + " (" + pct(numEdifConVul, numEdif) + ")", 10);
-      html += row("— no vul. code", numEdifSinVul + " (" + pct(numEdifSinVul, numEdif) + ")", 10);
-    }
+    html += row("— with vul. code", numEdifConVul + " (" + pct(numEdifConVul, numEdif) + ")", 10);
+    html += row("— no vul. code",   numEdifSinVul + " (" + pct(numEdifSinVul, numEdif) + ")", 10);
     html += "</div>";
     html += sectionBtn("sec_vul", "Vulnerability");
     vulsToShow.forEach(function (base) {
@@ -301,12 +299,11 @@
     html += sectionBtn("sec_dmg", "Damage");
     if (noData) {
       html += row("Mean damage", "No data", 10);
-      if (numEdifSinVul > 0) {
-        html += row("No vul. code",
-          numEdifSinVul + " edif. (" + pct(numEdifSinVul, numEdif) + ")", 10);
-      }
+      html += row("No vul. code",
+        numEdifSinVul + " edif. (" + pct(numEdifSinVul, numEdif) + ")", 10);
     } else {
-      // numEdif calculable = total - sin vul
+      // Los totales de daño se calculan solo sobre edificios con vul_code.
+      // numEdifConVul es la base correcta para los porcentajes de daño.
       var calcEdif = numEdifConVul || numEdif;
       html += row("Mean damage",      safeNum(props.dMean, 3), 10);
       html += row("Null damage",      (d.dmgNull || 0) + " edif. (" + pct(d.dmgNull || 0, calcEdif) + ")", 10);
@@ -314,6 +311,7 @@
       html += row("Moderate damage",  (d.dmgMod  || 0) + " edif. (" + pct(d.dmgMod  || 0, calcEdif) + ")", 10);
       html += row("Extensive damage", (d.dmgExt  || 0) + " edif. (" + pct(d.dmgExt  || 0, calcEdif) + ")", 10);
       html += row("Complete damage",  (d.dmgCom  || 0) + " edif. (" + pct(d.dmgCom  || 0, calcEdif) + ")", 10);
+      html += row("No vul. code",     numEdifSinVul + " edif. (" + pct(numEdifSinVul, numEdif) + ")", 10);
     }
     html += "</div>";
     html += "</div>";

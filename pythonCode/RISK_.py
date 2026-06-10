@@ -6,6 +6,11 @@
 #   1. Lee fault_params.json (escrito por routes/data.js con los params del terremoto elegido)
 #   2. Procesa Lorca y Puerto Lumbreras usando sus respectivos shapefiles y TXTs
 #   3. Genera resultSSCC_Lorca.js y resultSSCC_PuertoLumbreras.js en pythonCode/output/
+#
+# NOTA sobre NumEdif / NumEdifSinVul:
+#   - NumEdif       = total de edificios en la sección (con y sin vul_code)
+#   - NumEdifSinVul = edificios SIN vul_code (no entran en el cálculo de daño)
+#   - El cálculo de dMean, DamageTotals, etc. usa SOLO los edificios con vul_code.
 
 import sys, io
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
@@ -30,8 +35,8 @@ from info_ import (inputpath, outputpath,
 
 PARAMS_XLSX      = os.path.join(inputpath, "params.xlsx")
 FAULT_JSON       = os.path.join(inputpath, "fault_params.json")
-BUILDINGS_TXT    = os.path.join(inputpath, "allBuildings_cusec.txt")
-BUILDINGS_TXT_PL = os.path.join(inputpath, "allBuildings_cusec_PL.txt")
+BUILDINGS_TXT    = os.path.join(inputpath, "Lorca", "Buildings_Lorca_completo.txt")
+BUILDINGS_TXT_PL = os.path.join(inputpath, "PuertoLumbreras", "allBuildings_cusec_PL.txt")
 BEDROCK_VS30     = 760
 
 # ---------------------------------------------------------------------------
@@ -83,12 +88,20 @@ def load_buildings_file(filepath):
       - 8 columnas separadas por ESPACIO (PuertoLumbreras): idx lng lat REFCAT nplants year vul_code CUSEC
 
     El separador se autodetecta en la primera línea válida.
-    Solo se almacenan edificios con vul_code válido (no vacío, no 'none', no 'nan').
+
+    Devuelve dos dicts:
+      - cusec_vuls:  {cusec: {vul_code: count}}  — edificios CON vul_code válido
+      - cusec_total: {cusec: int}                 — TODOS los edificios (con y sin vul_code)
+
+    Los edificios sin vul_code no entran en el cálculo de daño sísmico, pero sí
+    se cuentan para informar al usuario cuántos quedan fuera del análisis.
     """
-    cusec_vuls = defaultdict(lambda: defaultdict(int))
+    cusec_vuls  = defaultdict(lambda: defaultdict(int))
+    cusec_total = defaultdict(int)
+
     if not os.path.exists(filepath):
         print(f"  Warning: {filepath} no encontrado, omitiendo.")
-        return cusec_vuls
+        return cusec_vuls, cusec_total
 
     # Autodetectar separador
     sep = None
@@ -98,8 +111,9 @@ def load_buildings_file(filepath):
                 sep = "\t" if "\t" in line else " "
                 break
 
-    count = 0
+    count        = 0
     count_no_vul = 0
+
     with open(filepath, "r", encoding="utf-8") as f:
         for line in f:
             parts = line.strip().split(sep)
@@ -123,16 +137,20 @@ def load_buildings_file(filepath):
                 continue
 
             count += 1
+            cusec_total[cusec] += 1          # contar TODOS, con o sin vul_code
+
             if vul_code and vul_code.lower() not in ("none", "nan", "-", ""):
                 cusec_vuls[cusec][vul_code] += 1
             else:
                 count_no_vul += 1
 
     print(f"  {count} edificios leídos de {os.path.basename(filepath)}")
-    print(f"  {len(cusec_vuls)} CUSECs únicos")
+    print(f"  {len(cusec_total)} CUSECs únicos (total edificios)")
+    print(f"  {len(cusec_vuls)} CUSECs con al menos un edificio con vul_code")
     if count_no_vul:
         print(f"  {count_no_vul} edificios sin vul_code (excluidos del cálculo de daño)")
-    return cusec_vuls
+
+    return cusec_vuls, cusec_total
 
 # ---------------------------------------------------------------------------
 # Vulnerabilidad
@@ -243,9 +261,11 @@ def load_fault_params():
 
 # ---------------------------------------------------------------------------
 # Redondeo proporcional exacto para DamageTotals
+# IMPORTANTE: num_edif aquí es solo el total de edificios CON vul_code,
+# que son los únicos que entran en el cálculo de daño.
 # ---------------------------------------------------------------------------
 
-def compute_damage_totals(resultados_vul, num_edif):
+def compute_damage_totals(resultados_vul, num_edif_con_vul):
     dmgNull = dmgLow = dmgMod = dmgExt = dmgCom = 0.0
     for v in resultados_vul.values():
         n = v["numEdif"]
@@ -259,7 +279,7 @@ def compute_damage_totals(resultados_vul, num_edif):
                 ("dmgMod", dmgMod), ("dmgExt", dmgExt), ("dmgCom", dmgCom)]
     floors    = {k: int(math.floor(v)) for k, v in raw_vals}
     fracs     = {k: v - floors[k]       for k, v in raw_vals}
-    remaining = num_edif - sum(floors.values())
+    remaining = num_edif_con_vul - sum(floors.values())
     rounded   = floors.copy()
 
     if remaining > 0:
@@ -275,9 +295,15 @@ def compute_damage_totals(resultados_vul, num_edif):
 # Procesado de un shapefile
 # ---------------------------------------------------------------------------
 
-def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
+def process_shapefile(shp_path, localidad, cusec_vuls, cusec_total, vul_table,
                       fault_proj, fault_dict, mag, mechanism, scenario,
                       vs30_field):
+    """
+    Procesa cada sección censal del shapefile.
+
+    cusec_vuls:  {cusec: {vul_code: count}}  — edificios con vul_code (para cálculo de daño)
+    cusec_total: {cusec: int}                 — total de edificios en la sección
+    """
     import sys
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from DIST import Fault_Proj, Find_R_Zones, Zone_Based_Distance
@@ -293,11 +319,10 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
     print(f"  Campos disponibles: {fields}")
     print(f"  Usando campo Vs30: '{vs30_field}'")
 
-    # Verificar que el campo Vs30 existe
     if vs30_field not in fields:
         print(f"  AVISO: campo '{vs30_field}' no encontrado. Se usará Vs30={BEDROCK_VS30} para todas las secciones.")
 
-    resultados  = []
+    resultados    = []
     sin_edificios = 0
 
     for sr in sf.iterShapeRecords():
@@ -317,17 +342,23 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
         except (TypeError, ValueError):
             vs30 = BEDROCK_VS30
 
-        vuls_en_seccion = cusec_vuls.get(cusec, {})
-        num_edif        = sum(vuls_en_seccion.values())
+        # Conteos de edificios para esta sección
+        vuls_en_seccion  = cusec_vuls.get(cusec, {})
+        num_edif_con_vul = sum(vuls_en_seccion.values())
+        # Total real: si hay edificios en cusec_total usamos ese valor;
+        # si no (p.ej. sección sin ningún edificio en el TXT), caemos al conteo con vul.
+        num_edif_total   = cusec_total.get(cusec, num_edif_con_vul)
+        num_edif_sin_vul = num_edif_total - num_edif_con_vul
 
+        # Sección sin ningún edificio con vul_code → noData
         if not vuls_en_seccion:
             sin_edificios += 1
             resultados.append({
                 "OBJECTID":      oid,
                 "CUSEC":         cusec,
                 "localidad":     localidad,
-                "NumEdif":       0,
-                "NumEdifSinVul": 0,
+                "NumEdif":       num_edif_total,    # total real (puede ser 0 si no hay edificios en el TXT)
+                "NumEdifSinVul": num_edif_total,    # todos están sin vul_code
                 "Vs30":          vs30,
                 "Rjb":           None,
                 "dMean":         None,
@@ -354,6 +385,7 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
             r = 10.0
 
         # Daño por código de vulnerabilidad
+        # Solo se calculan los edificios con vul_code; los sin vul_code no se tocan.
         resultados_vul = {}
         for vul_code in sorted(vuls_en_seccion.keys()):
             try:
@@ -365,13 +397,18 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
             except Exception as e:
                 print(f"    Error {cusec}/{vul_code}: {e}")
 
-        no_data      = (len(resultados_vul) == 0)
-        DamageTotals = compute_damage_totals(resultados_vul, num_edif)
-        vals_dmean   = [v["dMean"] for v in resultados_vul.values()]
-        # dMean ponderado por número de edificios de cada tipología
+        no_data = (len(resultados_vul) == 0)
+
+        # DamageTotals se calcula solo sobre edificios con vul_code
+        DamageTotals   = compute_damage_totals(resultados_vul, num_edif_con_vul)
         total_edif_vul = sum(v["numEdif"] for v in resultados_vul.values())
-        if vals_dmean and total_edif_vul > 0:
-            dMean = round(sum(v["dMean"] * v["numEdif"] for v in resultados_vul.values()) / total_edif_vul, 4)
+
+        # dMean ponderado por número de edificios de cada tipología (solo con vul_code)
+        if resultados_vul and total_edif_vul > 0:
+            dMean = round(
+                sum(v["dMean"] * v["numEdif"] for v in resultados_vul.values()) / total_edif_vul,
+                4
+            )
         else:
             dMean = None
 
@@ -379,8 +416,8 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
             "OBJECTID":      oid,
             "CUSEC":         cusec,
             "localidad":     localidad,
-            "NumEdif":       num_edif,
-            "NumEdifSinVul": 0,
+            "NumEdif":       num_edif_total,    # total real de la sección
+            "NumEdifSinVul": num_edif_sin_vul,  # sin vul_code, fuera del cálculo
             "Vs30":          vs30,
             "Rjb":           round(r, 3),
             "dMean":         dMean,
@@ -390,7 +427,7 @@ def process_shapefile(shp_path, localidad, cusec_vuls, vul_table,
         })
 
     con_res = len(resultados) - sin_edificios
-    print(f"  Con edificios: {con_res}  |  Sin edificios (incluidas con NumEdif=0): {sin_edificios}")
+    print(f"  Con vul_code: {con_res}  |  Sin vul_code o sin edificios: {sin_edificios}")
     return resultados
 
 # ---------------------------------------------------------------------------
@@ -438,22 +475,23 @@ def run():
         print(f"Procesando: {mun['id']}")
         print(f"{'='*40}")
 
-        cusec_vuls = load_buildings_file(mun["buildings"])
-        if not cusec_vuls:
+        cusec_vuls, cusec_total = load_buildings_file(mun["buildings"])
+        if not cusec_total:
             print(f"  Sin edificios para {mun['id']}, saltando.")
             continue
 
         res = process_shapefile(
-            shp_path   = os.path.join(inputpath, mun["shp"]),
-            localidad  = mun["id"],
-            cusec_vuls = cusec_vuls,
-            vul_table  = vul_table,
-            fault_proj = fault_proj,
-            fault_dict = fault_dict,
-            mag        = mag,
-            mechanism  = mechanism,
-            scenario   = scenario,
-            vs30_field = mun["vs30_field"],
+            shp_path    = os.path.join(inputpath, mun["shp"]),
+            localidad   = mun["id"],
+            cusec_vuls  = cusec_vuls,
+            cusec_total = cusec_total,
+            vul_table   = vul_table,
+            fault_proj  = fault_proj,
+            fault_dict  = fault_dict,
+            mag         = mag,
+            mechanism   = mechanism,
+            scenario    = scenario,
+            vs30_field  = mun["vs30_field"],
         )
         print(f"  -> {len(res)} secciones procesadas ({mun['id']})")
 
