@@ -4,6 +4,7 @@ const crypto     = require('crypto');
 const nodemailer = require('nodemailer');
 const router     = express.Router();
 const User       = require('../models/User');
+const path = require('path');
 
 // Configurar transporter con credenciales del .env
 const transporter = nodemailer.createTransport({
@@ -49,13 +50,32 @@ router.post('/register', async (req, res) => {
       await transporter.sendMail({
         from: process.env.MAIL_USER,
         to: email,
-        subject: 'MERISUR - Verify your email',
+        subject: 'Risk Seismic Viewer - Verify your email',
         html: `
           <p>Hello ${name},</p>
-          <p>Thank you for registering with MERISUR. Please verify your account by clicking the link:</p>
+          <p>Thank you for registering with Risk Seismic Viewer. Please verify your account by clicking the link:</p>
           <a href="${base}/verify-email?token=${emailToken}">Verify Email</a>
+          <p>After verification, your registration will be reviewed by our team. You will receive another email once your account is approved.</p>
           <p>If you did not register, please ignore this message.</p>
-        `
+
+          <p> Best regards,<br/>Risk Seismic Viewer Team</p>
+          <div style="text-align:left; margin-bottom:20px;">
+            <img src="cid:logo_terra" alt="TERRA" style="height:100px;" />
+            <img src="cid:logo_upm" alt="UPM" style="height:80px;" />
+          </div>
+        `,
+        attachments: [
+          {
+            filename: 'LogoTERRA.png',
+            path: path.join(__dirname, '../public/css/LogoTERRA.png'),
+            cid: 'logo_terra'
+          },
+          {
+            filename: 'Logo-UPM-Nombre.png',
+            path: path.join(__dirname, '../public/css/Logo-UPM-Nombre.png'),
+            cid: 'logo_upm'
+          }
+        ]
       });
     } catch (mailErr) {
       console.error('Error sending verification email:', mailErr.message);
@@ -66,7 +86,7 @@ router.post('/register', async (req, res) => {
       await transporter.sendMail({
         from: process.env.MAIL_USER,
         to: process.env.TECH_EMAIL,
-        subject: `MERISUR - New registration: ${usuario}`,
+        subject: `Risk Seismic Viewer - New registration: ${usuario}`,
         html: `
           <p>New user pending approval:</p>
           <ul>
@@ -132,10 +152,30 @@ router.get('/approve', async (req, res) => {
       await transporter.sendMail({
         from: process.env.MAIL_USER,
         to: user.email,
-        subject: 'MERISUR - Account status updated',
-        html: user.status === 'active'
-          ? `<p>Your account has been approved. You can now <a href="${process.env.APP_URL}/login">log in</a>.</p>`
-          : `<p>Your registration request has been rejected. Contact the team if you think this is an error.</p>`
+        subject: 'Risk Seismic Viewer - Account status updated',
+        html: `
+          ${user.status === 'active'
+            ? `<p>Your account has been approved. You can now <a href="${process.env.APP_URL}/login">log in</a>.</p>`
+            : `<p>Your registration request has been rejected. Contact the team if you think this is an error.</p>`
+          }
+          <p> Best regards,<br/>Risk Seismic Viewer Team</p>
+          <div style="text-align:left; margin-bottom:20px;">
+            <img src="cid:logo_terra" alt="TERRA" style="height:100px;" />
+            <img src="cid:logo_upm" alt="UPM" style="height:80px;" />
+          </div>
+        `,
+        attachments: [
+          {
+            filename: 'LogoTERRA.png',
+            path: path.join(__dirname, '../public/css/LogoTERRA.png'),
+            cid: 'logo_terra'
+          },
+          {
+            filename: 'Logo-UPM-Nombre.png',
+            path: path.join(__dirname, '../public/css/Logo-UPM-Nombre.png'),
+            cid: 'logo_upm'
+          }
+        ]
       });
     } catch (mailErr) {
       console.error('Error sending status update email:', mailErr.message);

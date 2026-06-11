@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 """
-by Pouye Yazdi
+by Alejandra Granizo and Pouye Yazdi
 Topography and Cartography Department
 Technical University of Madrid, Spain
 November 2017
